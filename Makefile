@@ -40,7 +40,7 @@ SOURCE=lsp-guidelines.tex lsp-guidelines.bib lsp-authors.tex lsp-latex.tex \
 cover: lsp-guidelines.pdf
 	convert $*.pdf\[0\] -resize 486x -background white -alpha remove -bordercolor black -border 2  cover.png
 
-convert $*.pdf\[0\] -resize 486x -background white -alpha remove -bordercolor black -border 2  cover.png
+# convert $*.pdf\[0\] -resize 486x -background white -alpha remove -bordercolor black -border 2  cover.png
 
 # 204x303 with a 2x2 margin it has to be 200x299
 #convert tmp.pdf\[0\] -resize x299 -background white -alpha remove -bordercolor black -border 2  -quality 100 cover.png

@@ -1,0 +1,475 @@
+\usepackage{my-xspace}
+%\usepackage{german}
+
+% \, -> kurz \ -> '.' kein Satzende
+
+\newcommand{\ua}{u.\,a.\ }
+\newcommand{\uae}{u.\,"a.\ }
+\newcommand{\zb}{z.\,B.\ }
+\newcommand{\Zb}{Z.\,B.\ }
+\newcommand{\ZB}{Z.\,B.\ }
+
+% according to the Leipzig glossing rules:
+% http://www.eva.mpg.de/lingua/resources/glossing-rules.php
+\newcommand{\nom}{{\sc nom}}
+\newcommand{\gen}{{\sc gen}}
+\newcommand{\dat}{{\sc dat}}
+\newcommand{\acc}{{\sc acc}}
+\newcommand{\nomOrAcc}{$_{nom \vee acc}$}
+\newcommand{\fem}{{\sc f}\xspace}
+\newcommand{\mas}{{\sc m}\xspace}
+\newcommand{\neu}{{\sc n}\xspace}
+\newcommand{\pl}{{\sc pl}\xspace}
+\newcommand{\sg}{{\sc sg}\xspace}
+\newcommand{\thirdsg}{3{\sc sg}\xspace}
+\newcommand{\defsc}{{\sc def}}
+\newcommand{\Neg}{{\sc neg}\xspace}
+\newcommand{\aux}{{\sc aux}\xspace}
+\newcommand{\prespass}{{\sc pres.pass}\xspace}
+\newcommand{\prog}{{\sc prog}\xspace}
+\newcommand{\pst}{{\sc pst}\xspace}
+\newcommand{\ipfv}{{\sc ipfv}\xspace}
+\newcommand{\ez}{{\sc ez}\xspace}
+\newcommand{\fut}{{\sc fut}\xspace}
+
+\newcommand{\expl}{{\sc expl}}
+\newcommand{\itextra}{$_{extra}$}
+\newcommand{\conj}{$_{conj}$}
+\newcommand{\partic}{{\sc part}\xspace}
+\newcommand{\prfx}{{\sc prfx}\xspace}
+
+\newcommand{\RA}{{\sc râ}\xspace}
+
+\newcommand{\particle}{{\sc part}\xspace}
+
+
+\newcommand{\pos}{$_{pos}$}
+
+\newcommand{\ind}[1]{\mbox{$_{\ibox{#1}}$}}
+%\def\th{\ifmmode\theta\else$\theta$\fi}
+
+
+
+
+\newcommand{\Vf}{Vorfeld\xspace}
+\newcommand{\Mf}{Mittelfeld\xspace}
+\newcommand{\Nf}{Nachfeld\xspace}
+
+\newcommand{\vf}{Vorfeld\xspace}
+\newcommand{\mf}{Mittelfeld\xspace}
+\newcommand{\nf}{Nachfeld\xspace}
+\newcommand{\dlr}{Description Level Lexical Rule\xspace}
+\newcommand{\dlrs}{Description Level Lexical Rules\xspace}
+
+
+\newcommand{\rf}{{\it Restfeld\/}\xspace}
+\newcommand{\schf}{{\it Schlu"sfeld\/}\xspace}
+\newcommand{\vbf}{{\it Verbalfeld\/}\xspace}
+\newcommand{\of}{{\it Oberfeld\/}\xspace}
+\newcommand{\uf}{{\it Unterfeld\/}\xspace}
+\newcommand{\cf}{{\it coherence field\/}\xspace}
+
+\newcommand{\vonpp}{\emph{von}-PP\xspace}
+
+\newcommand{\accf}{{\sc acc}\xspace}
+\newcommand{\accv}{{\sc acc} value\xspace}
+\newcommand{\adj}{{\sc adj}\xspace}
+\newcommand{\argst}{{\sc arg-st}\xspace}
+\newcommand{\argstw}{{\sc arg-st}"=Wert\xspace}
+\newcommand{\argstv}{{\sc arg-st} value\xspace}
+\newcommand{\argstvs}{{\sc arg-st} values\xspace}
+\iflanguage{german}{
+\newcommand{\argstl}{{\sc arg-st}"=Liste\xspace}
+}{\newcommand{\argstl}{{\sc arg-st} list\xspace}}
+\newcommand{\argstls}{{\sc arg-st} lists\xspace}
+
+\newcommand{\casew}{{\sc case}"=Wert\xspace}
+\newcommand{\casef}{{\sc case} feature\xspace}
+\newcommand{\cat}{{\sc cat}\xspace}
+\newcommand{\catv}{{\sc cat} value\xspace}
+\newcommand{\catvs}{{\sc cat} values\xspace}
+\newcommand{\catw}{{\sc cat}"=Wert\xspace}
+\newcommand{\catwe}{{\sc cat}"=Werte\xspace}
+\newcommand{\catwes}{{\sc cat}"=Wertes\xspace}
+% used in mathtime
+%\newcommand{\comp}{{\sc comp}\xspace}
+\newcommand{\comps}{{\sc comps}\xspace}
+\newcommand{\compsf}{{\sc comps} feature\xspace}%
+\iflanguage{german}{%
+\newcommand{\compsl}{{\sc comps}"=Liste\xspace}}{%
+\newcommand{\compsl}{{\sc comps} list\xspace}%
+}
+\newcommand{\compsv}{{\sc comps} value\xspace}%
+\newcommand{\compsvs}{{\sc comps} values\xspace}%
+\newcommand{\compsw}{{\sc comps}"=Wert\xspace}%
+\newcommand{\compswe}{{\sc comps}"=Werte\xspace}%
+\newcommand{\ccont}{{\sc c-cont}\xspace}
+\newcommand{\ccontf}{{\sc c-cont} feature\xspace}
+\newcommand{\cont}{{\sc cont}\xspace}
+\newcommand{\contv}{{\sc cont} value\xspace}
+\newcommand{\contvs}{{\sc cont} values\xspace}
+\newcommand{\contw}{{\sc cont}"=Wert\xspace}
+\newcommand{\contwe}{{\sc cont}"=Werte\xspace}
+\newcommand{\contwes}{{\sc cont}"=Wertes\xspace}
+\newcommand{\contws}{{\sc cont}"=Wertes\xspace}
+\newcommand{\cstr}{c"=Struktur\xspace}
+\newcommand{\da}{{\sc da}\xspace}
+\newcommand{\daf}{{\sc da} feature\xspace}
+%
+% \dal is used by the arabi package
+\iflanguage{german}{%
+\newcommand{\dalist}{{\sc da}"=Liste\xspace}}{%
+\newcommand{\dalist}{{\sc da} list\xspace}%
+}
+\newcommand{\dam}{{\sc da}"=Merkmal\xspace}
+\newcommand{\daw}{{\sc da}"=Wert\xspace}
+\newcommand{\dawe}{{\sc da}"=Werte\xspace}
+\newcommand{\dawes}{{\sc da}"=Wertes\xspace}
+\newcommand{\dav}{{\sc da} value\xspace}
+\newcommand{\davs}{{\sc da} values\xspace}
+\newcommand{\defv}{{\sc def} value\xspace}
+\newcommand{\depsl}{{\sc deps} list\xspace}
+\newcommand{\domvs}{{\sc dom} values\xspace}
+\newcommand{\dsl}{{\sc dsl}\xspace}
+\newcommand{\dslf}{{\sc dsl} feature\xspace}
+\newcommand{\dslfs}{{\sc dsl} features\xspace}
+\newcommand{\dslv}{{\sc dsl} value\xspace}
+\newcommand{\dslvs}{{\sc dsl} values\xspace}
+\newcommand{\dslw}{{\sc dsl}"=Wert\xspace}
+\newcommand{\dslwe}{{\sc dsl}"=Werte\xspace}
+\newcommand{\dslwes}{{\sc dsl}"=Wertes\xspace}
+
+% used by kluwer.cls
+%\newcommand{\dom}{{\sc dom}\xspace}
+\newcommand{\domv}{{\sc dom} value\xspace}
+\newcommand{\domw}{{\sc dom}"=Wert\xspace}
+\iflanguage{german}{%
+\newcommand{\doml}{{\sc dom}"=Liste\xspace}}{%
+\newcommand{\doml}{{\sc dom} list\xspace}%
+}
+\newcommand{\erg}{{\sc erg}\xspace}
+\newcommand{\ergm}{{\sc erg}"=Merkmal\xspace}
+\newcommand{\ergv}{{\sc erg} value\xspace}
+\newcommand{\ergw}{{\sc erg}"=Wert\xspace}
+\newcommand{\ergf}{{\sc erg} feature\xspace}
+\newcommand{\extra}{{\sc extra}\xspace}
+\newcommand{\extraw}{{\sc extra}"=Wertes\xspace}
+\newcommand{\flipv}{{\sc flip} value\xspace}
+\newcommand{\focus}{{\sc focus}\xspace}
+\newcommand{\fstr}{f"=Struktur\xspace}
+\newcommand{\fstren}{f"=Strukturen\xspace}
+\newcommand{\gtop}{{\sc gtop}\xspace}
+\newcommand{\hcons}{{\sc hcons}\xspace}
+\newcommand{\hconsl}{{\sc hcons} list\xspace}
+\newcommand{\hconsv}{{\sc hcons} value\xspace}
+\newcommand{\hconsvs}{{\sc hcons} values\xspace}
+\newcommand{\head}{\textsc{head}\xspace}
+\newcommand{\headv}{\textsc{head} value\xspace}
+\newcommand{\headvs}{\textsc{head} values\xspace}
+\newcommand{\headw}{{\sc head}"=Wert\xspace}
+\newcommand{\hookv}{{\sc hook} value\xspace}
+\newcommand{\indv}{{\sc ind} value\xspace}
+\newcommand{\indexv}{{\sc index} value\xspace}
+\newcommand{\islw}{{\sc inher$|$"-slash}"=Wert\xspace}
+\newcommand{\isll}{{\sc inher$|$"-slash}"=Liste\xspace}
+\newcommand{\initial}{{\sc initial}\xspace}
+\newcommand{\initialw}{{\sc initial}"=Wert\xspace}
+\newcommand{\initialwes}{{\sc initial}"=Wertes\xspace}
+\newcommand{\initialm}{{\sc initial}"=Merkmal\xspace}
+\newcommand{\ldat}{{\it ldat\/}}
+\newcommand{\lex}{{\sc lex}\xspace}
+\newcommand{\lexm}{{\sc lex}"=Merkmal\xspace}
+\newcommand{\lexv}{{\sc lex} value\xspace}
+\newcommand{\lexw}{{\sc lex}"=Wert\xspace}
+\newcommand{\lexwe}{{\sc lex}"=Werte\xspace}
+\newcommand{\lexwen}{{\sc lex}"=Werten\xspace}
+\newcommand{\lexwes}{{\sc lex}"=Wertes\xspace}
+\newcommand{\loc}{{\sc loc}\xspace}
+\newcommand{\local}{{\sc local}\xspace}
+\newcommand{\localv}{{\sc local} value\xspace}
+\newcommand{\localvs}{{\sc local} values\xspace}
+\newcommand{\locv}{{\sc local} value\xspace}
+\newcommand{\locvs}{{\sc local} values\xspace}
+\newcommand{\locw}{{\sc loc}"=Wert\xspace}
+\newcommand{\localw}{{\sc local}"=Wert\xspace}
+\newcommand{\localwes}{{\sc local}"=Wertes\xspace}
+% conflict with some package loaded by langsci.cls
+\newcommand{\ltop}{{\sc ltop}\xspace}
+\newcommand{\ltopv}{{\sc ltop} value\xspace}
+% Konflikt mit Beamer
+%\newcommand{\mod}{{\sc mod}\xspace}
+\newcommand{\modm}{{\sc mod}"=Merkmal\xspace}
+\newcommand{\modms}{{\sc mod}"=Merkmals\xspace}
+\newcommand{\modv}{{\sc mod} value\xspace}
+\newcommand{\modvs}{{\sc mod} values\xspace}
+\newcommand{\modw}{{\sc mod}"=Wert\xspace}
+\newcommand{\movealpha}{move~$\alpha$\xspace}
+\let\movea=\movealpha
+\newcommand{\nonloc}{{\sc nonloc}\xspace}
+\newcommand{\nonlocal}{{\sc nonlocal}\xspace}
+\newcommand{\nonlocm}{{\sc nonloc}"=Merkmal\xspace}
+\newcommand{\nonlocv}{{\sc nonloc} value\xspace}
+\newcommand{\nonlocw}{{\sc nonloc}"=Wert\xspace}
+\newcommand{\numw}{{\sc num}"=Wert\xspace}
+\newcommand{\obj}{{\sc obj}\xspace}
+\newcommand{\objw}{{\sc obj}"=Wert\xspace}
+\newcommand{\objz}{{\sc obj2}\xspace}
+\newcommand{\perw}{{\sc per}"=Wert\xspace}
+\newcommand{\pform}{{\sc pform}\xspace}
+\newcommand{\pformf}{{\sc pform} feature\xspace}
+\newcommand{\pformv}{{\sc pform} value\xspace}
+\newcommand{\phon}{{\sc phon}\xspace}
+\newcommand{\phonl}{{\sc phon}"=Liste\xspace}
+\newcommand{\phonv}{{\sc phon} value\xspace}
+\newcommand{\phonvs}{{\sc phon} values\xspace}
+\newcommand{\phonw}{{\sc phon}"=Wert\xspace}
+\newcommand{\phonwe}{{\sc phon}"=Werte\xspace}
+\newcommand{\phonwes}{{\sc phon}"=Wertes\xspace}
+\newcommand{\phonm}{{\sc phon}"=Merkmal\xspace}
+\newcommand{\prd}{{\sc prd}\xspace}
+\newcommand{\prdf}{{\sc prd} feature\xspace}
+\newcommand{\pred}{{\sc pred}\xspace}
+\newcommand{\predm}{{\sc pred}"=Merkmal\xspace}
+\newcommand{\predw}{{\sc pred}"=Wert\xspace}
+\newcommand{\que}{{\sc que}\xspace}
+\newcommand{\qstore}{{\sc qstore}\xspace}
+\newcommand{\refl}{{\sc refl}\xspace}
+% avm.sty
+%\newcommand{\rel}{{\sc rel}\xspace}
+\newcommand{\rels}{{\sc rels}\xspace}
+\iflanguage{german}{%
+\newcommand{\relsl}{{\sc rels}"=Liste\xspace}}{%
+\newcommand{\relsl}{{\sc rels} list\xspace}}
+\newcommand{\relslen}{{\sc rels}"=Listen\xspace}%
+%
+\newcommand{\relsv}{{\sc rels} value\xspace}
+\newcommand{\relsvs}{{\sc rels} values\xspace}
+\newcommand{\relsw}{{\sc rels}"=Wert\xspace}
+\newcommand{\relswe}{{\sc rels}"=Werte\xspace}
+\newcommand{\relw}{{\sc rel}"=Wert\xspace}
+\newcommand{\relwe}{{\sc rel}"=Werte\xspace}
+\newcommand{\sbcxg}{Sign"=Based Construction Grammar\xspace}
+\newcommand{\self}{{\sc self}\xspace}
+\newcommand{\slasch}{{\sc slash}\xspace}
+\newcommand{\slashel}{{\sc slash}"=Element\xspace}
+\iflanguage{german}{%
+\newcommand{\slashl}{{\sc slash}"=Liste\xspace}}{%
+\newcommand{\slashl}{{\sc slash} list\xspace}}
+\newcommand{\slashls}{{\sc slash} lists\xspace}
+\newcommand{\slashm}{{\sc slash}"=Merkmal\xspace}
+\newcommand{\slashms}{{\sc slash}"=Merkmals\xspace}
+\newcommand{\slashme}{{\sc slash}"=Merkmale\xspace}
+\newcommand{\slashw}{{\sc slash}"=Wert\xspace}
+\newcommand{\slashwe}{{\sc slash}"=Werte\xspace}
+\newcommand{\slashws}{{\sc slash}"=Wertes\xspace}
+\newcommand{\slashv}{{\sc slash} value\xspace}
+\newcommand{\slashvs}{{\sc slash} values\xspace}
+\newcommand{\specv}{{\sc spec} value\xspace}
+\newcommand{\spr}{{\sc spr}\xspace}
+\newcommand{\sprf}{{\sc spr} feature\xspace}
+\iflanguage{german}{%
+\newcommand{\sprl}{{\sc spr}"=Liste\xspace}}{%
+\newcommand{\sprl}{{\sc spr} list\xspace}%
+}
+\newcommand{\sprm}{{\sc spr}"=Merkmal\xspace}
+\newcommand{\sprv}{{\sc spr} value\xspace}
+\newcommand{\sprw}{{\sc spr}"=Wert\xspace}
+\newcommand{\sprwe}{{\sc spr}"=Werte\xspace}
+\newcommand{\sprwes}{{\sc spr}"=Wertes\xspace}
+\newcommand{\subcat}{{\sc subcat}\xspace}
+
+\iflanguage{german}{%
+\newcommand{\subcatl}{{\sc subcat}"=Liste\xspace}}{%
+\newcommand{\subcatl}{{\sc subcat} list\xspace}%
+}
+
+\newcommand{\subcatln}{{\sc subcat}"=Listen\xspace}
+\newcommand{\subcatlen}{{\sc subcat}"=Listen\xspace}
+\newcommand{\subcatls}{{\sc subcat} lists\xspace}%
+
+\newcommand{\subcatm}{{\sc subcat}"=Merkmal\xspace}
+\newcommand{\subcatw}{{\sc subcat}"=Wert\xspace}
+\newcommand{\subcatwe}{{\sc subcat}"=Werte\xspace}
+\newcommand{\subcatwes}{{\sc subcat}"=Wertes\xspace}
+\newcommand{\subcatv}{{\sc subcat} value\xspace}
+\newcommand{\subj}{{\sc subj}\xspace}
+
+\iflanguage{german}{%
+\newcommand{\subjl}{{\sc subj}"=Liste\xspace}}{%
+\newcommand{\subjl}{{\sc subj} list\xspace}
+}
+
+\newcommand{\subjf}{{\sc subj} feature\xspace}
+\newcommand{\subjv}{{\sc subj} value\xspace}
+\newcommand{\subjw}{{\sc subj}"=Wert\xspace}
+\newcommand{\subjm}{{\sc subj}"=Merkmal\xspace}
+\newcommand{\subjms}{{\sc subj}"=Merkmals\xspace}
+\newcommand{\subjwes}{{\sc subj}"=Wertes\xspace}
+\newcommand{\str}{\textit{str}}% xspace does not work with NP[\str]
+\newcommand{\synsem}{{\sc synsem}\xspace}
+\newcommand{\synsemm}{{\sc synsem}"=Merkmal\xspace}
+\newcommand{\synsemv}{{\sc synsem} value\xspace}
+\newcommand{\synsemw}{{\sc synsem}"=Wert\xspace}
+\newcommand{\synsemwe}{{\sc synsem}"=Werte\xspace}
+\newcommand{\synsemwes}{{\sc synsem}"=Wertes\xspace}
+\newcommand{\synsemws}{{\sc synsem}"=Wertes\xspace}
+\newcommand{\thetarolle}{$\theta$"=Rolle\xspace}
+\newcommand{\topic}{{\sc topic}\xspace}
+\newcommand{\vcomp}{{\sc vcomp}\xspace}
+\iflanguage{german}{%
+\newcommand{\vcompl}{{\sc vcomp}"=Liste\xspace}}{%
+\newcommand{\vcompl}{{\sc vcomp} list\xspace}}
+
+\newcommand{\vcompv}{{\sc vcomp} value\xspace}
+\newcommand{\vcompw}{{\sc vcomp}"=Wert\xspace}
+\newcommand{\xcomp}{{\sc xcomp}\xspace}
+\newcommand{\xcompl}{{\sc xcomp}"=Liste\xspace}
+\newcommand{\xcompw}{{\sc xcomp}"=Wert\xspace}
+\newcommand{\xcompv}{{\sc xcomp} value\xspace}
+\newcommand{\vform}{{\sc vform}\xspace}
+\newcommand{\vformf}{{\sc vform} feature\xspace}
+\newcommand{\vformv}{{\sc vform} value\xspace}
+\newcommand{\vformw}{{\sc vform}"=Wert\xspace}
+
+\newcommand{\prefix}[1]{\emph{#1}"~\xspace}
+\newcommand{\stem}[1]{\emph{#1}"~\xspace}
+\newcommand{\suff}[1]{"~\emph{#1}\xspace}
+\newcommand{\suffix}[1]{"~\emph{#1}\xspace}
+\newcommand{\infix}[1]{"~\emph{#1}"~\xspace}
+
+\newcommand{\SC}{Small Clause\xspace}
+
+\newcommand{\sein}{\emph{sein}\xspace}
+\newcommand{\haben}{\emph{haben}\xspace}
+\newcommand{\grauen}{\emph{grauen}\xspace}
+
+\newcommand{\er}{"~\emph{er}\xspace}
+\newcommand{\ern}{\iflanguage{german}{%
+"~\emph{er}"=Nominalisierung\xspace}{%
+"~\emph{er}"=nominalization\xspace}%
+}
+\newcommand{\erns}{"~\emph{er}"=nominalizations\xspace}
+\newcommand{\gee}{\emph{Ge}- "~\emph{e}\xspace}
+\newcommand{\geen}{\iflanguage{german}{%
+\emph{Ge}- "~\emph{e}"=Nominalisierung\xspace}{%
+\emph{Ge}- "~\emph{e}"=nominalization\xspace}%
+}
+\newcommand{\geens}{\emph{Ge}- "~\emph{e}"=nominalizations\xspace}
+\newcommand{\geenen}{\emph{Ge}- "~\emph{e}"=Nominalisierungen\xspace}
+\newcommand{\geed}{\emph{Ge}- "~\emph{e}"=\iflanguage{german}{% 
+Derivation}{derivation}\xspace}
+\newcommand{\geeds}{\emph{Ge}- "~\emph{e}"=derivations\xspace}
+\newcommand{\ung}{"~\emph{ung}\xspace}
+\newcommand{\ungd}{"~\emph{ung}"=derivation\xspace}
+\newcommand{\ungds}{"~\emph{ung}"=derivations\xspace}
+\newcommand{\ungn}{\iflanguage{german}{%
+"~\emph{ung}"=Nominalisierung\xspace}{%
+"~\emph{ung}"=nominalization\xspace}%
+}
+\newcommand{\ungs}{"~\emph{ung}"=nominalizations\xspace}
+
+
+\newcommand{\bars}{"~\emph{bar}\xspace}
+\newcommand{\baradj}{\iflanguage{german}{%
+"~\emph{bar}"=Adjektiv\xspace}{%
+"~\emph{bar}"=adjective\xspace}%
+}
+\newcommand{\baradjs}{\iflanguage{german}{%
+"~\emph{bar}"=Adjektivs\xspace}{%
+"~\emph{bar}"=adjectives\xspace}%
+}
+\newcommand{\bard}{\iflanguage{german}{%
+"~\emph{bar}"=Derivation\xspace}%
+{"~\emph{bar} derivation\xspace}%
+}
+\newcommand{\bards}{"~\emph{bar}"=derivations\xspace}
+\newcommand{\barden}{"~\emph{bar}"=Derivationen\xspace}
+
+\newcommand{\itsdb}{\xspace}
+\newcommand{\tsdb}{\mbox{\sf \lbrack incr tsdb()\rbrack}\xspace}
+
+\newcommand{\word}[1]{\emph{#1}\iw{#1}}
+\newcommand{\noword}[1]{\emph{*~#1}\iw{#1@* #1}}
+
+%\newcommand{\construction}{"`construction"'\xspace}
+%\newcommand{\constructions}{"`constructions"'\xspace}
+
+\newcommand{\ppt}{Prinzipien und Parameter"=Theorie\xspace}
+
+\newcommand{\kas}{Kopf"=Argument"=Struktur\xspace}
+\newcommand{\kasen}{Kopf"=Argument"=Strukturen\xspace}
+\newcommand{\kasch}{Kopf"=Argument"=Schema\xspace}
+\newcommand{\aciv}{AcI"=Verb\xspace}
+
+\newcommand{\zui}{\emph{zu}"=Infinitiv\xspace}
+\newcommand{\zuie}{\emph{zu}"=Infinitive\xspace}
+\newcommand{\zuien}{\emph{zu}"=Infinitiven\xspace}
+\newcommand{\zuis}{\emph{zu}"=Infinitivs\xspace}
+
+
+\newcommand{\Konstruktion}{\emph{Konstruktion}\xspace}
+\newcommand{\Konstruktionen}{\emph{Konstruktionen}\xspace}
+\newcommand{\Resultativkonstruktion}{\emph{Resultativkonstruktion}\xspace}
+
+\newcommand{\und}{and\xspace}
+\newcommand{\aw}{Ackerman\aimention{Farrell Ackerman}\aimention{Gert Webelhuth} \und Webelhuth\xspace}
+\newcommand{\bvn}{Bouma\aimention{Gosse Bouma}\aimention{Gertjan {van Noord}} \und van Noord\xspace}
+\newcommand{\fb}{Fleischer\aimention{Wolfgang Fleischer}\aimention{Irmhild Barz} \und Barz\xspace}
+\newcommand{\hm}{Heinz\aimention{Wolfgang Heinz}\aimention{Johannes Matiasek} \und Matiasek\xspace}%
+\newcommand{\hn}{Hinrichs\aimention{Erhard W. Hinrichs}\aimention{Tsuneko Nakazawa} \und Nakazawa\xspace}
+\newcommand{\nw}{Neeleman\aimention{Ad Neeleman}\aimention{Fred Weermann} \und Weermann\xspace}
+\newcommand{\sw}{Stiebels\aimention{Barbara Stiebels}\aimention{Dieter Wunderlich} \und Wunderlich\xspace}
+\newcommand{\CR}{Carrier\aimention{Jill Carrier}\aimention{Janet H. Randall} \und Randall\xspace}
+
+\newcommand{\xmf}{Xue\aimention{Ping Xue} \und McFetridge\aimention{Paul McFetridge}\xspace}
+
+\newcommand{\prz}{Przepi{\'o}rkowski\xspace}
+
+
+\newcommand{\Prolog}{{\sc Prolog}\xspace}
+\newcommand{\Prologs}{{\sc Prolog}s\xspace}
+
+
+\newcommand{\xbar}{\mbox{$\overline{\mbox{X}}$}\xspace}
+\newcommand{\xbarbar}{\mbox{$\overline{\overline{\mbox{X}}}$}\xspace}
+\newcommand{\baro}[1]{\mbox{$\overline{\mbox{\rm #1}}$}\xspace}
+\newcommand{\nbar}{\mbox{$\overline{\mbox{N}}$}\xspace}
+\newcommand{\nbars}{\mbox{$\overline{\mbox{N}}$s}\xspace}
+\newcommand{\abar}{\mbox{$\overline{\mbox{A}}$}\xspace}
+\newcommand{\cbar}{\mbox{$\overline{\mbox{C}}$}\xspace}
+\newcommand{\pbar}{\mbox{$\overline{\mbox{P}}$}\xspace}
+\newcommand{\detbar}{\mbox{$\overline{\mbox{Det}}$}\xspace}
+\newcommand{\advbar}{\mbox{$\overline{\mbox{Adv}}$}\xspace}
+\newcommand{\vbar}{\mbox{$\overline{\mbox{V}}$}\xspace}
+
+\iflanguage{german}{
+\newcommand{\xbart}{\mbox{$\overline{\mbox{X}}$}"=Theo\-rie\is{X-Theorie@\xbar-Theorie}\xspace}
+}{\newcommand{\xbart}{\mbox{$\overline{\mbox{X}}$} Theo\-ry\is{X-Theory@\xbar-Theory}\xspace}}
+
+\newcommand{\xbars}{\mbox{$\overline{\mbox{X}}$}"=Schema\xspace}
+
+
+\newcommand{\anull}{A$^0$\xspace}%
+\let\azero=\anull
+\newcommand{\dnull}{D$^0$\xspace}%
+\newcommand{\inull}{I$^0$\xspace}%
+\newcommand{\xnull}{X$^0$\xspace}%
+\let\xzero=\xnull
+\newcommand{\cnull}{C$^0$\xspace}%
+\newcommand{\vnull}{V$^0$\xspace}%
+\newcommand{\nnull}{N$^0$\xspace}%
+\newcommand{\pnull}{P$^0$\xspace}%
+\newcommand{\agrnull}{Agr$^0$\xspace}%
+
+\newcommand{\npnom}{NP[\textit{nom}]}
+\newcommand{\npacc}{NP[\textit{acc}]}
+\newcommand{\npdat}{NP[\textit{dat}]}
+
+
+\newcommand{\biband}{and\xspace}
+
+\newcommand{\vbase}{V\sub{\sc base}\xspace}
+\newcommand{\vfront}{V\sub{\sc front}\xspace}
+
+\@ifpackageloaded{hyperref}{\pdfstringdefDisableCommands{\def\vbase{V-Base} }
+\pdfstringdefDisableCommands{\def\vfront{V-Front} }}{}
