@@ -233,12 +233,15 @@ In case several pages are cited, the page numbers should be passed to cite as fo
 
 \subsection{Crossreferencing}
 
-You may use \verb+(\mex{1})+\iscommand{mex} to refer to the following example and \verb+(\mex{0})+ to the preceeding
-example. You can also pass smaller numbers or larger numbers to \verb+\mex+ but I would suggest not
-to do this since often text blocks are inserted between the example and its description and then
-references are broken. Furthermore the standard referencing mechanism creates hyperlinks to the
+%% You may use \verb+(\mex{1})+\iscommand{mex} to refer to the following example and \verb+(\mex{0})+ to the preceeding
+%% example. You can also pass smaller numbers or larger numbers to \verb+\mex+ but I would suggest not
+%% to do this since often text blocks are inserted between the example and its description and then
+%% references are broken. Furthermore t
+The standard referencing mechanism creates hyperlinks to the
 example sentences and depending on your viewer this gives you a nice preview of the referenced
-material, which you do not get with \verb+\mex+. See Figure~\vref{fig-preview-of-hyperlink-with-skim} for an example for such a preview.
+material.
+%, which you do not get with \verb+\mex+. 
+See Figure~\vref{fig-preview-of-hyperlink-with-skim} for an example for such a preview.
 \begin{figure}[htbp]
 \includegraphics[width=\linewidth]{crossref.png}
 \caption{\label{fig-preview-of-hyperlink-with-skim}Hyperlinked reference allow a preview in some viewers}

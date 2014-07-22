@@ -51,7 +51,7 @@ cover: lsp-guidelines.pdf
 
 
 public: lsp-guidelines.pdf
-	scp -p lsp-guidelines.pdf www-adm@home.hpsg.fu-berlin.de:/home/www-adm/langsci-files/presses/1/monographs/14/submission/proof/14-99Z_Book\\\ Manuscript-19-1-10-20131027.pdf
+	scp -p lsp-guidelines.pdf www-adm@home.hpsg.fu-berlin.de:/home/www-adm/doc-langsci/omp/Meta/
 
 
 commit:
