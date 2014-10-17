@@ -1,0 +1,42 @@
+%% -*- coding:utf-8 -*-
+\documentclass[ number=0
+                ,series=guidelines,
+                ,isbn=000-0-000000-00-0,
+                ,url=http://langsci-press.org/catalog/book/0,
+	        ,output=guidelines
+		,oneside
+		  ]{LSP/langsci}   		  
+\hypersetup{pdfdisplaydoctitle=true} 
+\usepackage{xspace}
+\newcommand{\latex}{\LaTeX\xspace}
+% just for the XeLaTeX logo
+\usepackage{dtklogos}\newcommand{\xelatex}{\XeLaTeX\xspace}
+\newcommand{\bibtex}{\BibTeX\xspace}
+\usepackage{./LSP/lsp-styles/lsp-makros}
+\usepackage{./LSP/lsp-styles/lsp-gb4e}
+\usepackage{tabularx}
+\def\exfont{\normalsize\upshape}
+\BackBody{}
+\typesetter{Sebastian Nordhoff} 
+\author{Stefan Müller, Martin Haspelmath \& Sebastian Nordhoff}
+
+\makeatletter
+\def\verbatim@font{\scriptsize\ttfamily}
+\makeatother
+     
+
+\title{Language Science Press indexing guidelines}  
+\subtitle{General rules for indexers}
+\BackTitle{Language Science Press indexing guidelines}    
+
+\begin{document}                
+\maketitle                
+\tableofcontents      
+\mainmatter     
+
+\include{indexers}
+
+\backmatter
+\bibliography{lsp-abbrev,lsp-guidelines}                             
+\end{document}
+      
