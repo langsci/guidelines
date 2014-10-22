@@ -1,16 +1,77 @@
-bibtex
+\chapter{Bibliography and list of references}
+\section{\bibtex}
+\lsp uses \bibtex for automatic reference management. This means that your list of references will always be synchronized with the works you cite in your text. If you add a work, it will be added to the list of references in the right format, if you remove a work from the text, it will be removed from the list of references as well (unless it is cited elsewhere in the text of course).
 
-allowed fields
+There are two basic ways to cite a work, and two rarer ones. \tabref{tab:bibtex:examples} gives an overview.
 
-disallowed fields
+\begin{table}
+  \begin{tabular}{>{tt}ll}
+  \lsptoprule
+  {\bs}citet{Bloomfield1933language}   & \citet{Bloomfield1933language} \\
+  {\bs}citep{Bloomfield1933language}   & \citep{Bloomfield1933language} \\
+  {\bs}citealt{Bloomfield1933language} & \citealt{Bloomfield1933language} \\ 
+  {\bs}nocite{Bloomfield1933language}  & nothing, but added to list of references \\ 
+  \midline
+  {\bs}citet[11]{Bloomfield1933language}   & \citet[11]{Bloomfield1933language} \\
+  {\bs}citep[22]{Bloomfield1933language}   & \citep[22]{Bloomfield1933language} \\
+  {\bs}citealt[33]{Bloomfield1933language} & \citealt[33]{Bloomfield1933language} \\ 
+  \lspbottomrule
+  \end{tabular}
+\end{table}
 
-undecapitalization
+\section{Bibliography managers}
+While it is possible to edit the \bibtex files in a text editor, it is preferable to use a specialized computer program for this. For Mac, we recommend BibDesk, for Windows and Linux, we reocommend JabRef. 
+
+\begin{figure}
+ \includegraphics{bibdesk.png}
+ \caption{BibDesk.}
+ \label{fig:bibtex:bibdesk}
+\end{figure}
+
+\begin{figure}
+ \includegraphics{jabref.png}
+ \caption{Jabref.}
+ \label{fig:bibtex:jabref}
+\end{figure}
+
+
+\section{Styles and conventions}
+\lsp uses the Unified Style Sheet for Linguistic developed by the Joint Committee of Editors of Linguistics Journals \todo{check correct name}. The following types of entries are recognized:
+\computer{
+@ARTICLE,
+@BOOK,
+@INCOLLECTION,
+@INPROCEEDINGS,
+@MASTERSTHESIS,
+@MISC,
+@PHDTHESIS,
+@UNPUBLISHED,
+}
+
+The following fields are recognized:
+\computer{address,
+author,
+booktitle,
+chapter,
+crossref,
+editor,
+journal,
+note,
+number,
+pages,
+publisher,
+school,
+title,
+volume,
+year}.
+Please do not use the field \computer{note} to give information about where an unpublished work was presented, rather, use \computer{howpublished}.
+
+In order to add bibliographical information from your \bibtex file to your document, run \computer{bibtex myfile.aux} or use the built-in functionality of your \latex editor. Pay attention to any warnings. Your manuscript can only be accepted if there are no warnings left when running bibtex.
+
+\section{Decapitalization}
+English uses special capitalization in titles, but usage is not uniform. The Unified Style Sheet for Linguistics \todo{sp?} has no special capitalization. This means that we undo all capitalization in bib entries for titles and booktitles  instructed otherwise. The way to suppress this decapitalization is to put the relevant stretch betweenextra braces
 
 FAQ
 
-%% \begin{itemize}
-%% \item BibDesk
-%% \item JabRef
-%% \end{itemize}
 
 
