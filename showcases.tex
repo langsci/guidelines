@@ -17,8 +17,8 @@ that is delivered with the \lsp \latex calsses. It differs from the original pac
 version of \texttt{gloss} that was modified by Alexis Dimitriadis\aimention{Alexis Dimitriadis} in order to be compatible with
 \texttt{jambox} (see Section~\ref{sec-jambox}).
 
-Simple examples like (\mex{1}) can be typeset as shown below.
-\ea
+Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
+\ea\label{ex:showcases:simple}
 \iw{Mann}\iw{schlafen}
 \gll Der Mann schläft.\\
      the man  sleeps\\
@@ -31,9 +31,9 @@ Simple examples like (\mex{1}) can be typeset as shown below.
 \glt `The man sleeps.'
 \z
 \end{verbatim}
-Lists of examples can be typeset with \verb+\eal+ and \verb+\zl+ respectively. The example in
-(\mex{1}) shows how the sentences can be aligned properly:
-\eal
+Lists of examples can be typeset with {\bs}eal and {\bs}zl respectively. The example in
+\REF{ex:showcases:list} shows how the sentences can be aligned properly:
+\eal \label{ex:showcases:list}
 \ex[]{
 \iw{Linguist}\iw{Nobelpreis}\iw{glauben}
 \gll Ich glaube dem Linguisten nicht, einen Nobelpreis gewonnen zu haben.\\
@@ -59,9 +59,9 @@ Lists of examples can be typeset with \verb+\eal+ and \verb+\zl+ respectively. T
 \zl
 % \end{fitverb}
 
-If you want to add a footnote\is{footnote|(} that provides the source of an example as in (\mex{1}), you can do
+If you want to add a footnote\is{footnote|(} that provides the source of an example as in \REF{ex:showcases:footnote}, you can do
 this as follows:
-\ea
+\ea\label{ex:showcases:footnote}
 \gll Piloten         fik frataget    sit certifikat\footnotemark\\
      pilot.{\sc def} got deprived.of his license\\
 \footnotetext{KorpusDK.}
@@ -75,13 +75,13 @@ this as follows:
 \glt `The pilot was deprived of his license to fly.'
 \z 
 \end{verbatim}
-Please call the \verb+\footnotetext+ command before the translation, since otherwise the
+Please call the {\bs}footnotetext command before the translation, since otherwise the
 footnotetext may be typeset on a page that is different from the one where the footnotemark is set.\is{footnote|)}
 
-For the typesetting of an additional line with the original script, one may use \verb+\glll+ rather
-than \verb+\gll+. (\mex{1}) shows a Chinese example:
+For the typesetting of an additional line with the original script, one may use {\bs}glll rather
+than {\bs}gll. \REF{ex:shown:chinese} shows a Chinese example:
 \ea
-\label{ex-chinese}
+\label{ex:shown:chinese}
 \glll 狗       叫     了。\\
       gou3     jiao4   le\\
       dog      bark    ASP/CRS\\
@@ -186,7 +186,7 @@ Ilmazzita kielet Ingrid. \jambox{(OVS)}
 }
 \zl
 
-The call of \verb+\jambox+ has to follow the linebreak after the gloss:
+The call of {\bs}jambox has to follow the linebreak after the gloss:
 \begin{verbatim}
 \ex[]{
 \label{ex-ingrid-kielet-ilmazzita}
@@ -196,7 +196,7 @@ The call of \verb+\jambox+ has to follow the linebreak after the gloss:
 }
 \end{verbatim}
 The distance from the right margin can be specified by passing the largest object to be placed in a
-jambox to \verb+\settowidth+:
+jambox to {\bs}settowidth:
 
 \eal
 \settowidth\jamwidth{(German)}
@@ -224,7 +224,8 @@ used \texttt{tree-dvips} for decades, but it is incompatible with \xelatex, sinc
 PostScript rather than PDF. Exploring the options I discovered \texttt{tikz-qtree}, which is a
 tikz-based\ispackage{tikz} reimplementation of Alexis Dimitriadis'\aimention{Alexis Dimitriadis} \texttt{q-tree}
 package. The syntax for drawing trees is rather simple and in comparison to \texttt{tree-dvips} drawing trees
-is considerably speeded up. Figure~\vref{fig-the-dog-barks} shows a simple example.
+is considerably speeded up. \figref{fig:showcases:the-dog-barks} shows a simple example.
+
 \begin{figure}[htbp]
 \centerline{%
 \begin{tikzpicture}
@@ -238,20 +239,21 @@ is considerably speeded up. Figure~\vref{fig-the-dog-barks} shows a simple examp
 \end{tikzpicture}
 }
 \caption{\label{fig-the-dog-barks}Tree for \emph{The dog barks.} drawn with \texttt{tikz-qtree}}
+\label{fig:showcases:the-dog-barks}
 \end{figure}
 % \begin{fitverb}
-\begin{tikzpicture}
-\tikzset{level 1+/.style={level distance=2\baselineskip}}
-\tikzset{frontier/.style={distance from root=6\baselineskip}}
-\Tree[.S
-       [.NP 
-         [.Det the ]
-         [.N   dog ] ]
-       [.VP barks ] ]
-\end{tikzpicture}
+% \begin{tikzpicture}
+% \tikzset{level 1+/.style={level distance=2\baselineskip}}
+% \tikzset{frontier/.style={distance from root=6\baselineskip}}
+% \Tree[.S
+%        [.NP 
+%          [.Det the ]
+%          [.N   dog ] ]
+%        [.VP barks ] ]
+% \end{tikzpicture}
 % \end{fitverb}
 
-The code below shows how words below a certain node can be put under a triangle as in Figure~\vref{fig-the-dog-barks-abbreviated}.
+The code below shows how words below a certain node can be put under a triangle as in \figref{fig:showcases:the-dog-barks-abbreviated}.
 \begin{figure}[htbp]
 \centerline{%
 \begin{tikzpicture}
@@ -262,7 +264,8 @@ The code below shows how words below a certain node can be put under a triangle 
        [.VP barks ] ]
 \end{tikzpicture}
 }
-\caption{\label{fig-the-dog-barks-abbreviated}Tree for \emph{The dog barks.} with abbreviated NP}
+\caption{Tree for \emph{The dog barks.} with abbreviated NP}
+\label{fig:showcases:the-dog-barks-abbreviated}
 \end{figure}
 
 \begin{samepage}
@@ -328,9 +331,9 @@ by Chris Manning\aimention{Chris Manning}.
 
 %% \subsubsection{\texttt{avm}}
 
-(\mex{1})\ispackageb{avm} shows an example of an AVM typeset with the \texttt{avm} package:
+\REF{ex:showcases:avm-avm}\ispackageb{avm} shows an example of an AVM typeset with the \texttt{avm} package:
 \ea
-\label{ex-avm-avm}
+\label{ex:showcases:avm-avm}
 \begin{avm}
 \[phon   & \< {\it porcupine\/} \>\\
   feat-a & \@{10} \[feat-aa & type-aa\\
@@ -364,7 +367,7 @@ by Chris Manning\aimention{Chris Manning}.
 \end{avm}
 \end{verbatim}
 %
-The command \verb+\tp+ is defined as follows (the code is taken from Detmar
+The command {\bs}tp is defined as follows (the code is taken from Detmar
 Meurers'\aimention{Detmar Meurers} \texttt{avm+}\ispackage{avm+}):
 \begin{verbatim}
 % command to fontify the type values of an avm 
@@ -374,9 +377,8 @@ Meurers'\aimention{Detmar Meurers} \texttt{avm+}\ispackage{avm+}):
 \newcommand{\tp}[1]{\avmspan{\tpv{#1}}}
 \end{verbatim}
 
-A more complex example is given in (\mex{1}):
-\ea
-\label{ex-avm-avm}
+A more complex example is given in \REF{ex:showcases:avm-complicated}:
+\ea\label{ex:showcases:avm-complicated} 
   \begin{avm}
     {\it word\/} $\rightarrow$
     \[ morphs & $\@{e_1}\bigcirc\cdots\bigcirc\@{e_n}$\\
@@ -468,7 +470,7 @@ This\is{Optimality Theory|(}\is{tabular} section just provides some examples of 
 \end{tabular}
 % \end{fitverb}
 
-\verb+\hand+ is defined as follows:
+{\bs}hand is defined as follows:
 
 \begin{verbatim}
 \usepackage{pifont}
@@ -562,7 +564,7 @@ the characters linguists want to use.
 You can enter Chinese\il{Chinese}\is{Chinese Characters} characters directly and mix them with ASCII text without any further markup
 provided you load the \texttt{xeCJK}\ispackage{xeCJK} package. We already saw an example in (\ref{ex-chinese}) on
 page~\pageref{ex-chinese}. In order to type Chinese text, one has to load the \texttt{xeCJK} package
-with the option \verb+indentfirst+ set to \verb+false+ and select an appropriate font:
+with the option {\bs}indentfirst set to {\bs}false and select an appropriate font:
 \begin{verbatim}
 \usepackage[indentfirst=false]{xeCJK}
 \setCJKmainfont{SimSun}
@@ -604,8 +606,8 @@ right text.\footnote{
 \subsubsection{Hebrew}
 
 Hebrew\il{Hebrew|(} is also written from right to left. The characters are part of Linux Libertine, so no extra
-font has to be loaded to set examples like (\mex{1}):
-\ea
+font has to be loaded to set examples like \REF{ex:latex:hebrew}:
+\ea\label{ex:latex:hebrew}
 % \RL{האישה קוראת ספר.}\\
 \gll   ha-'iša          qore't                            sefer.\\
        {\sc def}-woman  read.{\sc pres}.{\sc f}.{\sc sg}  book\\
@@ -625,8 +627,8 @@ font has to be loaded to set examples like (\mex{1}):
 
 The\is{IPA symbols|(} IPA symbols are part of the Linux Libertine font and hence can be entered into the document
 directly. The IPA unicode symbols can be created online at
-\url{http://ipa.typeit.org/full/}. (\mex{1}) shows some examples:
-\ea
+\url{http://ipa.typeit.org/full/}. \REF{ex:showcases:IPA} shows some examples:
+\ea\label{ex:showcases:IPA}
 ɓ ɐ ʁ ɾ ɻ ʃ ʂ θ~  t͡ʃ~  t͡s  ʈ ʊ ʊ̈ ʉ ʌ ʋ ʍ ɯ ɰ χ ʎ ɣ ʏ ɤ ʒ ʐ ʑ ʔ ʕ ʢ ʡ ɑ̃ ɔ ˧ ˨ ˩ ˩˥ ˥˩ ˦˥
 \z
 % ⱱ does not work  
@@ -637,7 +639,7 @@ If you find symbols that are not covered by the font, please use the \texttt{tip
 
 \subsection{\texttt{varioref}}
 
-\texttt{varioref}\ispackageb{varioref} is loaded by the \lsp class file. You can use \verb+\vref+\iscommand{vref} to refer to floating
+\texttt{varioref}\ispackageb{varioref} is loaded by the \lsp class file. You can use {\bs}vref \iscommand{vref} to refer to floating
 objects like figures and tables. \latex automatically determines whether the floating object is on
 the same page or further away. If the float is on the next page and the next page is to the right of
 the current page, \latex will insert an appropriate text like \emph{on the facing page}. If we are
@@ -650,11 +652,11 @@ away, a page number will be provided.
 
 \subsection{\texttt{german} for hyphenation}
 
-If\is{hyphenation|(}\ispackageb{german} you write things like \verb+head-driven+ or very long paths like
+If\is{hyphenation|(}\ispackageb{german} you write things like {\bs}head-driven or very long paths like
 {\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
 (in the part following the dash).
 
-\verb+german.sty+ provides additional markup that allows for proper hyphenation:
+german.sty+ provides additional markup that allows for proper hyphenation:
 \begin{verbatim}
 head"=driven
 
@@ -668,7 +670,7 @@ are typeset properly. Alternatively you my write
 which introduces a dash at the place of the linebreak:
 {\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod$|$\-loc$|$\-cat$|$\-head}.
 
-If you use \verb+german.sty+ for a book whose primary language is not German, do not forget to
+If you use german.sty for a book whose primary language is not German, do not forget to
 specify the language you are using. For example, if your book is in US English you have to specify
 the following:
 \begin{verbatim}
@@ -681,10 +683,10 @@ Otherwise the section name for references comes out in German.
 
 Trees and AVMs often are too big to fit onto one page. The \texttt{langsci} comes with commands for
 shrinking large objects. You may pass your complex object as an argument to \texttt{\oneline} and
-this will scale the object to \verb+\linewidth+ (the remaining space on the current line). There is
-a more clever version of this command: \verb+\centerfit+. This command checks whether there is
+this will scale the object to {\bs}linewidth (the remaining space on the current line). There is
+a more clever version of this command: {\bs}centerfit. This command checks whether there is
 enough space for an object and if this is the case it centers it in the line. If the object is
-larger than the \verb+\linewidth+, it is resized to fit the line. This is very handy for typesetting
+larger than the {\bs}linewidth, it is resized to fit the line. This is very handy for typesetting
 figures. You may copy and paste figures to other documents with a different text width without any
 adaptations.
 
