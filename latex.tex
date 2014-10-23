@@ -12,7 +12,13 @@ If you are dealing with Language Science Press books on a regular basis, you mig
 Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available 
 
 \subsection{Using writelatex}
-In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first. Visit \url{https://www.writelatex.com/templates/language-science-press-template-1-dot-1/vhnyshymvjzb#} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is chapters/filename.tex
+In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{https://www.writelatex.com/templates/language-science-press-template-1-dot-1/vhnyshymvjzb#} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is chapters/filename.tex
+
+\begin{figure}
+ \includegraphics[width=\textwidth]{writelatex.png}
+  \caption{Writelatex}
+  \label{fig:latex:writelatex}
+\end{figure}
 
 \section{The skeleton}
 The skeleton has a main file, which is called \computer{lsp-skeleton.tex}. You can leave that name or choose a name more suitable for your book, e.g. \computer{smith.tex} or \computer{hawaiiangrammar.tex}. That main file draws information from a number of other files which are in the same directory. All those files start with \computer{local\dots}. Furthermore, the main file includes the chapters, which are found in the directory \computer{chapters}.
@@ -36,7 +42,7 @@ The skeleton has a main file, which is called \computer{lsp-skeleton.tex}. You c
   \end{tabular}
 \end{table}
 
-A number of auxiliary files are generated on the fly, these are  \computer{.toc} for the table of contents; \computer{.bbl} for the bibliography; and \computer{.ind}, \computer{.and}, and \computer{.lnd} for the indexes.
+A number of auxiliary files are generated on the fly, these are  \computer{.toc} for the table of contents; \computer{.bbl} for the bibliography; and \computer{.ind}, \computer{.and}, and \computer{.lnd} for the indexes.  
 
 \section{Using the \texttt{langsci} class}
 There are a variety of programs for making writing \latex documents easier.
@@ -146,6 +152,8 @@ The wealth of commands available in \latex can be daunting at first sight. Howev
 \item \computer{{\bs}subsection\{titleofheading\}}
 \item \computer{{\bs}subsubsection\{titleofheading\}}
 \end{itemize}
+
+These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \computer{{\bs}addchap\{Preface\}} instead of {{\bs}chapter\{Preface\}}.
  
 Other common commands are 
 \computer{{\bs}label\{labelname\}} 
@@ -180,9 +188,20 @@ This gives you
 \ea\label{ex:examplelabel}
 \langinfo{French}{Indo-European}{personal knowledge}\\
 \gll  Jean aim-e Marie \\
-      John love-\textsc{3s.pres.ind} Mary \\
+      John love-\textsc{3sg.prs.ind} Mary \\
 \glt `John loves Mary.'    
 \z
+
+Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
+
+\begin{verbatim}
+\ea\label{ex:examplelabel}
+\langinfo{French}{Indo-European}{personal knowledge}\\
+\gll  Jean aim-e Marie \\
+      John love-3{\sg}.{\prs}.{\ind} Mary \\
+\glt `John loves Mary.'    
+\z
+\end{verbatim}
 
 For more complicated examples with more lines, judgments, additional information and the like, refer to the documentation of the package \computer{lsp-gb4e}.
 \computer{{\bs}langinfo} should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \computer{{\bs}citealt} rather than {{\bs}citep}.
@@ -250,70 +269,42 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
   \label{tab:chapterhandle:keytotable}
 \end{table}
 
+You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used. 
 
-\section{Tracking Progress}
-git
-trello
+In order to add footnotes, use the command \computer{{\bs}footnote\{...\}}. If you want to use a footnote in an example, use \computer{word word word {\bs}\{footnotemark\} word word} and add a line with \computer{{\bs}footnotetext\{text of the footnote\}} just before the translation of the example. You should not add footnotes to tables or figures.
 
 \section{Special needs}
-trees
-AVMs
-CJK
-RTL
-OT
-rotating
-shrinking
-   
-\subsubsection{\texttt{draftmode}}
+Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.
 
-Since\isoption{draftmode} \lsp does not have any commercial interest you can put your book on webpages and distribute it
+A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, simply use \computer{sidewaysfigure} or \computer{sidewaystable} instead of the normal \computer{figure} or \computer{table}.
+
+Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, you can use \computer{{\bs}resizebox\{{\bs}linewidth\}\{!\}\{stuff to resize\}}.
+
+For other special needs, please contact our coordinator at support@langsci-press.org. 
+
+\section{Tracking Progress}
+A book is a complex document. Once your book is in final production mode, we use github to track versions and changes (\figref{fig:latex:github}). You can use github during the writing process as well (in fact, this will make the transition much smoother. In order to keep things organized, we use Trello (\figref{fig:latex:trello}). Trello allows to distribute tasks such as bibliography update, proofreading, index creation and so on and keeps track of progress.
+
+\begin{figure}
+\caption{Github highlighting version history}
+\label{fig:latex:github}
+ \includegraphics[width=\textwidth]{github.png}
+\end{figure}
+
+\begin{figure}
+\caption{Trello}
+\label{fig:latex:trello}
+ \includegraphics[width=\textwidth]{trello.png}
+\end{figure}
+
+ 
+   
+\section{Circulating drafts}
+
+Since \lsp does not have any commercial interest, you can put your book on webpages and distribute it
 freely. We encourage authors to do this in order to discuss the work and improve it before final
 publication. If authors want to circulate prefinal versions, they can use the option
 \texttt{draftmode}. This prints a large watermark onto the first page and adds a footer to ever page
-that informs the reader about the fact that he is reading a draft and the date and time of the
-creation of the dra 
- 
-  
- 
- 
- 
-
-\subsection{Hyphenation}
-
-There is a special draft mode that can be used for the preparation of manuscripts. It can be enabled
-by passing the option \texttt{draftmode} to the langsci class. In draftmode words that could not be
-hyphenated automatically stick out in the right margin. Such problematic words are marked with a
-black box so that they can be detected easily. You can fix such problems by inserting explicit
-hyphenation rules in a word. This is done by \verb+\-+, for example \verb+weath\-er+. However, this
-method is dispreferred since it only affects one occurrence of the word rather than all occurrences in
-the current and further documents. The right way to deal with hyphenation issues is to put your
-hyphenation preferences into a file and include this file in all your publications. 
-
-\begin{verbatim}
-\hyphenation{
-Ajd-ukie-wicz
-Prze-piór-kow-ski
-To-ma-sel-lo
-To-ron-to
-trans-for-ma-tions-gram-ma-ti-sches
-Tü-bing-en
-Um-welt-ver-gif-tung
-Ver-lags-buch-hand-lung
-West-deut-scher
-Wis-sen-schaft-liche
-weath-er
-}
-\end{verbatim}
- 
-\subsection{Rotating figures and tables}
- 
- 
-
-\subsection{\texttt{todonotes}}
-
-\ispackage{todonotes}
-
-%% \section{Software}
-
-
+that informs the reader about the fact that they are reading a draft and the date and time of the
+creation of the draft.
   
