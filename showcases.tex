@@ -633,101 +633,102 @@ directly. The IPA unicode symbols can be created online at
 If you find symbols that are not covered by the font, please use the \texttt{tipa} package.
 \is{font|)}\is{IPA symbols|)}
 
-\section{Bells and whistles}
-
-\subsection{\texttt{varioref}}
-
-\texttt{varioref}\ispackageb{varioref} is loaded by the \lsp class file. You can use {\bs}vref \iscommand{vref} to refer to floating
-objects like figures and tables. \latex automatically determines whether the floating object is on
-the same page or further away. If the float is on the next page and the next page is to the right of
-the current page, \latex will insert an appropriate text like \emph{on the facing page}. If we are
-on a right page, \latex will insert something like \emph{on the next page} or \emph{on the facing page}. If the float is further
-away, a page number will be provided.
-\ispackagee{varioref}
-
-%Please use \verb+\vref+ for the first reference to a float only.
-
-
-\subsection{\texttt{german} for hyphenation}
-
-If\is{hyphenation|(}\ispackageb{german} you write things like {\bs}head-driven or very long paths like
-{\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
-(in the part following the dash).
-
-german.sty+ provides additional markup that allows for proper hyphenation:
-\begin{verbatim}
-head"=driven
-
-{\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}
-\end{verbatim}
-With this markup even long paths like {\sc snysem$|$loc$|$cat$|$""head$|$""mod$|$""loc$|$""cat$|$""head}
-are typeset properly. Alternatively you my write
-\begin{verbatim}
-{\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod}
-\end{verbatim}
-which introduces a dash at the place of the linebreak:
-{\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod$|$\-loc$|$\-cat$|$\-head}.
-
-If you use german.sty for a book whose primary language is not German, do not forget to
-specify the language you are using. For example, if your book is in US English you have to specify
-the following:
-\begin{verbatim}
-\selectlanguage{USenglish}
-\end{verbatim}
-Otherwise the section name for references comes out in German.
-\is{hyphenation|)}\ispackagee{german}
-
-\subsection{Resizing large objects}
-
-Trees and AVMs often are too big to fit onto one page. The \texttt{langsci} comes with commands for
-shrinking large objects. You may pass your complex object as an argument to \texttt{\oneline} and
-this will scale the object to {\bs}linewidth (the remaining space on the current line). There is
-a more clever version of this command: {\bs}centerfit. This command checks whether there is
-enough space for an object and if this is the case it centers it in the line. If the object is
-larger than the {\bs}linewidth, it is resized to fit the line. This is very handy for typesetting
-figures. You may copy and paste figures to other documents with a different text width without any
-adaptations.
-
-
-%% \begin{figure}[htb]
-%% \centerfit{%
-%% \begin{tikzpicture}
-%% \tikzset{level 1+/.style={level distance=3\baselineskip}}
-%% \tikzset{level 2+/.style={level distance=5\baselineskip}}
-%% \tikzset{level 3+/.style={level distance=6\baselineskip}}
-%% \tikzset{level 4/.style={level distance=7\baselineskip}}
-%% \tikzset{level 5+/.style={level distance=5\baselineskip}}
-%% \tikzset{frontier/.style={distance from root=26\baselineskip}}
-%% %% \Tree[.{\ms[np-passive-cx]{ vform & passive \\
-%% %%                             subj & \sliste{ NP\ind{1} }\\[2mm]
-%% %%                             comps & \sliste{ (PP[\type{by}]\ind{2}) }\\
-%% %%                           } }
-%% %%         \ms{ vform & psp \\
-%% %%              subj & \sliste{ NP\ind{2} }\\[2mm]
-%% %%              comps & \sliste{ NP\ind{1} } 
-%% %%            } ]
-%% \Tree[.S
-%%        [.{\ibox{1} NP\ind{2}} \edge[roof]; {the boy} ]
-%%        [.VP\feattab{
-%%                  \subj  \sliste{ \ibox{1} NP\ind{2} },\\
-%%                  \comps  \sliste{  }}
-%%          [.V\feattab{
-%%                  \subj  \sliste{ \ibox{1} NP\ind{2} },\\
-%%                  \comps  \sliste{ \ibox{3} }} was ]
-%%          [.{\ibox{3} VP\feattab{
-%%                  \vform \type{passive},\\
-%%                  \subj  \sliste{ \ibox{1} NP\ind{2} },\\
-%%                  \comps  \sliste{ }}} \edge node[auto=left]{Passive Construction};
-%%            [.V\feattab{
-%%                  \vform \type{psp},\\
-%%                  \subj  \sliste{ NP },\\
-%%                  \comps  \sliste{ NP\ind{2} }} 
-%%              [.V\feattab{
-%%                  \vform \type{psp},\\
-%%                  \subj  \sliste{ NP },\\
-%%                  \comps  \sliste{ NP\ind{2}, \ibox{4} }} given ] \edge node[auto=left]{Schema for Passive Participles};
-%%              [.{\ibox{4} NP} \edge[roof]; { the ball } ] ] ] ] ] 
-%% \end{tikzpicture}
-%% }
-%% \caption{\label{fig-the-boy-was-given-the-ball-tseng}Analysis of \emph{The boy was given the ball} according to \citet{Tseng2007a}}
-%% \end{figure}
+% \section{Bells and whistles}
+% 
+% \subsection{\texttt{varioref}}
+% 
+% \texttt{varioref}\ispackageb{varioref} is loaded by the \lsp class file. You can use {\bs}vref \iscommand{vref} to refer to floating
+% objects like figures and tables. \latex automatically determines whether the floating object is on
+% the same page or further away. If the float is on the next page and the next page is to the right of
+% the current page, \latex will insert an appropriate text like \emph{on the facing page}. If we are
+% on a right page, \latex will insert something like \emph{on the next page} or \emph{on the facing page}. If the float is further
+% away, a page number will be provided.
+% \ispackagee{varioref}
+% 
+% %Please use \verb+\vref+ for the first reference to a float only.
+% 
+% 
+% \subsection{\texttt{german} for hyphenation}
+% 
+% If\is{hyphenation|(}\ispackageb{german} you write things like {\bs}head-driven or very long paths like
+% {\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
+% (in the part following the dash).
+% 
+% german.sty+ provides additional markup that allows for proper hyphenation:
+% \begin{verbatim}
+% head"=driven
+% 
+% {\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}
+% \end{verbatim}
+% With this markup even long paths like {\sc snysem$|$loc$|$cat$|$""head$|$""mod$|$""loc$|$""cat$|$""head}
+% are typeset properly. Alternatively you my write
+% \begin{verbatim}
+% {\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod}
+% \end{verbatim}
+% which introduces a dash at the place of the linebreak:
+% {\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod$|$\-loc$|$\-cat$|$\-head}.
+% 
+% If you use german.sty for a book whose primary language is not German, do not forget to
+% specify the language you are using. For example, if your book is in US English you have to specify
+% the following:
+% \begin{verbatim}
+% \selectlanguage{USenglish}
+% \end{verbatim}
+% Otherwise the section name for references comes out in German.
+% \is{hyphenation|)}\ispackagee{german}
+% 
+% \subsection{Resizing large objects}
+% 
+% Trees and AVMs often are too big to fit onto one page. The \texttt{langsci} comes with commands for
+% shrinking large objects. You may pass your complex object as an argument to \texttt{\oneline} and
+% this will scale the object to {\bs}linewidth (the remaining space on the current line). There is
+% a more clever version of this command: {\bs}centerfit. This command checks whether there is
+% enough space for an object and if this is the case it centers it in the line. If the object is
+% larger than the {\bs}linewidth, it is resized to fit the line. This is very handy for typesetting
+% figures. You may copy and paste figures to other documents with a different text width without any
+% adaptations.
+% 
+% 
+% %% \begin{figure}[htb]
+% %% \centerfit{%
+% %% \begin{tikzpicture}
+% %% \tikzset{level 1+/.style={level distance=3\baselineskip}}
+% %% \tikzset{level 2+/.style={level distance=5\baselineskip}}
+% %% \tikzset{level 3+/.style={level distance=6\baselineskip}}
+% %% \tikzset{level 4/.style={level distance=7\baselineskip}}
+% %% \tikzset{level 5+/.style={level distance=5\baselineskip}}
+% %% \tikzset{frontier/.style={distance from root=26\baselineskip}}
+% %% %% \Tree[.{\ms[np-passive-cx]{ vform & passive \\
+% %% %%                             subj & \sliste{ NP\ind{1} }\\[2mm]
+% %% %%                             comps & \sliste{ (PP[\type{by}]\ind{2}) }\\
+% %% %%                           } }
+% %% %%         \ms{ vform & psp \\
+% %% %%              subj & \sliste{ NP\ind{2} }\\[2mm]
+% %% %%              comps & \sliste{ NP\ind{1} } 
+% %% %%            } ]
+% %% \Tree[.S
+% %%        [.{\ibox{1} NP\ind{2}} \edge[roof]; {the boy} ]
+% %%        [.VP\feattab{
+% %%                  \subj  \sliste{ \ibox{1} NP\ind{2} },\\
+% %%                  \comps  \sliste{  }}
+% %%          [.V\feattab{
+% %%                  \subj  \sliste{ \ibox{1} NP\ind{2} },\\
+% %%                  \comps  \sliste{ \ibox{3} }} was ]
+% %%          [.{\ibox{3} VP\feattab{
+% %%                  \vform \type{passive},\\
+% %%                  \subj  \sliste{ \ibox{1} NP\ind{2} },\\
+% %%                  \comps  \sliste{ }}} \edge node[auto=left]{Passive Construction};
+% %%            [.V\feattab{
+% %%                  \vform \type{psp},\\
+% %%                  \subj  \sliste{ NP },\\
+% %%                  \comps  \sliste{ NP\ind{2} }} 
+% %%              [.V\feattab{
+% %%                  \vform \type{psp},\\
+% %%                  \subj  \sliste{ NP },\\
+% %%                  \comps  \sliste{ NP\ind{2}, \ibox{4} }} given ] \edge node[auto=left]{Schema for Passive Participles};
+% %%              [.{\ibox{4} NP} \edge[roof]; { the ball } ] ] ] ] ] 
+% %% \end{tikzpicture}
+% %% }
+% %% \caption{\label{fig-the-boy-was-given-the-ball-tseng}Analysis of \emph{The boy was given the ball} according to \citet{Tseng2007a}}
+% %% \end{figure}
+% 
