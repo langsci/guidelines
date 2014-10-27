@@ -1,9 +1,9 @@
 %% -*- coding:utf-8 -*-
-\documentclass[number=0
-                ,series=guidelines,
+\documentclass[ number=0
+                ,series=sidl,
                 ,isbn=000-0-000000-00-0,
                 ,url=http://langsci-press.org/catalog/book/0,
-	        ,output=guidelines    % long|short|inprep              
+	        ,output=short    % long|short|inprep              
 	        %,blackandwhite
 	        %,smallfont
 	        ,draftmode  
@@ -73,7 +73,7 @@
 
 
 % Chinese
-\usepackage[indentfirst=false]{xeCJK}
+% \usepackage[indentfirst=false]{xeCJK}
 % \setCJKmainfont{SimSun}
 
 % bidirectional text and support for Arabic/Persia\newfontfamily\Parsifont[Script=Arabic]{XB Niloofar}
@@ -92,8 +92,7 @@
 
 
 \newcommand{\computer}[1]{\texttt{#1}}
-\newcommand{\bs}{$\backslash$}
-\begin{document}                
+\newcommand{\bs}{$\backslash$}\begin{document}                
 % \maketitle                
 \tableofcontents      
 \mainmatter     
@@ -107,7 +106,7 @@
 \include{proofreaders}
 \include{indexers}
 \include{typesetters} 
-
+\include{openness}
 \backmatter
 \bibliography{lsp-abbrev,lsp-guidelines}                             
 \end{document}
