@@ -7,7 +7,7 @@ documentations too. The purpose of this section is to point users to the package
 serve their purpose best and that are compatible with other packages and the \lsp classes, as this
 book proves.
 
-\subsection{Glossed examples}
+\section{Glossed examples}
 
 Glossed\is{glossing|(}\ispackageb{lsp-gb4e} examples are typeset with a modified version of the \texttt{gb4e}\ispackage{gb4e} package by Craig
 Thiersch\aimention{Craig Thiersch}. The modified package is called \texttt{lsp-gb4e}. It is contained in the styles directory
@@ -153,7 +153,7 @@ page~\pageref{ex-typology} are typeset as follows:
 \end{verbatim}
 
 
-\subsection{\texttt{jam\-box}}
+\section{\texttt{jam\-box}}
 \label{sec-jambox}
 
 
@@ -215,7 +215,7 @@ jambox to {\bs}settowidth:
 
 
 
-\subsection{Trees: \texttt{tikz-qtree}}
+\section{Trees: \texttt{tikz-qtree}}
 
 Several\ispackageb{tikz-qtree} tree-drawing packages are around and all have their advantages and disadvantages. I
 used \texttt{tree-dvips} for decades, but it is incompatible with \xelatex, since it creates
@@ -279,7 +279,7 @@ The code below shows how words below a certain node can be put under a triangle 
 \end{samepage}
 \ispackagee{tikz-qtree} 
 
-\subsection{DRSes: \texttt{drs}}
+\section{DRSes: \texttt{drs}}
 
 DRSes\ispackageb{drs} can be typeset using the \texttt{drs} package by Alexis Dimitriadis\aimention{Alexis
   Dimitriadis}. There are various commands that let you typeset simple DRSes, ones with implications
@@ -319,7 +319,7 @@ and DRSes with quantifiers. Some examples from the manual are given below:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{AVMs}
+\section{AVMs}
 
 The package for typesetting AVMs that is most widely used is the package \texttt{avm}\ispackage{avm}
 by Chris Manning\aimention{Chris Manning}. 
@@ -327,7 +327,7 @@ by Chris Manning\aimention{Chris Manning}.
 %% This package is described in the following
 %% subsection. Section~\ref{sec-lsp-avm} describes AVM macros that were put together by Markus Duda\aimention{Markus Duda}.
 
-%% \subsubsection{\texttt{avm}}
+%% \subsection{\texttt{avm}}
 
 \REF{ex:showcases:avm-avm}\ispackageb{avm} shows an example of an AVM typeset with the \texttt{avm} package:
 \ea
@@ -412,7 +412,7 @@ With the \texttt{avm} package it is possible to use brackets as they are used in
 The package has a good documentation and we will not repeat all the details here.
 \ispackagee{avm}
 
-%% \subsubsection{\texttt{lsp-avm}}
+%% \subsection{\texttt{lsp-avm}}
 %% \label{sec-lsp-avm}
 
 %% An alternative way to typeset AVMs is provided in the \lsp style file \texttt{lsp-avm} that contains
@@ -445,7 +445,7 @@ The package has a good documentation and we will not repeat all the details here
 %% \end{verbatim}
 
 
-\subsection{OT tableaux}
+\section{OT tableaux}
 
 
 This\is{Optimality Theory|(}\is{tabular} section just provides some examples of how Optimality Tableaux can be typeset.
@@ -549,14 +549,15 @@ suffixing  &Kwakwala   &Japanese    \\ \hline
 \is{Optimality Theory|)}
 
 
+\section{Conversation transcripts} 
 
-\subsection{Font issues and right to left scripts}
+\section{Font issues and right to left scripts}
 
 Since\is{font|(} we are using \xelatex, all fonts that are installed in the cannonical font directories can be
 used. We are using the font \texttt{Linux Libertine}, which is unicode-based and contains a lot of
 the characters linguists want to use.
 
-\subsubsection{Chinese}
+\subsection{Chinese}
 \label{sec-Chinese}
 
 You can enter Chinese\il{Chinese}\is{Chinese Characters} characters directly and mix them with ASCII text without any further markup
@@ -569,7 +570,7 @@ with the option {\bs}indentfirst set to {\bs}false and select an appropriate fon
 \end{verbatim}
 
 
-\subsubsection{Arabic script}
+\subsection{Arabic script}
 
 Arabic script\is{Arabic Script}\il{Persian} is the most challenging script for typesetting since it is written from right to left
 and contains ligatures. If you load the \texttt{bidi} package, you can mix right to left and left to
@@ -601,7 +602,7 @@ right text.\footnote{
 \end{verbatim}
 %\end{rtlverbatim}
 
-\subsubsection{Hebrew}
+\subsection{Hebrew}
 
 Hebrew\il{Hebrew|(} is also written from right to left. The characters are part of Linux Libertine, so no extra
 font has to be loaded to set examples like \REF{ex:latex:hebrew}:
@@ -621,7 +622,7 @@ font has to be loaded to set examples like \REF{ex:latex:hebrew}:
 % \end{fitverb}
 \il{Hebrew|)}
 
-\subsubsection{IPA symbols}
+\subsection{IPA symbols}
 
 The\is{IPA symbols|(} IPA symbols are part of the Linux Libertine font and hence can be entered into the document
 directly. The IPA unicode symbols can be created online at
@@ -632,10 +633,10 @@ directly. The IPA unicode symbols can be created online at
 % ⱱ does not work  
 If you find symbols that are not covered by the font, please use the \texttt{tipa} package.
 \is{font|)}\is{IPA symbols|)}
-
+ 
 % \section{Bells and whistles}
 % 
-% \subsection{\texttt{varioref}}
+% \section{\texttt{varioref}}
 % 
 % \texttt{varioref}\ispackageb{varioref} is loaded by the \lsp class file. You can use {\bs}vref \iscommand{vref} to refer to floating
 % objects like figures and tables. \latex automatically determines whether the floating object is on
@@ -648,7 +649,7 @@ If you find symbols that are not covered by the font, please use the \texttt{tip
 % %Please use \verb+\vref+ for the first reference to a float only.
 % 
 % 
-% \subsection{\texttt{german} for hyphenation}
+% \section{\texttt{german} for hyphenation}
 % 
 % If\is{hyphenation|(}\ispackageb{german} you write things like {\bs}head-driven or very long paths like
 % {\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
@@ -677,7 +678,7 @@ If you find symbols that are not covered by the font, please use the \texttt{tip
 % Otherwise the section name for references comes out in German.
 % \is{hyphenation|)}\ispackagee{german}
 % 
-% \subsection{Resizing large objects}
+% \section{Resizing large objects}
 % 
 % Trees and AVMs often are too big to fit onto one page. The \texttt{langsci} comes with commands for
 % shrinking large objects. You may pass your complex object as an argument to \texttt{\oneline} and
@@ -731,4 +732,3 @@ If you find symbols that are not covered by the font, please use the \texttt{tip
 % %% }
 % %% \caption{\label{fig-the-boy-was-given-the-ball-tseng}Analysis of \emph{The boy was given the ball} according to \citet{Tseng2007a}}
 % %% \end{figure}
-% 

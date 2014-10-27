@@ -6,7 +6,7 @@
 	        ,output=guidelines    % long|short|inprep              
 	        %,blackandwhite
 	        %,smallfont
-	        ,draftmode  
+% 	        ,draftmode  
 		  ]{LSP/langsci}                          
 
           
@@ -100,15 +100,35 @@
  
 \include{authors}
 \include{volumeeditors}
-\include{serieseditors}
 \include{latex}
-\include{showcases}
 \include{conversion}
 \include{proofreaders}
 \include{indexers}
 \include{typesetters} 
+\include{openness}
+% \include{showcases}
+\include{serieseditors}
 
 \backmatter
-\bibliography{lsp-abbrev,lsp-guidelines}                             
+\bibliography{lsp-abbrev,lsp-guidelines}  
+ 
+\clearpage
+   
+\addcontentsline{toc}{chapter}{Index} 
+
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Name index}
+\ohead{Name index} 
+\printindex[aut]
+  
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Language index}
+\ohead{Language index} 
+\printindex[lan] 
+  
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Subject index}
+\ohead{Subject index} 
+\printindex                           
 \end{document}
       

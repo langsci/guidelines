@@ -11,7 +11,7 @@ If you are dealing with Language Science Press books on a regular basis, you mig
 
 Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available 
 
-\subsection{Using writelatex}
+\subsection{Online editor}
 In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{https://www.writelatex.com/templates/language-science-press-template-1-dot-1/vhnyshymvjzb#} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is chapters/filename.tex
 
 \begin{figure}
@@ -78,53 +78,39 @@ For Linux, Kile is a very good \latex editor \figref{fig:latex:kile}.
 \end{figure}
 
   
-\subsection{Included packages}
-The following packages are already loaded by default: 
-\computer{amssymb}, 
-\computer{authorindex}, 
-\computer{biblatex}, 
-\computer{booktabs}, 
-\computer{chngcntr}, 
-\computer{chngcntr}, 
-\computer{datetime}, 
-\computer{epigraph}, 
-\computer{etex}, 
-\computer{floatrow}, 
-\computer{fontspec}, 
-\computer{geometry}, 
-\computer{graphicx}, 
-\computer{hyperref }, 
-\computer{ifxetex}, 
-\computer{index}, 
-\computer{microtype}, 
-\computer{natbib}, 
-\computer{newtxmath}, 
-\computer{pbox}, 
-\computer{pst-barcode }, 
-\computer{rotating}, 
-\computer{scrpage2}, 
-\computer{showidx}, 
-\computer{textpos}, 
-\computer{tocstyle}, 
-\computer{url}, 
-\computer{xcolor}, 
-\computer{xspace}, 
-\computer{xstring}. 
-
-\section{Adapting the class to your needs}
-
-Additional packages can be added via \computer{{\bs}usepackage\{packagename\}} in the file \computer{localpackages.sty}.
-Addtional commands can be added in the file \computer{localcommands.sty} with \computer{{\bs}newcommand\{commandname\}\,\{commanddefinition\}}
-
-\section{Adapting the structure of the document}
-The general structure of the document is given by \lsp. You have a couple of options to change the structure:
-\begin{itemize}
- \item You can choose the skeleton for monograph or edited volume
- \item You can add additional chapters to the directory \computer{chapters}, for instance \computer{chapters/chapter4.tex} or \computer{chapters/introduction.tex}. Make sure to add \computer{{\bs}include\{chapters/introduction} (without \computer{.tex}) to your main file.
- \item You can add a preface, acknowledgements, or a list of abbreviations with \computer{{\bs}addchap\{Preface\}}
-\end{itemize}
-
-
+% \subsection{Included packages}
+% The following packages are already loaded by default: 
+% \computer{amssymb}, 
+% \computer{authorindex}, 
+% \computer{biblatex}, 
+% \computer{booktabs}, 
+% \computer{chngcntr}, 
+% \computer{chngcntr}, 
+% \computer{datetime}, 
+% \computer{epigraph}, 
+% \computer{etex}, 
+% \computer{floatrow}, 
+% \computer{fontspec}, 
+% \computer{geometry}, 
+% \computer{graphicx}, 
+% \computer{hyperref }, 
+% \computer{ifxetex}, 
+% \computer{index}, 
+% \computer{microtype}, 
+% \computer{natbib}, 
+% \computer{newtxmath}, 
+% \computer{pbox}, 
+% \computer{pst-barcode }, 
+% \computer{rotating}, 
+% \computer{scrpage2}, 
+% \computer{showidx}, 
+% \computer{textpos}, 
+% \computer{tocstyle}, 
+% \computer{url}, 
+% \computer{xcolor}, 
+% \computer{xspace}, 
+% \computer{xstring}. 
+% 
 \section{Producing the document}
 In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \computer{xelatex}. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \computer{{\bs}begin\{...\}} not followed by \computer{{\bs}end\{...\}}
 
@@ -142,6 +128,17 @@ makeindex -o lsp-skeleton.and lsp-skeleton.combined.adx
 \end{verbatim}
 
 Because the whole compilation process is rather involved, there is a shortcut for the creation of the complete document: type \computer{make} into the terminal, hit enter, and the right sequence of commands should run automatically!
+
+
+
+\section{Adapting the structure of the document}
+The general structure of the document is given by \lsp. You have a couple of options to change the structure:
+\begin{itemize}
+ \item You can choose the skeleton for monograph or edited volume
+ \item You can add additional chapters to the directory \computer{chapters}, for instance \computer{chapters/chapter4.tex} or \computer{chapters/introduction.tex}. Make sure to add \computer{{\bs}include\{chapters/introduction} (without \computer{.tex}) to your main file.
+ \item You can add a preface, acknowledgements, or a list of abbreviations with \computer{{\bs}addchap\{Preface\}}
+\end{itemize}
+
 
 
 \section{Common commands}\label{sec:latex:commoncommands}
@@ -206,26 +203,6 @@ Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The 
 For more complicated examples with more lines, judgments, additional information and the like, refer to the documentation of the package \computer{lsp-gb4e}.
 \computer{{\bs}langinfo} should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \computer{{\bs}citealt} rather than {{\bs}citep}.
 
-For the various ways to add entries to the index, refer to \tabref{tab:latex:indexentriese}
-
-\begin{table}[h]
-\caption{Commands for creating index entries.}
-\label{tab:latex:indexentriese}
- \begin{tabular}{p{2.5cm}>{\tt\small\raggedright}p{6.5cm}p{3cm}}
-  \lsptoprule
-  type & \rm\normalsize command & indexed term \\
-  \midrule
-  Subject Index& Nominalized sentences \textbf{$\setminus$is\{nominalization\}} are current. & nomina\-lization \\
-  Subject Index identical& ... while \textbf{$\setminus$isi\{nominalization\}} is less frequent ...  & nomina\-lization \\[2em]
-  Language Index & Varieties of Chinese \textbf{$\setminus$il\{Sinitic languages\}} differ in that ...& Sinitic languages \\
-  Language Index identical& The \textbf{$\setminus$ili\{Sinitic languages\}}, \mbox{however}, ... & Sinitic languages \\[2em]
-  Author Index & In Homeric \textbf{$\setminus$ia\{Homer\}} language, ...  & Homer\\
-  Author Index identical & This contradicts \textbf{$\setminus$iai\{Homer\}}, who had advocated ... & Homer \\
-  \lspbottomrule
- \end{tabular}
-
-\end{table}
-
 In order to add a graphic, use the following stretch of code
 
 \begin{verbatim}
@@ -273,33 +250,24 @@ You should not assume that a figure or table will be placed exactly where it app
 
 In order to add footnotes, use the command \computer{{\bs}footnote\{...\}}. If you want to use a footnote in an example, use \computer{word word word {\bs}\{footnotemark\} word word} and add a line with \computer{{\bs}footnotetext\{text of the footnote\}} just before the translation of the example. You should not add footnotes to tables or figures.
 
-\section{Special needs}
-Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.
 
 A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, simply use \computer{sidewaysfigure} or \computer{sidewaystable} instead of the normal \computer{figure} or \computer{table}.
 
 Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, you can use \computer{{\bs}resizebox\{{\bs}linewidth\}\{!\}\{stuff to resize\}}.
 
 For other special needs, please contact our coordinator at support@langsci-press.org. 
+\section{Adapting the class to your needs}
 
-\section{Tracking Progress}
-A book is a complex document. Once your book is in final production mode, we use github to track versions and changes (\figref{fig:latex:github}). You can use github during the writing process as well (in fact, this will make the transition much smoother. In order to keep things organized, we use Trello (\figref{fig:latex:trello}). Trello allows to distribute tasks such as bibliography update, proofreading, index creation and so on and keeps track of progress.
+Additional packages can be added via \computer{{\bs}usepackage\{packagename\}} in the file \computer{localpackages.sty}.
+Addtional commands can be added in the file \computer{localcommands.sty} with \computer{{\bs}newcommand\{commandname\}\,\{commanddefinition\}}
 
-\begin{figure}
-\caption{Github highlighting version history}
-\label{fig:latex:github}
- \includegraphics[width=\textwidth]{github.png}
-\end{figure}
 
-\begin{figure}
-\caption{Trello}
-\label{fig:latex:trello}
- \includegraphics[width=\textwidth]{trello.png}
-\end{figure}
+Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.
+
 
  
    
-\section{Circulating drafts}
+\section{Drafts}
 
 Since \lsp does not have any commercial interest, you can put your book on webpages and distribute it
 freely. We encourage authors to do this in order to discuss the work and improve it before final
