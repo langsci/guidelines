@@ -19,23 +19,31 @@ For the various ways to add entries to the index, refer to \tabref{tab:latex:ind
  \end{tabular}
 \end{table}
 
-If there are two or more entries on subsequent pages, the index generation will automatically produce a range. So, instead of `33,34,35,36', it will print out `33--36'. You can produce ranges yourself by using \computer{{\bs}\{someterm|(\}} for the start and  \computer{{\bs}is\{someterm|)\}} for the end of the range. 
+If there are two or more entries on subsequent pages, the index generation will automatically produce a range. So, instead of `33,34,35,36', it will print out `33--36'. You can produce ranges yourself by using \computer{{\bs}is\{someterm|(\}} for the start and  \computer{{\bs}is\{someterm|)\}} for the end of the range. 
 
 Do not use the indexing commands directly before punctuation as it can produce unwanted white space. Put it after the punctuation instead.
 
 If you compile your document with the option \computer{draftmode} all indexed terms will show up in the margins.
 
-When your are done with adding index terms to your document, the following commands will produce the Subject Index and the Name Index
+When your are done with adding index terms to your document, the following commands will produce the Subject Index and the Language Index
 \begin{verbatim}
 makeindex -o yourfilename.ind yourfilename.idx
 makeindex -o yourfilename.lnd yourfilename.ldx
 \end{verbatim}
-
+ 
 In order to produce the author index, use
+% \begin{verbatim} 
+%     xindy -M texindy -M page-ranges -L english -C utf8 authors.idx
+% \end{verbatim}
+% \todo{check filenames}
+% 
+% Another solution is 
 \begin{verbatim} 
-    xindy -M texindy -M page-ranges -L english -C utf8 authors.idx
+authorindex -i -p yourfilename.aux > yourfilename.bib.adx
+sed 's/|hyperpage//' yourfilename.adx > yourfilename.txt.adx 
+cat yourfilename.bib.adx yourfilename.txt.adx > yourfilename.combined.adx
+makeindex -o yourfilename.and yourfilename.combined.adx
 \end{verbatim}
-\todo{check filenames}
 
 After the creation of the indexes, check for every index whether it contains only terms that should be found in this index (no languages in Subject Index and vice versa). Furthermore, check that every concept has exactly one entry in the index. It is easy to index the same concept once in the singular and then again in the plural, or once with a hyphen and once without. 
 
