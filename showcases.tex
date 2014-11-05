@@ -3,17 +3,15 @@
 There is a huge amount of packages that can be used for various purposes. \citew{MG2013a} is a good
 reference book. This section discusses some aspects of some packages that are relevant for
 linguistics. Every \latex package comes with a documentation and users should consult these
-documentations too. The purpose of this section is to point users to the packages that we think
+documentations, too. The purpose of this section is to point users to the packages that we think
 serve their purpose best and that are compatible with other packages and the \lsp classes, as this
 book proves.
 
 \section{Glossed examples}
 
 Glossed\is{glossing|(}\ispackageb{lsp-gb4e} examples are typeset with a modified version of the \texttt{gb4e}\ispackage{gb4e} package by Craig
-Thiersch\aimention{Craig Thiersch}. The modified package is called \texttt{lsp-gb4e}. It is contained in the styles directory
-that is delivered with the \lsp \latex calsses. It differs from the original package in loading a
-version of \texttt{gloss} that was modified by Alexis Dimitriadis\aimention{Alexis Dimitriadis} in order to be compatible with
-\texttt{jambox} (see Section~\ref{sec-jambox}).
+Thiersch\aimention{Craig Thiersch}. The modified package is called \texttt{lsp-gb4e}. 
+% % It is contained in the styles directory that is delivered with the \lsp \latex classes. It differs from the original package in loading a version of \texttt{gloss} that was modified by Alexis Dimitriadis\aimention{Alexis Dimitriadis} in order to be compatible with \texttt{jambox} (see Section~\ref{sec-jambox}).
 
 Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
 \ea\label{ex:showcases:simple}
@@ -24,15 +22,35 @@ Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
 \z
 \begin{verbatim}
 \ea
-\gll Der Mann schläft.\\
-     the man  sleeps\\
+\gll  Der Mann schläft.\\
+      the man  sleeps\\
 \glt `The man sleeps.'
 \z
 \end{verbatim}
-Lists of examples can be typeset with {\bs}eal and {\bs}zl respectively. The example in
-\REF{ex:showcases:list} shows how the sentences can be aligned properly:
-\eal \label{ex:showcases:list}
-\ex[]{
+
+Grammaticality judgments can be added in brackets. Note that in this case, braces have to be used around the rest of the example
+\ea[*]{\label{ex:showcases:ungrammatical}
+\iw{Mann}\iw{schlafen}
+\gll Der Mann schlafen.\\
+     the man  sleep\\
+\glt `(The man sleeps.)'
+}
+\z
+\begin{verbatim}
+\ea[*]{
+  \gll  Der Mann schläft.\\
+        the man  sleeps\\
+  \glt `The man sleeps.'
+  }
+\z
+\end{verbatim}
+
+Lists of examples can be typeset with nested \computer{{\bs}ea}  and \computer{}{\bs}z}  respectively. The example in
+\REF{ex:showcases:list} shows how the sentences can be aligned properly. Note that the first example in a list gets \computer{{\bs}ea}, the subsequent ones get \computer{{\bs}ex}. Also note the empty grammticality judgment for the first example in order to align it with the second example, which has a~*.
+
+
+\ea  \label{ex:showcases:list}
+\ea[]{
 \iw{Linguist}\iw{Nobelpreis}\iw{glauben}
 \gll Ich glaube dem Linguisten nicht, einen Nobelpreis gewonnen zu haben.\\
      I believe the linguist not a Nobel.prize won to have\\
@@ -42,47 +60,51 @@ Lists of examples can be typeset with {\bs}eal and {\bs}zl respectively. The exa
 \gll Dem Linguisten einen Nobelpreis  glaube  ich nicht gewonnen zu haben.\\
      the linguist   a     Nobel.price believe I   not   won      to have\\
 }
-\zl
-% \begin{fitverb}
-\eal
-\ex[]{
-\gll Ich glaube  dem Linguisten nicht, einen Nobelpreis  gewonnen zu haben.\\
-     I   believe the linguist   not    a     Nobel.prize won      to have\\
-\glt  `I don't believe linguist's claim that he won a Nobel prize.'
-}
-\ex[*]{
-\gll Dem Linguisten einen Nobelpreis  glaube  ich nicht gewonnen zu haben.\\
-     the linguist   a     Nobel.price believe I   not   won      to have\\
-}
-\zl
-% \end{fitverb}
+\z
+\z  
+
+\begin{verbatim}
+\ea
+  \ea[]{
+    \gll Ich glaube  dem Linguisten nicht, einen Nobelpreis  gewonnen zu haben.\\
+         I   believe the linguist   not    a     Nobel.prize won      to have\\
+    \glt  `I don't believe linguist's claim that he won a Nobel prize.'
+    }
+    \ex[*]{
+    \gll Dem Linguisten einen Nobelpreis  glaube  ich nicht gewonnen zu haben.\\
+	the linguist   a     Nobel.price believe I   not   won      to have\\
+    }
+  \z
+\z
+  \end{verbatim}
+ 
 
 If you want to add a footnote\is{footnote|(} that provides the source of an example as in \REF{ex:showcases:footnote}, you can do
 this as follows:
 \ea\label{ex:showcases:footnote}
 \gll Piloten         fik frataget    sit certifikat\footnotemark\\
-     pilot.{\sc def} got deprived.of his license\\
+     pilot.\textsc{def} got deprived.of his license\\
 \footnotetext{KorpusDK.}
 \glt `The pilot was deprived of his license to fly.'
 \z 
 \begin{verbatim}
 \ea
-\gll Piloten         fik frataget    sit certifikat\footnotemark\\
-     pilot.{\sc def} got deprived.of his license\\
+\gll Piloten fik frataget sit certifikat{\footnotemark}\\
+     pilot.\textsc{def} got deprived.of his license\\
 \footnotetext{KorpusDK.}
 \glt `The pilot was deprived of his license to fly.'
 \z 
 \end{verbatim}
-Please call the {\bs}footnotetext command before the translation, since otherwise the
+Please call the \computer{{\bs}footnotetext} command before the translation, since otherwise the
 footnotetext may be typeset on a page that is different from the one where the footnotemark is set.\is{footnote|)}
 
-For the typesetting of an additional line with the original script, one may use {\bs}glll rather
-than {\bs}gll. \REF{ex:shown:chinese} shows a Chinese example:
+For the typesetting of an additional line with the original script, one may use \computer{{\bs}glll} rather
+than \computer{{\bs}gll}. \REF{ex:shown:chinese} shows a Chinese example:
 \ea
 \label{ex:shown:chinese}
 \glll 狗       叫     了。\\
       gou3     jiao4   le\\
-      dog      bark    ASP/CRS\\
+      dog      bark    \textsc{asp/crs}\\
 \glt `The dog is barking.'/`The dogs are barking.'
 \z
 
@@ -90,11 +112,12 @@ than {\bs}gll. \REF{ex:shown:chinese} shows a Chinese example:
 \ea
 \glll 狗       叫     了。\\
       gou3     jiao4   le\\
-      dog      bark    ASP/CRS\\
+      dog      bark    \textsc{asp/crs}\\
 \glt `The dog is barking.'/`The dogs are barking.'
 \z
 \end{verbatim}
 
+You can use up to \computer{{\bs}glllllll} if you need additional lines.
 
 In some subdisciplines of linguistics (e.\,g.\ typology) the examples are written in italics as in the
 following example:
@@ -105,55 +128,94 @@ following example:
 \footnotetext{KorpusDK.}
 \glt `The pilot was deprived of his license to fly.'
 \z 
-Authors do not have to care for this. The code for typesetting this is exactly the same as for the
-variant without italics.
-% of course this is not true for the code above ...
-The series editor decided whether italics is used or not.
+This is done automatically according to the series you publish in. 
+% of course this is not true for the code above ... 
 
-If the series decides to use italics, it has to be ensured that structural markup like brackets are
-not typeset in italics:
-\ea
-\def\exfont{\normalsize\it}
-\gll ein {\rm[}interessantes       Beispiel{\rm]}\\
-     an  \hspaceThis{[}interesting example\\
-\glt `an interesting example'
-\z 
+If the series decides to use italics, it has to be ensured that structural markup like brackets are not typeset in italics. Use \computer{{\bs}ob} for opening brackets and \computer{{\bs}cb} for closing brackets. \computer{{\bs}op} and \computer{{\bs}cp} provide the same for parens.
 \begin{verbatim}
 \ea
-\gll ein {\rm[}interessantes       Beispiel{\rm]}\\
-     an  \hspaceThis{[}interesting example\\
+\gll ein {\ob}interessantes  Beispiel{\cb}\\
+     an   interesting        example\\
 \glt `an interesting example'
 \z 
 \end{verbatim}
+\ea
+\def\exfont{\normalsize\it}
+\gll ein {\ob}interessantes       Beispiel{\cb}\\
+     an   interesting example\\
+\glt `an interesting example'
+\z 
 \is{glossing|)}\ispackagee{lsp-gb4e}
-%% \inlinetodostefan{
-%% The translation should not be separated from the glossed example by a page break.
-%% }
+
+In order to align the gloss with the beginning of the source word, and not with the bracket, you can use \computer{{\bs}hspaceThis\{[\}}
+
+\begin{verbatim}
+\ea
+\gll ein {\ob}interessantes  Beispiel{\cb}\\
+     an  \hspaceThis{[}interesting        example\\
+\glt `an interesting example'
+\z 
+\end{verbatim}
+
+\ea
+\def\exfont{\normalsize\it}
+\gll ein {\ob}interessantes       Beispiel{\cb}\\
+     an  \hspaceThis{[}interesting example\\
+\glt `an interesting example'
+\z 
+ 
+
 
 In typological series examples often come with the language name and references. The examples on
 page~\pageref{ex-typology} are typeset as follows:
 \begin{verbatim}
 \ea
-{\rm Mising\il{Mising} \citep[69]{Prasad91a}}\\
-\gll azɔ́në dɔ́luŋ\\
-     small village\\ 
-\glt `a small village' 
+  \langinfo{Mising}{Sino-Tibetan}{\citealt[69]{Prasad91a}}\\
+  \gll azɔ́në dɔ́luŋ\\
+      small village\\ 
+  \glt `a small village' 
+\z
+\end{verbatim}
+\ea
+  \langinfo{Mising}{Sino-Tibetan}{\citealt[69]{Prasad91a}}\\
+  \gll azɔ́në dɔ́luŋ\\
+      small village\\ 
+  \glt `a small village' 
 \z
 
-\eal
-\ex {\rm Apatani\il{Apanti} \citep[23]{Abraham85a}}\\
-\gll aki atu\\ 
-     dog small\\ 
-\glt ‘the small dog’ 
-\ex {\rm Temiar\il{Temiar} \citep[155]{Benjamin76a}}\\ 
-\gll dēk mənūʔ\\
-     house big\\
-\glt ‘big house’ 
-\zl
+\begin{verbatim}
+\ea 
+  \ea
+    \langinfo{Apatani}{Sino-Tibetan}{\citealt[23]{Abraham85a}}\\
+    \gll aki atu\\ 
+         dog small\\ 
+    \glt ‘the small dog’ 
+  \ex
+  \langinfo{Temiar}{Austroasiatic}{\citealt[155]{Benjamin76a}}\\ 
+    \gll dēk mənūʔ\\
+         house big\\
+    \glt ‘big house’ 
+  \z
+\z
 \end{verbatim}
 
+\ea 
+  \ea
+    \langinfo{Apatani}{Sino-Tibetan}{\citealt[23]{Abraham85a}}\\
+    \gll aki atu\\ 
+	dog small\\ 
+    \glt ‘the small dog’ 
+  \ex
+  \langinfo{Temiar}{Austroasiatic}{\citealt[155]{Benjamin76a}}\\ 
+    \gll dēk mənūʔ\\
+	house big\\
+    \glt ‘big house’ 
+  \z
+\z
 
-\section{\texttt{jam\-box}}
+\def\exfont{\normalsize\rm}
+
+\section{\texttt{jambox}}
 \label{sec-jambox}
 
 
@@ -190,23 +252,24 @@ The call of {\bs}jambox has to follow the linebreak after the gloss:
 \label{ex-ingrid-kielet-ilmazzita}
 \gll Ingrid kiel-et il-mazzit-a.\\
      Ingrid eat-3fsg def-black.pudding-fsg\\ \jambox{(SVO)}
-\glt `Ingread ate black pudding.'
+\glt `Ingrid ate black pudding.'
 }
 \end{verbatim}
 The distance from the right margin can be specified by passing the largest object to be placed in a
 jambox to {\bs}settowidth:
 
-\eal
+\ea 
 \settowidth\jamwidth{(German)}
-\ex The man reads the book.    \jambox{(English)}
-\ex Manden læser bogen.        \jambox{(Danish)}
-\ex Der Mann liest das Buch.   \jambox{(German)}
-\zl
+  \ea The man reads the book.    \jambox{(English)}
+  \ex Manden læser bogen.        \jambox{(Danish)}
+  \ex Der Mann liest das Buch.   \jambox{(German)}
+  \z 
+\z
 
 \begin{verbatim}
-\eal
+\ea 
 \settowidth\jamwidth{(German)}
-\ex The man reads the book.    \jambox{(English)}
+\ea The man reads the book.    \jambox{(English)}
 \ex Manden læser bogen.        \jambox{(Danish)}
 \ex Der Mann liest das Buch.   \jambox{(German)}
 \zl

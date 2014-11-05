@@ -3,16 +3,15 @@
 
 \section{Installation of the \texttt{langsci} class}
 \subsection{Local installation}
-For your first book, the easiest way will be to download the skeleton from \url{http://langsci-press.org/Meta/downloads}.
+For your first book, the easiest way will be to download the skeleton from \url{http://test.langsci-press.org/information/templates}.
 There is a skeleton for monographies and a skeleton for edited volumes. Choose what is appropriate for you.
+ 
+% If you are dealing with Language Science Press books on a regular basis, you might want to opt for a system wide installation. The LSP class can be downloaded from \url{...} and will be available on CTAN in the near future.
 
-
-If you are dealing with Language Science Press books on a regular basis, you might want to opt for a system wide installation. The LSP class can be downloaded from \url{...} and will be available on CTAN in the near future.
-
-Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available 
+Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
 \subsection{Online editor}
-In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{https://www.writelatex.com/templates/language-science-press-template-1-dot-1/vhnyshymvjzb#} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is chapters/filename.tex
+In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \computer{chapters/filename.tex}.
 
 \begin{figure}
  \includegraphics[width=\textwidth]{writelatex.png}
@@ -21,7 +20,7 @@ In order to familiarize yourself with \latex, you might also want to try the web
 \end{figure}
 
 \section{The skeleton}
-The skeleton has a main file, which is called \computer{lsp-skeleton.tex}. You can leave that name or choose a name more suitable for your book, e.g. \computer{smith.tex} or \computer{hawaiiangrammar.tex}. That main file draws information from a number of other files which are in the same directory. All those files start with \computer{local\dots}. Furthermore, the main file includes the chapters, which are found in the directory \computer{chapters}.
+The skeleton has a main file, which is called \computer{lsp-skeleton.tex}. You can leave that name or choose a name more suitable for your book, e.g. \computer{smith.tex} or \computer{hawaiiangrammar.tex}. That main file draws information from a number of other files which are in the same directory. All those files start with \computer{local\dots}. Furthermore, the main file includes the chapters, which are found in the directory \computer{chapters/}.
 
 \begin{table}[htb]
   \caption{File structure of the skeleton}
@@ -135,8 +134,8 @@ Because the whole compilation process is rather involved, there is a shortcut fo
 The general structure of the document is given by \lsp. You have a couple of options to change the structure:
 \begin{itemize}
  \item You can choose the skeleton for monograph or edited volume
- \item You can add additional chapters to the directory \computer{chapters}, for instance \computer{chapters/chapter4.tex} or \computer{chapters/introduction.tex}. Make sure to add \computer{{\bs}include\{chapters/introduction} (without \computer{.tex}) to your main file.
- \item You can add a preface, acknowledgements, or a list of abbreviations with \computer{{\bs}addchap\{Preface\}}
+ \item You can add additional chapters to the directory \computer{chapters}, for instance\\ \computer{chapters/chapter4.tex} or \computer{chapters/introduction.tex}. Make sure to add \computer{{\bs}include\{chapters/introduction} (without \computer{.tex}) to your main file.
+ \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \computer{{\bs}addchap\{Preface\}}
 \end{itemize}
 
 
@@ -150,59 +149,62 @@ The wealth of commands available in \latex can be daunting at first sight. Howev
 \item \computer{{\bs}subsubsection\{titleofheading\}}
 \end{itemize}
 
-These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \computer{{\bs}addchap\{Preface\}} instead of {{\bs}chapter\{Preface\}}.
+These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \computer{{\bs}addchap\{Preface\}} instead of \computer{{{\bs}chapter\{Preface\}}}.
  
 Other common commands are 
 \computer{{\bs}label\{labelname\}} 
 to assign a label, and 
-\computer{{\bs}ref\{labelname\}}
+\computer{{\bs}ref\{ labelname\}}
 to refer to a label. It is good practice to use 
 \computer{{\bs}sectref\{labelname\}},
 \computer{{\bs}tabref\{labelname\}},
 \computer{{\bs}figref\{labelname\}},
-to refer to sections, tables, and figures, respectively. A reference to this section will be \computer{see {\bs}sectref\{sec:latex:commoncommands\}}, which will produce ``\sectref{sec:latex:commoncommands}''.
+to refer to sections, tables, and figures, respectively. A reference to this section will be \computer{see {\bs}sectref\{sec:latex: commoncommands\}}, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
-Other commands very often used in academic texts are \computer{{\bs}citet\{somework\}} and \computer{{\bs}citep\{somework\}}. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \computer{{\bs}citealt\{somework\}}. Page numbers are added with \computer{{\bs}citet[99-{}-123]\{somework\}}. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \computer{somework} is the key of a record in your \bibtex file. When \computer{somework} is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
+Other commands very often used in academic texts are \computer{{\bs}citet\{somework\}} and \computer{{\bs}citep\{somework\}}. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \computer{{\bs}citealt\{ somework\}}. Page numbers are added with \computer{{\bs}citet[99-{}-123]\{somework\}}. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \computer{somework} is the key of a record in your \bibtex file. When \computer{somework} is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
 
 
 If some text should not be in the normal font, use 
 \computer{{\bs}textit\{text to be changed\}} for italics, 
 \computer{{\bs}textsc\{text to be changed\}} for small capitals. There is generally no need to use boldface. If you want to use boldface, get in touch with your series editors.
 
+\subsection{Linguistic examples}
 Linguistic examples are typeset like this
 
 \begin{verbatim}
 \ea\label{ex:examplelabel}
 \langinfo{French}{Indo-European}{personal knowledge}\\
-\gll  Jean aim-e Marie \\
+\gll  Jean aim-e                    Marie \\
       John love-\textsc{3s.pres.ind} Mary \\
 \glt `John loves Mary.'    
 \z
 \end{verbatim}
 
 This gives you
-\todo{fix index}
+% \todo{fix index}
 \ea\label{ex:examplelabel}
 \langinfo{French}{Indo-European}{personal knowledge}\\
 \gll  Jean aim-e Marie \\
-      John love-\textsc{3sg.prs.ind} Mary \\
+      John love-{3\sg.\prs.\ind} Mary \\
 \glt `John loves Mary.'    
 \z
 
+Rough alignment of glosses in the source text can be helpful, but is not necessary.
 Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
 
 \begin{verbatim}
 \ea\label{ex:examplelabel}
 \langinfo{French}{Indo-European}{personal knowledge}\\
-\gll  Jean aim-e Marie \\
-      John love-3{\sg}.{\prs}.{\ind} Mary \\
+\gll  Jean aim-e                 Marie \\
+      John love-{3\sg.\prs.\ind} Mary \\
 \glt `John loves Mary.'    
 \z
 \end{verbatim}
 
 For more complicated examples with more lines, judgments, additional information and the like, refer to the documentation of the package \computer{lsp-gb4e}.
-\computer{{\bs}langinfo} should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \computer{{\bs}citealt} rather than {{\bs}citep}.
+\computer{{\bs}langinfo} should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \computer{{\bs}citealt} rather than \computer{{\bs}citep}.
 
+\subsection{Graphics}
 In order to add a graphic, use the following stretch of code
 
 \begin{verbatim}
@@ -213,6 +215,7 @@ In order to add a graphic, use the following stretch of code
 \end{figure}
 \end{verbatim}
 
+\subsection{Tables}
 In order to add a table, use the following stretch of code:
 
 \begin{verbatim}
@@ -231,7 +234,7 @@ In order to add a table, use the following stretch of code:
 \end{table}
 \end{verbatim}
 
-This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \computer{{\bs}begin\{tabular\}\{p\{4cm\}p\{4cm\}p\{4cm\}\}}, rather than \computer{{\bs}begin\{tabular\}\{lll\}}
+This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \computer{{\bs}begin\{tabular\}\{p\{4cm\} p\{4cm\}p\{4cm\}\}}, rather than \computer{{\bs}begin\{tabular\}\{lll\}}
 \begin{table}[h]
   \begin{tabular}{lll}
     \lsptoprule
@@ -248,6 +251,7 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
 
 You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used. 
 
+\subsection{Footnotes}
 In order to add footnotes, use the command \computer{{\bs}footnote\{...\}}. If you want to use a footnote in an example, use \computer{word word word {\bs}\{footnotemark\} word word} and add a line with \computer{{\bs}footnotetext\{text of the footnote\}} just before the translation of the example. You should not add footnotes to tables or figures.
 
 
@@ -255,11 +259,11 @@ A common requirement is to put pages in landscape orientation rather than portra
 
 Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, you can use \computer{{\bs}resizebox\{{\bs}linewidth\}\{!\}\{stuff to resize\}}.
 
-For other special needs, please contact our coordinator at support@langsci-press.org. 
+For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
 \section{Adapting the class to your needs}
 
 Additional packages can be added via \computer{{\bs}usepackage\{packagename\}} in the file \computer{localpackages.sty}.
-Addtional commands can be added in the file \computer{localcommands.sty} with \computer{{\bs}newcommand\{commandname\}\,\{commanddefinition\}}
+Addtional commands can be added via \computer{{\bs}newcommand\{ commandname\}\,\{commanddefinition\}} in the file \computer{localcommands.sty}. 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.
