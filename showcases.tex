@@ -10,8 +10,8 @@ book proves.
 \section{Glossed examples}
 
 Glossed\is{glossing|(}\ispackageb{lsp-gb4e} examples are typeset with a modified version of the \texttt{gb4e}\ispackage{gb4e} package by Craig
-Thiersch\aimention{Craig Thiersch}. The modified package is called \texttt{lsp-gb4e}. 
-% % It is contained in the styles directory that is delivered with the \lsp \latex classes. It differs from the original package in loading a version of \texttt{gloss} that was modified by Alexis Dimitriadis\aimention{Alexis Dimitriadis} in order to be compatible with \texttt{jambox} (see Section~\ref{sec-jambox}).
+Thiersch\ia{Craig Thiersch}. The modified package is called \texttt{lsp-gb4e}. 
+% % It is contained in the styles directory that is delivered with the \lsp \latex classes. It differs from the original package in loading a version of \texttt{gloss} that was modified by Alexis Dimitriadis\ia{Alexis Dimitriadis} in order to be compatible with \texttt{jambox} (see Section~\ref{sec-jambox}).
 
 Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
 \ea\label{ex:showcases:simple}
@@ -124,7 +124,7 @@ following example:
 \ea
 \def\exfont{\normalsize\it}
 \gll Piloten         fik frataget    sit certifikat\footnotemark\\
-     pilot.{\sc def} got deprived.of his license\\
+     pilot.{\scshape def} got deprived.of his license\\
 \footnotetext{KorpusDK.}
 \glt `The pilot was deprived of his license to fly.'
 \z 
@@ -213,20 +213,20 @@ page~\pageref{ex-typology} are typeset as follows:
   \z
 \z
 
-\def\exfont{\normalsize\rm}
+\def\exfont{\normalsize\upshape}
 
 \section{\texttt{jambox}}
 \label{sec-jambox}
 
 
-The\ispackageb{jam\-box} package \texttt{jambox} by Alexis Dimitriadis\aimention{Alexis Dimitriadis} can be used to provide information about the language of an example or
+The\ispackageb{jam\-box} package \texttt{jambox} by Alexis Dimitriadis\ia{Alexis Dimitriadis} can be used to provide information about the language of an example or
 about a certain other aspect to be highlighted.\il{Maltese}
 \settowidth\jamwidth{VSO}
 \eal
 \ex[]{
 \label{ex-ingrid-kielet-ilmazzita}
 \gll Ingrid kiel-et il-mazzit-a.\\
-     Ingrid eat-{\sc 3sg.f} {\sc def}-black.pudding-{\sc sg.f}\\ \jambox{(SVO)}
+     Ingrid eat-{\scshape 3sg.f} {\scshape def}-black.pudding-{\scshape sg.f}\\ \jambox{(SVO)}
 \glt `Ingrid ate black pudding.'
 }
 \ex[]{
@@ -367,7 +367,7 @@ for children={l+=5mm,no edge}
 
 \section{DRSes: \texttt{drs}}
 
-DRSes\ispackageb{drs} can be typeset using the \texttt{drs} package by Alexis Dimitriadis\aimention{Alexis
+DRSes\ispackageb{drs} can be typeset using the \texttt{drs} package by Alexis Dimitriadis\ia{Alexis
   Dimitriadis}. There are various commands that let you typeset simple DRSes, ones with implications
 and DRSes with quantifiers. Some examples from the manual are given below:
 
@@ -408,10 +408,10 @@ and DRSes with quantifiers. Some examples from the manual are given below:
 \section{AVMs}
 
 The package for typesetting AVMs that is most widely used is the package \texttt{avm}\ispackage{avm}
-by Chris Manning\aimention{Chris Manning}. 
+by Chris Manning\ia{Chris Manning}. 
 
 %% This package is described in the following
-%% subsection. Section~\ref{sec-lsp-avm} describes AVM macros that were put together by Markus Duda\aimention{Markus Duda}.
+%% subsection. Section~\ref{sec-lsp-avm} describes AVM macros that were put together by Markus Duda\ia{Markus Duda}.
 
 %% \subsection{\texttt{avm}}
 
@@ -452,7 +452,7 @@ by Chris Manning\aimention{Chris Manning}.
 \end{verbatim}
 %
 The command {\bs}tp is defined as follows (the code is taken from Detmar
-Meurers'\aimention{Detmar Meurers} \texttt{avm+}\ispackage{avm+}):
+Meurers'\ia{Detmar Meurers} \texttt{avm+}\ispackage{avm+}):
 \begin{verbatim}
 % command to fontify the type values of an avm 
 \newcommand{\tpv}[1]{{\avmjvalfont #1}}
@@ -502,7 +502,7 @@ The package has a good documentation and we will not repeat all the details here
 %% \label{sec-lsp-avm}
 
 %% An alternative way to typeset AVMs is provided in the \lsp style file \texttt{lsp-avm} that contains
-%% code by Markus Duda\aimention{Markus Duda} with some adaptions by Stefan Müller\aimention{Stefan
+%% code by Markus Duda\ia{Markus Duda} with some adaptions by Stefan Müller\ia{Stefan
 %%   M{\"u}ller}. The AVM in (\ref{ex-avm-avm}) is typeset as follows:
 
 %% \ea
@@ -594,7 +594,7 @@ right text.\footnote{
 \ea
 % \PRL{او مرد را دوست نخواهد داشت.}\\
  \gll U      mard rā        dust   naxāhad        dāšt.\\
-      He/she man  {\sc dom} friend {\sc neg}.want have\\
+      He/she man  {\scshape dom} friend {\scshape neg}.want have\\
 \glt `He/she will not love the man.'
 \z
 
@@ -608,7 +608,7 @@ right text.\footnote{
 \ea
 \PRL{او مرد را دوست نخواهد داشت.}\\
 \gll U      mard rā       dust   naxāhad        dāšt.\\
-     He/she man {\sc dom} friend {\sc neg}.want have\\
+     He/she man {\scshape dom} friend {\scshape neg}.want have\\
 \glt `He/she will not love the man.'
 \z
 \end{verbatim}
@@ -621,14 +621,14 @@ font has to be loaded to set examples like \REF{ex:latex:hebrew}:
 \ea\label{ex:latex:hebrew}
 % \RL{האישה קוראת ספר.}\\
 \gll   ha-'iša          qore't                            sefer.\\
-       {\sc def}-woman  read.{\sc pres}.{\sc f}.{\sc sg}  book\\
+       {\scshape def}-woman  read.{\scshape pres}.{\scshape f}.{\scshape sg}  book\\
 \glt `The woman is reading a book.'
 \z
 % \begin{fitverb}
 \ea
 % \RL{האישה קוראת ספר.}\\
 \gll   ha-'iša          qore't                            sefer.\\
-       {\sc def}-woman  read.{\sc pres}.{\sc f}.{\sc sg}  book\\
+       {\scshape def}-woman  read.{\scshape pres}.{\scshape f}.{\scshape sg}  book\\
 \glt `The woman is reading a book.'
 \z
 % \end{fitverb}
@@ -664,22 +664,22 @@ If you find symbols that are not covered by the font, please use the \texttt{tip
 % \section{\texttt{german} for hyphenation}
 % 
 % If\is{hyphenation|(}\ispackageb{german} you write things like {\bs}head-driven or very long paths like
-% {\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
+% {\scshape snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
 % (in the part following the dash).
 % 
 % german.sty+ provides additional markup that allows for proper hyphenation:
 % \begin{verbatim}
 % head"=driven
 % 
-% {\sc snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}
+% {\scshape snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}
 % \end{verbatim}
-% With this markup even long paths like {\sc snysem$|$loc$|$cat$|$""head$|$""mod$|$""loc$|$""cat$|$""head}
+% With this markup even long paths like {\scshape snysem$|$loc$|$cat$|$""head$|$""mod$|$""loc$|$""cat$|$""head}
 % are typeset properly. Alternatively you my write
 % \begin{verbatim}
-% {\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod}
+% {\scshape snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod}
 % \end{verbatim}
 % which introduces a dash at the place of the linebreak:
-% {\sc snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod$|$\-loc$|$\-cat$|$\-head}.
+% {\scshape snysem$|$\-loc$|$\-cat$|$\-head$|$\-mod$|$\-loc$|$\-cat$|$\-head}.
 % 
 % If you use german.sty for a book whose primary language is not German, do not forget to
 % specify the language you are using. For example, if your book is in US English you have to specify

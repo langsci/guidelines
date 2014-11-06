@@ -17,6 +17,29 @@
 \newcommand{\latex}{\LaTeX\xspace}
 
 
+\newcommand{\isfeat}[1]{\if@noftnote%
+\index{feature!{\scshape #1}}%
+\else%
+%\index{feature!{\scshape #1}|fn{\thefootnote}}%
+\is{feature!{\scshape #1}|fn{*}}%
+\fi%
+}
+
+\newcommand{\istype}[1]{\if@noftnote%
+\is{type!#1@\type{#1}}%
+\else%
+%\index{type!{\it #1}|fn{\thefootnote}}
+\is{type!#1@\type{#1}|fn{*}}%
+\fi%
+}
+
+\newcommand{\isrel}[1]{\if@noftnote%
+\is{relation!\emph{#1}}%
+\else%
+\is{relation!\emph{#1}|fn{*}}%
+\fi%
+}
+
 % \usepackage{embrac}
 
 % just for the XeLaTeX logo
@@ -49,8 +72,8 @@
 
 % AVMs
 \usepackage{avm}
-\avmfont{\sc} 
-\avmvalfont{\it}
+\avmfont{\scshape} 
+\avmvalfont{\itshape}
 
 % command to fontify the type values of an avm 
 \newcommand{\tpv}[1]{{\avmjvalfont #1}}
@@ -59,10 +82,10 @@
 \newcommand{\tp}[1]{\avmspan{\tpv{#1}}}
 
 
-\usepackage{tikz-qtree}
+% \usepackage{tikz-qtree}
 % has strange side effects
 %\tikzset{every tree node/.style={align=left, anchor=north}}
-\tikzset{every roof node/.append style={inner sep=0.1pt,text height=2ex,text depth=0.3ex}}
+% \tikzset{every roof node/.append style={inner sep=0.1pt,text height=2ex,text depth=0.3ex}}
 
 \usepackage{jambox}
 
@@ -86,7 +109,7 @@
 
 \def\exfont{\normalsize\itshape}
      
-
+\author{Sebastian Nordhoff and Stefan Müller}
 \title{Language Science Press guidelines}  
 \subtitle{Complete set of guidelines}
 \BackTitle{Language Science Press guidelines}    
@@ -122,7 +145,7 @@
 \phantomsection%this allows hyperlink in ToC to work
 \addcontentsline{toc}{section}{Name index}
 \ohead{Name index} 
-\printindex[aut]
+\printindex 
   
 \phantomsection%this allows hyperlink in ToC to work
 \addcontentsline{toc}{section}{Language index}
@@ -132,6 +155,6 @@
 \phantomsection%this allows hyperlink in ToC to work
 \addcontentsline{toc}{section}{Subject index}
 \ohead{Subject index} 
-\printindex                           
+\printindex[sbj]                        
 \end{document}
       
