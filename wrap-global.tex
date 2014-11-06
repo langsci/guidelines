@@ -3,7 +3,8 @@
                 ,series=guidelines,
                 ,isbn=000-0-000000-00-0,
                 ,url=http://langsci-press.org/catalog/book/0,
-	        ,output=guidelines    % long|short|inprep              
+	        ,output=guidelines    % long|short|inprep   
+	        ,biblatex
 	        %,blackandwhite
 	        %,smallfont
 % 	        ,draftmode  
@@ -117,6 +118,10 @@
 \newcommand{\computer}[1]{\texttt{\small #1}}
 \newcommand{\bs}{$\backslash$}
 % \input{localcommands.tex}
+
+\bibliography{lsp-abbrev,lsp-guidelines}  
+
+
 \begin{document}                
 \maketitle                
 \tableofcontents      
@@ -136,7 +141,7 @@
 % \include{serieseditors}
 
 \backmatter
-\bibliography{lsp-abbrev,lsp-guidelines}  
+
  
 \clearpage
    
