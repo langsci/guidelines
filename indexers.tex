@@ -5,7 +5,7 @@ For the various ways to add entries to the index, refer to \tabref{tab:latex:ind
 \begin{table}[h]
 \caption{Commands for creating index entries.}
 \label{tab:latex:indexentriese}
- \begin{tabular}{p{2.5cm}>{\tt\small\raggedright}p{6.5cm}p{3cm}}
+ \begin{tabular}{p{2.5cm}>{\tt\small\raggedright}p{6.5cm}l}
   \lsptoprule
   type & \rm\normalsize command & indexed term \\
   \midrule
@@ -29,9 +29,10 @@ When your are done with adding index terms to your document, the following comma
 \begin{verbatim}
 makeindex -o yourfilename.ind yourfilename.idx
 makeindex -o yourfilename.lnd yourfilename.ldx
+makeindex -o yourfilename.snd yourfilename.sdx
 \end{verbatim}
  
-The author index should be produced automatically.
+% The author index should be produced automatically.
 % \begin{verbatim} 
 % authorindex -i -p yourfilename.aux > yourfilename.bib.adx
 % sed 's/|hyperpage//' yourfilename.adx > yourfilename.txt.adx 

@@ -278,69 +278,92 @@ jambox to {\bs}settowidth:
 
 
 
-\section{Trees: \texttt{tikz-qtree}}
+\section{Trees: \texttt{forest}}
+Linguistic trees can be typeset with the \computer{forest} package. An example is given below.
 
-Several\ispackageb{tikz-qtree} tree-drawing packages are around and all have their advantages and disadvantages. I
-used \texttt{tree-dvips} for decades, but it is incompatible with \xelatex, since it creates
-PostScript rather than PDF. Exploring the options I discovered \texttt{tikz-qtree}, which is a
-tikz-based\ispackage{tikz} reimplementation of Alexis Dimitriadis'\aimention{Alexis Dimitriadis} \texttt{q-tree}
-package. The syntax for drawing trees is rather simple and in comparison to \texttt{tree-dvips} drawing trees
-is considerably speeded up. \figref{fig:showcases:the-dog-barks} shows a simple example.
+\begin{verbatim}
+\begin{forest}
+  [VP
+    [DP[John]]
+    [V’
+      [V[sent]]
+      [DP[Mary]]
+      [DP[D[a]][NP[letter]]]
+    ]
+  ]
+\end{forest}
+\end{verbatim}
+\begin{forest}
+[VP
+[DP[John]]
+[V’
+[V[sent]]
+[DP[Mary]]
+[DP[D[a]][NP[letter]]]
+]
+]
+\end{forest}
 
-\begin{figure}[htbp]
-\centerline{%
-\begin{tikzpicture}
-\tikzset{level 1+/.style={level distance=2\baselineskip}}
-\tikzset{frontier/.style={distance from root=6\baselineskip}}
-\Tree[.S
-       [.NP 
-         [.Det the ]
-         [.N   dog ] ]
-       [.VP barks ] ]
-\end{tikzpicture}
+A more complicated example, showing the power of the \computer{forest} package is given below
+
+\begin{verbatim}
+ \begin{forest}
+myGP1/.style={
+GP1,
+delay={where tier={x}{
+for children={content=\textipa{##1}}}{}},
+tikz={\draw[dotted](.south)--
+(!1.north west)--(!l.north east)--cycle;},
+for children={l+=5mm,no edge}
 }
-\caption{\label{fig-the-dog-barks}Tree for \emph{The dog barks.} drawn with \texttt{tikz-qtree}}
-\label{fig:showcases:the-dog-barks}
-\end{figure}
-% \begin{fitverb}
-% \begin{tikzpicture}
-% \tikzset{level 1+/.style={level distance=2\baselineskip}}
-% \tikzset{frontier/.style={distance from root=6\baselineskip}}
-% \Tree[.S
-%        [.NP 
-%          [.Det the ]
-%          [.N   dog ] ]
-%        [.VP barks ] ]
-% \end{tikzpicture}
-% \end{fitverb}
-
-The code below shows how words below a certain node can be put under a triangle as in \figref{fig:showcases:the-dog-barks-abbreviated}.
-\begin{figure}[htbp]
-\centerline{%
-\begin{tikzpicture}
-\tikzset{level 1+/.style={level distance=2\baselineskip}}
-\tikzset{frontier/.style={distance from root=5\baselineskip}}
-\Tree[.S
-       [.NP  \edge[roof]; {the dog} ]
-       [.VP barks ] ]
-\end{tikzpicture}
+[VP[DP[John,tier=word,myGP1
+[O[x[dZ]]]
+[R[N[x[6]]]]
+[O[x[n]]]
+[R[N[x]]]
+]][V’[V[loves,tier=word,myGP1
+[O[x[l]]]
+[R[N[x[a]]]]
+[O[x[v]]]
+[R[N[x]]]
+[O[x[z]]]
+[R[N[x]]]
+]][DP[Mary,tier=word,myGP1
+[O[x[m]]]
+[R[N[x[e]]]]
+[O[x[r]]]
+[R[N[x[i]]]]
+]]]]
+\end{forest}%
+\end{verbatim}
+\begin{forest}
+myGP1/.style={
+GP1,
+delay={where tier={x}{
+for children={content=\textipa{##1}}}{}},
+tikz={\draw[dotted](.south)--
+(!1.north west)--(!l.north east)--cycle;},
+for children={l+=5mm,no edge}
 }
-\caption{Tree for \emph{The dog barks.} with abbreviated NP}
-\label{fig:showcases:the-dog-barks-abbreviated}
-\end{figure}
-
-\begin{samepage}
-% \begin{fitverb}
-\begin{tikzpicture}
-\tikzset{level 1+/.style={level distance=2\baselineskip}}
-\tikzset{frontier/.style={distance from root=5\baselineskip}}
-\Tree[.S
-       [.NP  \edge[roof]; {the dog} ]
-       [.VP barks ] ]
-\end{tikzpicture}
-% \end{fitverb}
-\end{samepage}
-\ispackagee{tikz-qtree} 
+[VP[DP[John,tier=word,myGP1
+[O[x[dZ]]]
+[R[N[x[6]]]]
+[O[x[n]]]
+[R[N[x]]]
+]][V’[V[loves,tier=word,myGP1
+[O[x[l]]]
+[R[N[x[a]]]]
+[O[x[v]]]
+[R[N[x]]]
+[O[x[z]]]
+[R[N[x]]]
+]][DP[Mary,tier=word,myGP1
+[O[x[m]]]
+[R[N[x[e]]]]
+[O[x[r]]]
+[R[N[x[i]]]]
+]]]]
+\end{forest}%
 
 \section{DRSes: \texttt{drs}}
 
@@ -511,67 +534,11 @@ The package has a good documentation and we will not repeat all the details here
 \section{OT tableaux}
 
 
-This\is{Optimality Theory|(}\is{tabular} section just provides some examples of how Optimality Tableaux can be typeset.
+This\is{Optimality Theory|(}\is{tabular} section just provides a simple example of how Optimality Tableaux can be typeset.
 
-\begin{tabular}
-       {|lc|c|c|c|}\hline   
-      & \textbf{Input}  & Cnstrnt 1  &  Cnstrnt 2& Cnstrnt 3\\ \hline\hline
-      & candidate 1     & *!         &           &          \\ \hline
-      & candidate 2     &            &  *        &          \\ \hline
-\hand & candidate 3     &            &           &  *       \\ \hline
-\end{tabular}
-
-% \begin{fitverb}
-\begin{tabular}
-       {|lc|c|c|c|}\hline   
-      & \textbf{Input}  & Cnstrnt 1  &  Cnstrnt 2& Cnstrnt 3\\ \hline\hline
-      & candidate 1     & *!         &           &          \\ \hline
-      & candidate 2     &            &  *        &          \\ \hline
-\hand & candidate 3     &            &           &  *       \\ \hline
-\end{tabular}
-% \end{fitverb}
-
-{\bs}hand is defined as follows:
-
-\begin{verbatim}
-\usepackage{pifont}
-\newcommand{\hand}{\ding{43}}
-\end{verbatim}
- 
-
-
-\begin{tabular*}{0.95\textwidth}
-    {@{\extracolsep{\fill}}|rl||c|c|c|}\hline   
-      & \textbf{Input} & Constraint 1 & Constraint 2 & Constraint 3 \\ \hline\hline
-      & candidate 1    & *!           &              &              \\ \hline
-      & candidate 2    &              &  *           &              \\ \hline
-\hand & candidate 3    &              &              &  *           \\ \hline
-\end{tabular*}
-
-% \begin{fitverb}
-\begin{tabular*}{0.95\textwidth}
-    {@{\extracolsep{\fill}}|rl||c|c|c|}\hline   
-      & \textbf{Input} & Constraint 1 & Constraint 2 & Constraint 3 \\ \hline\hline
-      & candidate 1    & *!           &              &              \\ \hline
-      & candidate 2    &              &  *           &              \\ \hline
-\hand & candidate 3    &              &              &  *           \\ \hline
-\end{tabular*}
-% \end{fitverb}
-
-\begin{tabular}[t]{r|c|c|c|}
-\cline{2-4}
-      & /qi/  & qi    & qi         \\
-\LCC 
-      &       &       & \lightgray \\ \cline{2-4}
-\hand & [qi]  &       & *          \\ \cline{2-4}
-      & [*qi] & *!    &            \\ \cline{2-4}
-\ECC
-\end{tabular}
 
 
 \begin{verbatim}
-\usepackage{pstricks,colortab}
-
 \begin{tabular}[t]{r|c|c|c|}
 \cline{2-4}
       & /qi/  & qi    & qi         \\
@@ -583,41 +550,23 @@ This\is{Optimality Theory|(}\is{tabular} section just provides some examples of 
 \end{tabular}
 \end{verbatim}
 
-
-\begin{tabular}{|l||c|c|} \hline
-          &VO          &OV         \\ \hline\hline
-\LCC
-          &            &\lightgray \\ \hline
-prefixing &Tagalog     &Ma'a       \\ \hline
-\ECC
-\LCC
-           &\lightgray &            \\ \hline
-suffixing  &Kwakwala   &Japanese    \\ \hline
+\begin{tabular}[t]{r|c|c|c|}
+\cline{2-4}
+      & /qi/  & qi    & qi         \\
+\LCC 
+      &       &       & \lightgray \\ \cline{2-4}
+\hand & [qi]  &       & *          \\ \cline{2-4}
+      & [*qi] & *!    &            \\ \cline{2-4}
 \ECC
 \end{tabular}
-
-\begin{verbatim}
-\begin{tabular}{|l||c|c|} \hline
-          &VO          &OV         \\ \hline\hline
-\LCC
-          &            &\lightgray \\ \hline
-prefixing &Tagalog     &Ma'a       \\ \hline
-\ECC
-\LCC
-           &\lightgray &            \\ \hline
-suffixing  &Kwakwala   &Japanese    \\ \hline
-\ECC
-\end{tabular}
-\end{verbatim}
-\is{Optimality Theory|)}
-
 
 \section{Conversation transcripts} 
+To be completed.
 
 \section{Font issues and right to left scripts}
 
 Since\is{font|(} we are using \xelatex, all fonts that are installed in the cannonical font directories can be
-used. We are using the font \texttt{Linux Libertine}, which is unicode-based and contains a lot of
+used. We are using the font Linux Libertine, which is unicode-based and contains a lot of
 the characters linguists want to use.
 
 \subsection{Chinese}

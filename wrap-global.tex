@@ -12,6 +12,7 @@
           
 \hypersetup{pdfdisplaydoctitle=true}
 
+\usepackage{forest}
 \usepackage{xspace}
 \newcommand{\latex}{\LaTeX\xspace}
 
@@ -90,9 +91,11 @@
 \subtitle{Complete set of guidelines}
 \BackTitle{Language Science Press guidelines}    
 
-\input{localcommands.tex}
+\newcommand{\computer}[1]{\texttt{\small #1}}
+\newcommand{\bs}{$\backslash$}
+% \input{localcommands.tex}
 \begin{document}                
-% \maketitle                
+\maketitle                
 \tableofcontents      
 \mainmatter     
 

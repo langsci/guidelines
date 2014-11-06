@@ -115,19 +115,14 @@ In your \latex editor, there are various ways to create a pdf from your sourceco
 
 In order to include the bibliography, you have to run \computer{bibtex} to read the bibliography, and then again \computer{xelatex} to include it into your document. Pay attention to error messages and warnings.
 
+\newpage
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp people. The relevant commands are:
 
 \begin{verbatim}
 makeindex -o lsp-skeleton.ind lsp-skeleton.idx
 makeindex -o lsp-skeleton.lnd lsp-skeleton.ldx 
-authorindex -i -p lsp-skeleton.aux > lsp-skeleton.bib.adx
-sed 's/|hyperpage//' lsp-skeleton.adx > lsp-skeleton.txt.adx 
-cat lsp-skeleton.bib.adx lsp-skeleton.txt.adx > lsp-skeleton.combined.adx 
-makeindex -o lsp-skeleton.and lsp-skeleton.combined.adx
-\end{verbatim}
-
-Because the whole compilation process is rather involved, there is a shortcut for the creation of the complete document: type \computer{make} into the terminal, hit enter, and the right sequence of commands should run automatically!
-
+makeindex -o lsp-skeleton.snd lsp-skeleton.sdx
+\end{verbatim} 
 
 
 \section{Adapting the structure of the document}
@@ -136,7 +131,7 @@ The general structure of the document is given by \lsp. You have a couple of opt
  \item You can choose the skeleton for monograph or edited volume
  \item You can add additional chapters to the directory \computer{chapters}, for instance\\ \computer{chapters/chapter4.tex} or \computer{chapters/introduction.tex}. Make sure to add \computer{{\bs}include\{chapters/introduction} (without \computer{.tex}) to your main file.
  \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \computer{{\bs}addchap\{Preface\}}
-\end{itemize}
+ \end{itemize}
 
 
 
@@ -149,17 +144,16 @@ The wealth of commands available in \latex can be daunting at first sight. Howev
 \item \computer{{\bs}subsubsection\{titleofheading\}}
 \end{itemize}
 
-These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \computer{{\bs}addchap\{Preface\}} instead of \computer{{{\bs}chapter\{Preface\}}}.
- 
+These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \computer{{\bs}addchap\{Preface\}} instead of \computer{{{\bs}chapter\{Preface\}}}. 
 Other common commands are 
-\computer{{\bs}label\{labelname\}} 
+\computer{{\bs}label\{label name\}} 
 to assign a label, and 
-\computer{{\bs}ref\{ labelname\}}
+\computer{{\bs}ref\{labelname\}}
 to refer to a label. It is good practice to use 
 \computer{{\bs}sectref\{labelname\}},
 \computer{{\bs}tabref\{labelname\}},
-\computer{{\bs}figref\{labelname\}},
-to refer to sections, tables, and figures, respectively. A reference to this section will be \computer{see {\bs}sectref\{sec:latex: commoncommands\}}, which will produce ``see \sectref{sec:latex:commoncommands}''.
+\computer{{\bs}figref\{ labelname\}},
+to refer to sections, tables, and figures, respectively. A reference to this section will be \computer{see {\bs}sectref\{sec:latex:commoncommands\}}, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
 Other commands very often used in academic texts are \computer{{\bs}citet\{somework\}} and \computer{{\bs}citep\{somework\}}. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \computer{{\bs}citealt\{ somework\}}. Page numbers are added with \computer{{\bs}citet[99-{}-123]\{somework\}}. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \computer{somework} is the key of a record in your \bibtex file. When \computer{somework} is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
 
@@ -209,7 +203,7 @@ In order to add a graphic, use the following stretch of code
 
 \begin{verbatim}
 \begin{figure}
-  \includegraphics[height.3\textheight]{figures/filename.png}
+  \includegraphics[height=.3\textheight]{filename.png}
   \caption{Some good caption.}
   \label{fig:chapterhandle:keytofigure}
 \end{figure}
@@ -234,7 +228,7 @@ In order to add a table, use the following stretch of code:
 \end{table}
 \end{verbatim}
 
-This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \computer{{\bs}begin\{tabular\}\{p\{4cm\} p\{4cm\}p\{4cm\}\}}, rather than \computer{{\bs}begin\{tabular\}\{lll\}}
+This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \computer{{\bs}begin\{tabular\} \{p\{4cm\}p\{4cm\}p\{4cm\}\}}, rather than \computer{{\bs}begin\{tabular\}\{lll\}}
 \begin{table}[h]
   \begin{tabular}{lll}
     \lsptoprule
@@ -257,7 +251,7 @@ In order to add footnotes, use the command \computer{{\bs}footnote\{...\}}. If y
 
 A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, simply use \computer{sidewaysfigure} or \computer{sidewaystable} instead of the normal \computer{figure} or \computer{table}.
 
-Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, you can use \computer{{\bs}resizebox\{{\bs}linewidth\}\{!\}\{stuff to resize\}}.
+Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, you can use \computer{{\bs}resizebox\{{\bs}linewidth\} \{!\}\{stuff to resize\}}.
 
 For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
 \section{Adapting the class to your needs}
