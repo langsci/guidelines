@@ -4,30 +4,30 @@
 \section{Front matter}
 
 The front matter of \lsp books is structured as follows
-\begin{itemize}
- \item optional dedication
- \item obligatory table of contents 
-%  \item obligatory Notes on contributors (only in edited volumes)
- \item optional notational conventions
- \item optional acknowledgements
- \item optional preface
- \item optional list of abbreviations
- \item no lists of figures or lists of tables!
-\end{itemize}
-
+\begin{table}[h]
+\begin{tabular}{p{4cm}p{6cm}}
+ dedication & optional\\
+table of contents & obligatory\\
+notational conventions & optional\\
+acknowledgements & optional\\
+preface & optional\\
+list of abbreviations & optional\\
+\multicolumn{2}{l}{No lists of figures or tables!}\\
+\end{tabular}
+\end{table}
 \section{Back matter}
 The back matter is structured as follows:
-
-\begin{itemize}
- \item optional Appendix A
- \item optional Appendix B etc
- \item optional further appendices
- \item obligatory Bibliography
- \item obligatory Author index
- \item optional Language index (advisable if the book talks about a larger number of languages)
- \item obligatory Subject index
- 
-\end{itemize}
+\begin{table}[h]
+\begin{tabular}{p{4cm}p{6cm}}
+ Appendix A & optional \\
+ Appendix B etc & optional \\
+ further appendices & optional \\
+ Bibliography & obligatory \\
+ Author index & obligatory \\
+ Language index  & optional (advisable if the book talks about a larger number of languages)\\
+ Subject index & obligatory \\
+\end{tabular}
+ \end{table}
 
 
 \chapter{Style rules}
@@ -155,7 +155,7 @@ family names are contained in curly brackets.
 % These authors will then be cited as \citet{VanEynde2006a} and \citet{vonStechow84a}.
  Note that Dutch names like ``de Hoop'' are not treated differently from other surnames.
 
-Many bibliographies have inconsistent capitalization. We decapitalize all titles and booktitles. If there is a proper name in a title, enclose it in \{\} to prevent decapitalization, e.g. \texttt{title = \{The languages of \{A\}frica\}}. Use the same procedure for German nouns and all other characters in titles which should not be decapitalized. This is not necessary for other fields, especially the author and editor fields, where capitalization is kept as is.
+Many bibliographies have inconsistent capitalization. We decapitalize all titles and booktitles. If there is a proper name in a title, enclose it in \verb+{}+ to prevent decapitalization, e.g. \verb+title = {The languages of {A}frica}+. Use the same procedure for German nouns and all other characters in titles which should not be decapitalized. This is not necessary for other fields, especially the author and editor fields, where capitalization is kept as is.
 
 The references in your \bibtex file will automatically be typeset correctly. So, provided the
 \bibtex file is correct, authors do not have to worry about this. But there are some things to
@@ -164,15 +164,25 @@ observe in the main text. Please cite as shown in Table~\ref{tab-citation}.
 \begin{table}[htbp]
 \caption{Citation style for \lsp}%
 \label{tab-citation}
-\begin{tabular}{p{1.8cm}>{\small}p{7cm}p{2cm}}
+\begin{tabular}{p{1.8cm}>{\small}p{6.2cm}p{4cm}}
 \lsptoprule
 citation type & example &yields\\
 \midrule
-author &  \computer{\raggedright As {\bs}citet[215]\{MZ85a\} have shown} &As \citet[215]{MZ85a} have shown\\[2em]
-       &  \computer{\raggedright As {\bs}citet[215]\{MZ85a\} and {\bs}citet\{Bloomfield1933language\} have shown} &  As \citet[215]{MZ85a} and \citet{Bloomfield1933language} have shown\\[2em]
-work   &  \computer{\raggedright As was shown in {\bs}citet[215]\{Saussure16a\}, this is a problem for theories that \ldots} & As was shown in \citet[215]{Saussure16a}, this is a problem for theories that \ldots\\[2em]
-work   &  \computer{\raggedright This is not true {\bs}citep\{Saussure16a, \mbox{Bloomfield1933language\}}.} & This is not true \citep{Saussure16a,Bloomfield1933language}.\\[2em]
-no double parentheses   & \computer{\raggedright This is not true ({\bs}citealt\{Saussure16a\} and especially {\bs}citealt\{Bloomfield1933language\}). }& This is not true (\citealt{Saussure16a} and especially \citealt{Bloomfield1933language}).\\
+author & \raggedright \verb+As \citet[215]{MZ85a}+
+	  \verb+have shown+             &As \citet[215]{MZ85a} have shown\\ 
+       & \raggedright  \verb+As \citet[215]{MZ85a} and+
+	  \verb+\citet{Bloomfield1933lg}+
+	  \verb+have shown+ 
+					  &  As \citet[215]{MZ85a} and \citet{Bloomfield1933lg} have shown\\ 
+work   & \raggedright  \verb+As was shown in+ 
+	  \verb+\citet[215]{Saussure16a},+
+	  \verb+this is a problem for theories that ...+ & As was shown in \citet[215]{Saussure16a}, this is a problem for theories that \ldots\\ 
+work   & \raggedright  \verb+This is not true \citep{+  
+	  \verb+Saussure16a,Bloomfield1933lg}.+ & This is not true \citep{Saussure16a,Bloomfield1933lg}.\\[2em]
+no double parentheses   & \raggedright \verb+This is not true+
+			    \verb+(\citealt{Saussure16a}+
+			    \verb+and especially+
+			    \verb+\citealt{Bloomfield1933lg}).+& This is not true (\citealt{Saussure16a} and especially \citealt{Bloomfield1933lg}).\\
 \lspbottomrule
 \end{tabular}
 \end{table}
@@ -182,8 +192,7 @@ If you have an enumeration of references in the text as in \emph{As X, Y, and Z 
 the normal punctuation of the respective language rather than special markup like `;'.
 
 If you refer to regions in a text, for instance 111--112, please do not use 111f.\ or 111ff.\ but provide the
-full information. 
-\newpage
+full information.  
+
 \section{Indexes}
 All {\lsp} books have a Subject Index and a Name Index. The Language Index is optional and should be used if the book treats several languages. Subject Index and Language Index have to be prepared by the authors completely. The Name Index is generated automatically from the citations in the text. This means that you only have to add people to the Name Index who, for whatever reason, are mentioned without connection to a work in the list of references. Examples would be politicians, ancient philosophers, novelists and the like.
- 

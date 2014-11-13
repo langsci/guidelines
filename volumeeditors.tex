@@ -1,11 +1,11 @@
 \chapter{Edited volumes}
 \section{Workflow}
-Edited volumes are submitted as a whole. It is thus the task of the volume editor to assure the integration of the various chapters. It is highly recommended that all authors use the templates provided (Word, LibreOffice, \latex). The editor should download the skeleton for edited volumes and add all author's files to the folder \computer{chapters}. In the skeleton, the files should be included via \computer{{\bs}includepaper\{ chapters/smith.tex\}}. Make sure that the options \computer{collection} and \computer{collectionchapter} are used in the preamble of your master file. If you use our skeleton for edited volumes, this is already done for you. 
+Edited volumes are submitted as a whole. It is thus the task of the volume editor to assure the integration of the various chapters. It is highly recommended that all authors use the templates provided (Word, LibreOffice, \latex). The editor should download the skeleton for edited volumes and add all author's files to the folder \verb+chapters+. In the skeleton, the files should be included via \verb+\includepa+ \verb+per{chapters/smith.tex}+. Make sure that the options \verb+collection+ and \verb+collectionchapter+ are used in the preamble of your master file. If you use our skeleton for edited volumes, this is already done for you. 
 The chapter templates for edited volumes contain fields for epigrams and abstracts. While abstracts should be used, epigrams should rather be avoided as they clutter the page in combination with the abstract. 
 
 
 
-All chapters will have their own list of references, but all lists will be built using the same {\bibtex} file. This is done in order to avoid that two authors cite the same work differently. In order to compile the bibliographies for the individual chapters, you have to run {\bibtex} on the relevant \computer{blx.aux} file which will show up after compiling the master file. There is a Makefile in the skeleton which includes all relevant commands.
+All chapters will have their own list of references, but all lists will be built using the same {\bibtex} file. This is done in order to avoid that two authors cite the same work differently. In order to compile the bibliographies for the individual chapters, you have to run {\bibtex} on the relevant \verb+blx.aux+ file which will show up after compiling the master file. There is a Makefile in the skeleton which includes all relevant commands.
      
 \section{Special style rules for edited volumes}
 Some special rules apply to the chapter of edited volumes:

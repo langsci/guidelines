@@ -11,7 +11,7 @@ There is a skeleton for monographies and a skeleton for edited volumes. Choose w
 Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
 \subsection{Online editor}
-In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \computer{chapters/filename.tex}.
+In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
 
 \begin{figure}
  \includegraphics[width=\textwidth]{writelatex.png}
@@ -20,7 +20,7 @@ In order to familiarize yourself with \latex, you might also want to try the web
 \end{figure}
 
 \section{The skeleton}
-The skeleton has a main file, which is called \computer{lsp-skeleton.tex}. You can leave that name or choose a name more suitable for your book, e.g. \computer{smith.tex} or \computer{hawaiiangrammar.tex}. That main file draws information from a number of other files which are in the same directory. All those files start with \computer{local\dots}. Furthermore, the main file includes the chapters, which are found in the directory \computer{chapters/}.
+The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can leave that name or choose a name more suitable for your book, e.g. \verb+smith.tex+ or \verb+hawaiiangrammar.tex+. That main file draws information from a number of other files which are in the same directory. All those files start with \verb+local...+. Furthermore, the main file includes the chapters, which are found in the directory \verb+chapters/+.
 
 \begin{table}[htb]
   \caption{File structure of the skeleton}
@@ -29,19 +29,19 @@ The skeleton has a main file, which is called \computer{lsp-skeleton.tex}. You c
     \lsptoprule
     file & content \\
     \midrule
-    \computer{localmetadata.sty} & information about the author, the title, the ISBN etc \\
-    \computer{localpackages.sty} & extra packages you might require, for instance for syntactic trees or Hebrew text\\
-    \computer{localcommands.sty} & extra commands you might want to define, e.g. for very frequent abbrevations in your text\\
-    \computer{localhyphenation.sty} & for words where the \latex hyphenation algorithm doe not produce the desired result      \\
-    \computer{localbibliography.bib} & your bibliography in \bibtex-format \\
-    \computer{chapters/chapter1.tex} & text \\
-    \computer{chapters/chapter2.tex} & text \\
+    \verb+localmetadata.sty+ & information about the author, the title, the ISBN etc \\
+    \verb+localpackages.sty+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
+    \verb+localcommands.sty+ & extra commands you might want to define, e.g. for very frequent abbrevations in your text\\
+    \verb+localhyphenation.sty+ & for words where the \latex hyphenation algorithm doe not produce the desired result      \\
+    \verb+localbibliography.bib+ & your bibliography in \bibtex-format \\
+    \verb+chapters/chapter1.tex+ & text \\
+    \verb+chapters/chapter2.tex+ & text \\
 ... & text \\
     \lspbottomrule
   \end{tabular}
 \end{table}
 
-A number of auxiliary files are generated on the fly, these are  \computer{.toc} for the table of contents; \computer{.bbl} for the bibliography; and \computer{.ind}, \computer{.and}, and \computer{.lnd} for the indexes.  
+A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.ind+, \verb+.and+, and \verb+.lnd+ for the indexes.  
 
 \section{Using the \texttt{langsci} class}
 There are a variety of programs for making writing \latex documents easier.
@@ -79,41 +79,41 @@ For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
   
 % \subsection{Included packages}
 % The following packages are already loaded by default: 
-% \computer{amssymb}, 
-% \computer{authorindex}, 
-% \computer{biblatex}, 
-% \computer{booktabs}, 
-% \computer{chngcntr}, 
-% \computer{chngcntr}, 
-% \computer{datetime}, 
-% \computer{epigraph}, 
-% \computer{etex}, 
-% \computer{floatrow}, 
-% \computer{fontspec}, 
-% \computer{geometry}, 
-% \computer{graphicx}, 
-% \computer{hyperref }, 
-% \computer{ifxetex}, 
-% \computer{index}, 
-% \computer{microtype}, 
-% \computer{natbib}, 
-% \computer{newtxmath}, 
-% \computer{pbox}, 
-% \computer{pst-barcode }, 
-% \computer{rotating}, 
-% \computer{scrpage2}, 
-% \computer{showidx}, 
-% \computer{textpos}, 
-% \computer{tocstyle}, 
-% \computer{url}, 
-% \computer{xcolor}, 
-% \computer{xspace}, 
-% \computer{xstring}. 
+% \verb+amssymb+, 
+% \verb+authorindex+, 
+% \verb+biblatex+, 
+% \verb+booktabs+, 
+% \verb+chngcntr+, 
+% \verb+chngcntr+, 
+% \verb+datetime+, 
+% \verb+epigraph+, 
+% \verb+etex+, 
+% \verb+floatrow+, 
+% \verb+fontspec+, 
+% \verb+geometry+, 
+% \verb+graphicx+, 
+% \verb+hyperref +, 
+% \verb+ifxetex+, 
+% \verb+index+, 
+% \verb+microtype+, 
+% \verb+natbib+, 
+% \verb+newtxmath+, 
+% \verb+pbox+, 
+% \verb+pst-barcode +, 
+% \verb+rotating+, 
+% \verb+scrpage2+, 
+% \verb+showidx+, 
+% \verb+textpos+, 
+% \verb+tocstyle+, 
+% \verb+url+, 
+% \verb+xcolor+, 
+% \verb+xspace+, 
+% \verb+xstring+. 
 % 
 \section{Producing the document}
-In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \computer{xelatex}. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \computer{{\bs}begin\{...\}} not followed by \computer{{\bs}end\{...\}}
+In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+
 
-In order to include the bibliography, you have to run \computer{bibtex} to read the bibliography, and then again \computer{xelatex} to include it into your document. Pay attention to error messages and warnings.
+In order to include the bibliography, you have to run \verb+bibtex+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
 
 \newpage
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp people. The relevant commands are:
@@ -129,8 +129,8 @@ makeindex -o lsp-skeleton.snd lsp-skeleton.sdx
 The general structure of the document is given by \lsp. You have a couple of options to change the structure:
 \begin{itemize}
  \item You can choose the skeleton for monograph or edited volume
- \item You can add additional chapters to the directory \computer{chapters}, for instance\\ \computer{chapters/chapter4.tex} or \computer{chapters/introduction.tex}. Make sure to add \computer{{\bs}include\{chapters/introduction} (without \computer{.tex}) to your main file.
- \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \computer{{\bs}addchap\{Preface\}}
+ \item You can add additional chapters to the directory \verb+chapters+, for instance\\ \verb+chapters/chapter4.tex+ or \verb+chapters/introduction.tex+. Make sure to add \verb+\include{chapters/introduction+ (without \verb+.tex+) to your main file.
+ \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \verb+\addchap{Preface}+
  \end{itemize}
 
 
@@ -138,29 +138,29 @@ The general structure of the document is given by \lsp. You have a couple of opt
 \section{Common commands}\label{sec:latex:commoncommands}
 The wealth of commands available in \latex can be daunting at first sight. However, very soon you will see that you can get a very long way with some very basic commands. The first batch involve the structure of your document, i.e. the various levels of headings. These are:
 \begin{itemize}
- \item \computer{{\bs}chapter\{titleofheading\}}
-\item \computer{{\bs}section\{titleofheading\}}
-\item \computer{{\bs}subsection\{titleofheading\}}
-\item \computer{{\bs}subsubsection\{titleofheading\}}
+ \item \verb+\chapter{titleofheading}+
+\item \verb+\section{titleofheading}+
+\item \verb+\subsection{titleofheading}+
+\item \verb+\subsubsection{titleofheading}+
 \end{itemize}
 
-These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \computer{{\bs}addchap\{Preface\}} instead of \computer{{{\bs}chapter\{Preface\}}}. 
+These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
 Other common commands are 
-\computer{{\bs}label\{label name\}} 
+\verb+\label{la+ \verb+belname}+ 
 to assign a label, and 
-\computer{{\bs}ref\{labelname\}}
+\verb+\ref{labelname}+
 to refer to a label. It is good practice to use 
-\computer{{\bs}sectref\{labelname\}},
-\computer{{\bs}tabref\{labelname\}},
-\computer{{\bs}figref\{ labelname\}},
-to refer to sections, tables, and figures, respectively. A reference to this section will be \computer{see {\bs}sectref\{sec:latex:commoncommands\}}, which will produce ``see \sectref{sec:latex:commoncommands}''.
+\verb+\sectref{labelname}+,
+\verb+\tabref{labelname}+,
+\verb+\figref{labelname}+,
+to refer to sections, tables, and figures, respectively. A reference to this section will be \verb+see \sectref{sec:latex:commonco+ \verb+mmands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
-Other commands very often used in academic texts are \computer{{\bs}citet\{somework\}} and \computer{{\bs}citep\{somework\}}. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \computer{{\bs}citealt\{somework\}}. Page numbers are added with \computer{{\bs}citet[99-{}-123]\{somework\}}. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \computer{somework} is the key of a record in your \bibtex file. When \computer{somework} is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
+Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99+ \verb+--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
 
 
 If some text should not be in the normal font, use 
-\computer{{\bs}textit\{text to be changed\}} for italics, 
-\computer{{\bs}textsc\{text to be changed\}} for small capitals. There is generally no need to use boldface. If you want to use boldface, get in touch with your series editors.
+\verb+\textit{text to chan+ \verb+ge}+ for italics, 
+\verb+\textsc{text to change}+ for small capitals. There is generally no need to use boldface. If you want to use boldface, get in touch with your series editors.
 
 \subsection{Linguistic examples}
 Linguistic examples are typeset like this
@@ -195,8 +195,8 @@ Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The 
 \z
 \end{verbatim}
 
-For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \computer{lsp-gb4e}.
-\computer{{\bs}langinfo} should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \computer{{\bs}citealt} rather than \computer{{\bs}citep}.
+For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \verb+lsp-gb4e+.
+\verb+\langinfo+ should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \verb+\citealt+ rather than \verb+\citep+.
 
 \subsection{Graphics}
 In order to add a graphic, use the following stretch of code
@@ -228,7 +228,7 @@ In order to add a table, use the following stretch of code:
 \end{table}
 \end{verbatim}
 
-This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \computer{{\bs}begin\{tabular\} \{p\{4cm\}p\{4cm\}p\{4cm\}\}}, rather than \computer{{\bs}begin\{tabular\}\{lll\}}
+This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \verb+\begin{tabular}{p{4cm}p{4cm}p{4cm}}+, rather than \verb+\begin{tabular}{lll}+
 \begin{table}[h]
   \begin{tabular}{lll}
     \lsptoprule
@@ -246,18 +246,19 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
 You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used. 
 
 \subsection{Footnotes}
-In order to add footnotes, use the command \computer{{\bs}footnote\{...\}}. If you want to use a footnote in an example, use \computer{word word word {\bs}\{footnotemark\} word word} and add a line with \computer{{\bs}footnotetext\{text of the footnote\}} just before the translation of the example. You should not add footnotes to tables or figures.
+In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word {\footnotemark} word word}+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures.
 
 
-A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, simply use \computer{sidewaysfigure} or \computer{sidewaystable} instead of the normal \computer{figure} or \computer{table}.
+A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, use \verb+sidewaysfigure+ or \verb+sidewaystable+ instead of the normal \verb+figure+ or \verb+table+.
 
-Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, you can use \computer{{\bs}resizebox\{{\bs}linewidth\} \{!\}\{stuff to resize\}}.
+Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, use \verb+\resizebox{\linewidth}{!}+ \verb+{stuff to resize}+.
 
 For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
+
 \section{Adapting the class to your needs}
 
-Additional packages can be added via \computer{{\bs}usepackage\{packagename\}} in the file \computer{localpackages.sty}.
-Addtional commands can be added via \computer{{\bs}newcommand\{ commandname\}\,\{commanddefinition\}} in the file \computer{localcommands.sty}. 
+Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.sty+.
+Addtional commands can be added via \verb+{\newco+ \verb+mmand{commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.sty+. 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.

@@ -15,7 +15,7 @@ While it is preferable to work in \latex from the start, this is not always poss
 \end{figure}
 
 \section{Manual conversion}
-If you want to convert your file on your local computer, you can use the program \computer{writer2latex}. The relevant command is 
+If you want to convert your file on your local computer, you can use the program \verb+writer2latex+. The relevant command is 
 \begin{verbatim}
 w2l -wrap_lines_after=0 -multilingual=false 
 -simple_table_limit=10 -use_supertabular=false 
@@ -63,19 +63,17 @@ One has to manually join the former and the latter part to get
 \z 
 \end{verbatim} 
 
-Furthermore, \computer{{\bs}langinfo} has to be adapted to reflect the correct language, family and source of the example, or removed altogether. In this particular case, one would use  \computer{{\bs}langinfo\{French\}\{Indo-European\}\{René Magritte\}{\bs}{\bs}}
+Furthermore, \verb+\langinfo+ has to be adapted to reflect the correct language, family and source of the example, or removed altogether. In this case, one would use  \verb+\langinfo{French}{Indo-European}{René Magritte}\\+
 
 \subsection{Graphics}
 All graphics are commented out by default since the files will not be available on writelatex until you upload them. So the following stretch
 
 \begin{verbatim}
  \begin{figure}[h]
-
- [Warning: Image ignored] % Unhandled or unsupported graphics:
-%\includegraphics[width=3.3898in,height=3.4319in,width=\textwidth]
+[Warning: Image ignored] %Unhandled or unsupported graphics:
+%\includegraphics[width=\textwidth]
 {a8dc5773011814b3b98013db7af4ec7e9-img1.png}
 \caption[Some caption]{Some caption}
-
 \end{figure}
 \end{verbatim}
 
@@ -84,7 +82,7 @@ has to become
 
 \begin{verbatim}
 \begin{figure}[h]
- \includegraphics[width=\textwidth]{therealnameofthefile.png}
+ \includegraphics[width=\textwidth]{realnameofthefile.png}
  \caption{Some caption}
  \label{fig:chaptername:filehandle}
 \end{figure}

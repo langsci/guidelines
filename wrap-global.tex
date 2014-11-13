@@ -17,29 +17,7 @@
 \usepackage{xspace}
 \newcommand{\latex}{\LaTeX\xspace}
 
-
-\newcommand{\isfeat}[1]{\if@noftnote%
-\index{feature!{\scshape #1}}%
-\else%
-%\index{feature!{\scshape #1}|fn{\thefootnote}}%
-\is{feature!{\scshape #1}|fn{*}}%
-\fi%
-}
-
-\newcommand{\istype}[1]{\if@noftnote%
-\is{type!#1@\type{#1}}%
-\else%
-%\index{type!{\it #1}|fn{\thefootnote}}
-\is{type!#1@\type{#1}|fn{*}}%
-\fi%
-}
-
-\newcommand{\isrel}[1]{\if@noftnote%
-\is{relation!\emph{#1}}%
-\else%
-\is{relation!\emph{#1}|fn{*}}%
-\fi%
-}
+ 
 
 % \usepackage{embrac}
 
