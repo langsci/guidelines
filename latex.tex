@@ -46,9 +46,9 @@ A number of auxiliary files are generated on the fly, these are  \computer{.toc}
 \section{Using the \texttt{langsci} class}
 There are a variety of programs for making writing \latex documents easier.
 
-For Microsoft Windows, Texniccenter is the most popular one \figref{fig:latex:texniccenter}.
+For Microsoft Windows, Texniccenter is the most popular one (\figref{fig:latex:texniccenter}).
 For Mac, Texshop (\figref{fig:latex:texshop}) and Texstudio (\figref{fig:latex:texstudio}) are popular choices.
-For Linux, Kile is a very good \latex editor \figref{fig:latex:kile}.
+For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{texniccenter.png}
@@ -155,7 +155,7 @@ to refer to a label. It is good practice to use
 \computer{{\bs}figref\{ labelname\}},
 to refer to sections, tables, and figures, respectively. A reference to this section will be \computer{see {\bs}sectref\{sec:latex:commoncommands\}}, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
-Other commands very often used in academic texts are \computer{{\bs}citet\{somework\}} and \computer{{\bs}citep\{somework\}}. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \computer{{\bs}citealt\{ somework\}}. Page numbers are added with \computer{{\bs}citet[99-{}-123]\{somework\}}. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \computer{somework} is the key of a record in your \bibtex file. When \computer{somework} is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
+Other commands very often used in academic texts are \computer{{\bs}citet\{somework\}} and \computer{{\bs}citep\{somework\}}. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \computer{{\bs}citealt\{somework\}}. Page numbers are added with \computer{{\bs}citet[99-{}-123]\{somework\}}. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \computer{somework} is the key of a record in your \bibtex file. When \computer{somework} is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
 
 
 If some text should not be in the normal font, use 
@@ -195,7 +195,7 @@ Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The 
 \z
 \end{verbatim}
 
-For more complicated examples with more lines, judgments, additional information and the like, refer to the documentation of the package \computer{lsp-gb4e}.
+For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \computer{lsp-gb4e}.
 \computer{{\bs}langinfo} should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \computer{{\bs}citealt} rather than \computer{{\bs}citep}.
 
 \subsection{Graphics}

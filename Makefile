@@ -26,7 +26,7 @@ wrap-global.pdf: wrap-global.tex $(SOURCE)
 #	makeindex -o wrap-global.wnd wrap-global.wdx
 #	LSP/bin/reverse-index <wrap-global.wdx >wrap-global.rdx
 #	makeindex -o wrap-global.rnd wrap-global.rdx 	
-	makeindex -o wrap-global.and wrap-global.combined.adx
+# 	makeindex -o wrap-global.and wrap-global.combined.adx
 	xelatex -no-pdf wrap-global 
 	xelatex wrap-global 
 
