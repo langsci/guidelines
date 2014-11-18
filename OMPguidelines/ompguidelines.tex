@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%     Language Science Press Master File       %%%
+%%%         follow the instructions below        %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% please fill in some information in the following lines as soon
+% as you have it
+% Everything following a % is ignored
+% Some lines start with %. Remove the % to include them
+
+\documentclass[number=??              %replace by your number in series
+                ,series=guidelines,     % Choose series abbreviation as appropriate
+                ,isbn=000-0-000000-00-0, %add your isbn here
+                ,url=http://langsci-press.org/catalog/book/0,  %change to the running number of your book
+	        ,output=guidelines             % long|short|inprep
+	        %,blackandwhite
+	        %,smallfont
+	        ,draftmode
+            ,oneside 
+		  ]{./LSP/langsci} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%          additional packages                 %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% put all additional commands you need in the
+% following files. If you do not know what this might
+% mean, you can safely ignore this section
+
+\usepackage{localmetadata}
+\usepackage{localpackages}
+\usepackage{localhyphenation}
+\usepackage{localcommands} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             BEGIN DOCUMENT                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\maketitle
+\frontmatter
+% %% uncomment if you have preface and/or acknowledgments
+% \chapter*{Preface}
+% \include{chapters/preface}
+% \section*{Acknowledgments}
+% \include{chapters/acknowledgments}
+\tableofcontents
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%             Chapters                         %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\include{chapters/filename} 
+% \include{chapters/sleepingfilename} %uncomment to include this file in your book 
+
+\backmatter
+\bibliography{localbibliography.bib}  
+\end{document}
