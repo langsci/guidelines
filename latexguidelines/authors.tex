@@ -1,0 +1,198 @@
+%% -*- coding:utf-8 -*-
+\chapter{Structure of books}
+
+\section{Front matter}
+
+The front matter of \lsp books is structured as follows
+\begin{table}[h]
+\begin{tabular}{p{4cm}p{6cm}}
+ dedication & optional\\
+table of contents & obligatory\\
+notational conventions & optional\\
+acknowledgements & optional\\
+preface & optional\\
+list of abbreviations & optional\\
+\multicolumn{2}{l}{No lists of figures or tables!}\\
+\end{tabular}
+\end{table}
+\section{Back matter}
+The back matter is structured as follows:
+\begin{table}[h]
+\begin{tabular}{p{4cm}p{6cm}}
+ Appendix A & optional \\
+ Appendix B etc & optional \\
+ further appendices & optional \\
+ Bibliography & obligatory \\
+ Author index & obligatory \\
+ Language index  & optional (advisable if the book talks about a larger number of languages)\\
+ Subject index & obligatory \\
+\end{tabular}
+ \end{table}
+
+
+\chapter{Style rules}
+\section{Generic rules}
+We use the \em Generic Style Rules for Linguistics \em available on \url{https://www.academia.edu/7370927/The_Generic_Style_Rules_for_Linguistics}
+
+\section{House Rules}
+The generic rules are complemented by the following house rules:
+
+\subsection{Academic \emph{we}}
+
+Monographs and articles that are authored by a single author should use the pronoun \emph{I} rather
+than \emph{we} as in ``As I have shown in Section~3''.	
+ 
+
+\subsection{British vs.\ American English}
+Choose one and be consitent. For edited volumes, the choice is per chapter.  
+
+
+\subsection{Figures and tables} 
+Footnotes should not be used in tables or figures but should be attached to the text where the table is referred to.
+
+
+
+\subsection{Abbreviations}
+If you need special abbreviations that are not defined by the Leipzig Glossing Rules, put them in a table in a special section with abbreviations immediately before the first chapter of a monograph. In the case of an edited volume, the lists of abbreviations should be placed immediately before the references of the individual chapters.
+
+\subsection{Glossed examples}
+The formatting of example sentences in the typological series follows the format that is used by the World Atlas of Language Structures \citep{WALS}: If there is just one example sentence for an example number, the language name follows the example number directly, as in (\ref{ex-typology}); it may be followed by the reference.
+
+{\def\exfont{\normalsize\itshape}
+\ea\label{ex-typology}
+\langinfo{Mising}{}{\citealt[69]{Prasad91a}}\\
+\gll azɔ́në dɔ́luŋ\\
+     small village\\ 
+\glt `a small village' 
+\z
+
+
+If there are two sub-examples for a single example number, the example heading may have scope over both of them:
+
+\ea
+\langinfo{Zulu}{}{Poulos \& Bosch 1997: 19; 63}\\
+\ea
+\gll Shay-a		inja!\\
+hit-\textsc{imp.2sg}	dog\\
+\glt `Hit the dog!'
+\ex
+\gll	Mus-a	uku-shay-a	inga! \\
+	\textsc{neg.imp.aux-2sg}	\textsc{inf}-hit-\textsc{inf}	dog \\
+\glt		`Do not hit the dog!'	
+\z
+\z
+
+% If two examples with different numbers belong to the same language, the language name is repeated only if the identity of the language is not clear from the context. 
+If an example consists of several sub-examples from different languages, the language name and references follow the letters, as in (\ref{ex:apatani}).
+
+\ea\label{ex:apatani}
+\ea
+\langinfo{Apatani}{}{\citealt[23]{Abraham85a}}\\
+\gll aki atu\\ 
+     dog small\\ 
+\glt ‘the small dog’ 
+\ex 
+\langinfo{Temiar}{}{\citealt[155]{Benjamin76a}}\\ 
+\gll dēk mənūʔ\\
+     house big\\
+\glt ‘big house’ 
+\z
+\z
+
+
+
+\subsection{Quotations}
+
+If long passages are quoted, they should be indented and the quote should be followed by the exact reference. Use the quotation environment \latex provides:
+\begin{quotation}
+Precisely constructed models for linguistic structure can play an
+important role, both negative and positive, in the process of discovery 
+itself. By pushing a precise but inadequate formulation to
+an unacceptable conclusion, we can often expose the exact source
+of this inadequacy and, consequently, gain a deeper understanding
+of the linguistic data.
+\citep[5]{Chomsky57a}
+\end{quotation}
+%
+Short passages should be quoted inline using quotes: \citet[5]{Chomsky57a} stated that ``[o]bscure
+  and intuition-bound notions can neither lead to absurd conclusions nor provide new and
+correct ones''.
+
+If you quote text that is not in the language of the book provide a translation. Short quotes should
+be translated inline, long quotes should be translated in a footnote.
+
+
+
+
+\subsection{Cross-references in the text}
+
+Please use the cross-referencing mechanisms of your text editing/type setting software. Using such
+cross-referencing mechanisms is less error-prone when you shift text blocks around and in addition
+all these cross-references will be turned into hyperlinks between document parts, which makes the
+final documents much more useful.
+
+% If you have numbered example sentence, please start with (1) for every new chapter.
+%%
+%% Alternatively, you may put the chapter number in front of the example number (thus starting with (7.1), (7.2), ... in chapter 7, for example).
+%% [COMMENT: Bei Grammatiken ist es durchaus üblich, dass alle Beispiele im Buch durchnummeriert werden. Auch in Rießlers Arbeit sind die Beispiele komplett durchnummeriert. Ich bin mir nicht sicher, wie wichtig diese Regelung ist, und ob wir nicht Volldurchnummerierung auch erlauben sollten.]
+
+ 
+Depending on the series and the language the book is published in authors may  use the § sign or the word \emph{Section}. 
+
+\subsection{Epigrams}
+You can use epigrams for your chapters. When using epigrams in edited volumes, make sure that the combination of epigram and abstract leaves room for the actual chapter to start on the same page.
+
+\section{Citations and references}
+\label{sec-references-authors}
+
+Please deliver a \bibtex file with all your references together with your submissions. 
+\bibtex can be exported from all common bibliography tools (We recommend BibDesk for the Mac and JabRef for all other platforms). 
+
+Please provide all first and last names of all authors and editors. Do not use {\em et~al.}  in the Bibtex file; this will be generated automatically when inserted.
+
+For bipartite family names like ``von Stechow'', ``Van Eynde'', and ``de Hoop'' make sure that these
+family names are contained in curly brackets.
+% These authors will then be cited as \citet{VanEynde2006a} and \citet{vonStechow84a}.
+ Note that Dutch names like ``de Hoop'' are not treated differently from other surnames.
+
+Many bibliographies have inconsistent capitalization. We decapitalize all titles and booktitles. If there is a proper name in a title, enclose it in \verb+{}+ to prevent decapitalization, e.g. \verb+title = {The languages of {A}frica}+. Use the same procedure for German nouns and all other characters in titles which should not be decapitalized. This is not necessary for other fields, especially the author and editor fields, where capitalization is kept as is.
+
+The references in your \bibtex file will automatically be typeset correctly. So, provided the
+\bibtex file is correct, authors do not have to worry about this. But there are some things to
+observe in the main text. Please cite as shown in Table~\ref{tab-citation}.
+
+\begin{table}[htbp]
+\caption{Citation style for \lsp}%
+\label{tab-citation}
+\begin{tabular}{p{1.8cm}>{\small}p{6.2cm}p{4cm}}
+\lsptoprule
+citation type & example &yields\\
+\midrule
+author & \raggedright \verb+As \citet[215]{MZ85a}+
+	  \verb+have shown+             &As \citet[215]{MZ85a} have shown\\ 
+       & \raggedright  \verb+As \citet[215]{MZ85a} and+
+	  \verb+\citet{Bloomfield1933lg}+
+	  \verb+have shown+ 
+					  &  As \citet[215]{MZ85a} and \citet{Bloomfield1933lg} have shown\\ 
+work   & \raggedright  \verb+As was shown in+ 
+	  \verb+\citet[215]{Saussure16a},+
+	  \verb+this is a problem for theories that ...+ & As was shown in \citet[215]{Saussure16a}, this is a problem for theories that \ldots\\ 
+work   & \raggedright  \verb+This is not true \citep{+  
+	  \verb+Saussure16a,Bloomfield1933lg}.+ & This is not true \citep{Saussure16a,Bloomfield1933lg}.\\[2em]
+no double parentheses   & \raggedright \verb+This is not true+
+			    \verb+(\citealt{Saussure16a}+
+			    \verb+and especially+
+			    \verb+\citealt{Bloomfield1933lg}).+& This is not true (\citealt{Saussure16a} and especially \citealt{Bloomfield1933lg}).\\
+\lspbottomrule
+\end{tabular}
+\end{table}
+\nocite{Bresnan82b}% something with an editor.
+
+If you have an enumeration of references in the text as in \emph{As X, Y, and Z have shown}, please use
+the normal punctuation of the respective language rather than special markup like `;'.
+
+If you refer to regions in a text, for instance 111--112, please do not use 111f.\ or 111ff.\ but provide the
+full information.  
+
+\section{Indexes}
+All {\lsp} books have a Subject Index and a Name Index. The Language Index is optional and should be used if the book treats several languages. Subject Index and Language Index have to be prepared by the authors completely. The Name Index is generated automatically from the citations in the text. This means that you only have to add people to the Name Index who, for whatever reason, are mentioned without connection to a work in the list of references. Examples would be politicians, ancient philosophers, novelists and the like.

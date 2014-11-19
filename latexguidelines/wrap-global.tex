@@ -1,0 +1,144 @@
+%% -*- coding:utf-8 -*-
+\documentclass[number=0
+                ,series=guidelines,
+                ,isbn=000-0-000000-00-0,
+                ,url=http://langsci-press.org/catalog/book/0,
+	        ,output=guidelines    % long|short|inprep   
+	        ,biblatex
+	        %,blackandwhite
+	        %,smallfont
+% 	        ,draftmode  
+		  ]{LSP/langsci}                          
+
+          
+\hypersetup{pdfdisplaydoctitle=true}
+
+\usepackage{forest}
+\usepackage{xspace}
+\newcommand{\latex}{\LaTeX\xspace}
+
+ 
+
+% \usepackage{embrac}
+
+% just for the XeLaTeX logo
+\usepackage{dtklogos}\newcommand{\xelatex}{\XeLaTeX\xspace}
+\newcommand{\bibtex}{\BibTeX\xspace}
+
+\usepackage{LSP/lsp-styles/avm}
+% \usepackage{LSP/lsp-styles/lsp-makros}
+
+
+% \usepackage{german}\selectlanguage{USenglish}
+
+% \usepackage{LSP/lsp-styles/lsp-eng-hyp}
+
+% \usepackage{styles/abbrev}
+
+
+      
+% OT pointing hand
+\usepackage{pifont}
+\newcommand{\hand}{\ding{43}}
+
+% OT tableaux                                                
+\usepackage{pstricks,colortab}   
+
+% DRS package by Alexis Dimitriadis
+\usepackage{drs}
+
+\usepackage{tabularx}
+
+% AVMs
+\usepackage{avm}
+\avmfont{\scshape} 
+\avmvalfont{\itshape}
+
+% command to fontify the type values of an avm 
+\newcommand{\tpv}[1]{{\avmjvalfont #1}}
+
+% command to fontify the type of an avm and avmspan it
+\newcommand{\tp}[1]{\avmspan{\tpv{#1}}}
+
+
+% \usepackage{tikz-qtree}
+% has strange side effects
+%\tikzset{every tree node/.style={align=left, anchor=north}}
+% \tikzset{every roof node/.append style={inner sep=0.1pt,text height=2ex,text depth=0.3ex}}
+
+\usepackage{jambox}
+
+
+\setlength{\marginparwidth}{1.5cm}
+\usepackage[textsize=tiny,textwidth=1.5cm]{todonotes}
+\newcommand{\todostefan}[1]{\todo[color=green!40]{#1\xspace}}
+\newcommand{\inlinetodostefan}[1]{\todo[color=green!40,inline]{{\normalsize #1}}}
+
+
+% Chinese
+% \usepackage[indentfirst=false]{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% bidirectional text and support for Arabic/Persia\newfontfamily\Parsifont[Script=Arabic]{XB Niloofar}
+%\usepackage{bidi}
+% \usepackage{LSP/lsp-styles/lsp-bidi}
+% \newcommand{\PRL}[1]{\RL{\Parsifont #1}}
+%\TeXXeTOff
+\usepackage{LSP/lsp-styles/lsp-gb4e}
+
+\def\exfont{\normalsize\itshape}
+     
+\author{Sebastian Nordhoff and Stefan Müller}
+\title{Language Science Press guidelines}  
+\subtitle{Complete set of guidelines}
+\BackTitle{Language Science Press guidelines}    
+
+\newcommand{\computer}[1]{\texttt{\small #1}}
+\newcommand{\bs}{$\backslash$}
+% \input{localcommands.tex}
+
+\bibliography{lsp-abbrev,lsp-guidelines}  
+
+
+\begin{document}                
+\maketitle                
+\tableofcontents      
+\mainmatter     
+
+
+\include{introduction}
+\include{authors}
+% \include{gsr}
+\include{volumeeditors}
+\include{latex}
+\include{conversion}
+\include{proofreaders}
+\include{indexers}
+\include{typesetters} 
+\include{openness}
+% \include{showcases}
+% \include{serieseditors}
+
+\backmatter
+
+ 
+\clearpage
+   
+\addcontentsline{toc}{chapter}{Index} 
+
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Name index}
+\ohead{Name index} 
+\printindex 
+  
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Language index}
+\ohead{Language index} 
+\printindex[lan] 
+  
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Subject index}
+\ohead{Subject index} 
+\printindex[sbj]                        
+\end{document}
+      
