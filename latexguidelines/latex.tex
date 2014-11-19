@@ -32,7 +32,7 @@ The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can l
     \verb+localmetadata.sty+ & information about the author, the title, the ISBN etc \\
     \verb+localpackages.sty+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
     \verb+localcommands.sty+ & extra commands you might want to define, e.g. for very frequent abbrevations in your text\\
-    \verb+localhyphenation.sty+ & for words where the \latex hyphenation algorithm doe not produce the desired result      \\
+    \verb+localhyphenation.sty+ & for words where the \latex hyphenation algorithm does not produce the desired result      \\
     \verb+localbibliography.bib+ & your bibliography in \bibtex-format \\
     \verb+chapters/chapter1.tex+ & text \\
     \verb+chapters/chapter2.tex+ & text \\
@@ -129,8 +129,8 @@ makeindex -o lsp-skeleton.snd lsp-skeleton.sdx
 The general structure of the document is given by \lsp. You have a couple of options to change the structure:
 \begin{itemize}
  \item You can choose the skeleton for monograph or edited volume
- \item You can add additional chapters to the directory \verb+chapters+, for instance\\ \verb+chapters/chapter4.tex+ or \verb+chapters/introduction.tex+. Make sure to add \verb+\include{chapters/introduction+ (without \verb+.tex+) to your main file.
- \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \verb+\addchap{Preface}+
+ \item You can add additional chapters to the directory \verb+chapters+, for instance\\ \verb+chapters/chapter4.tex+ or \verb+chapters/introduction.tex+. Make sure to add \verb+\include{chapters/introduction}+ (without \verb+.tex+) to your main file.
+ \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \verb+\addchap{Preface}+.
  \end{itemize}
 
 
@@ -228,7 +228,7 @@ In order to add a table, use the following stretch of code:
 \end{table}
 \end{verbatim}
 
-This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \verb+\begin{tabular}{p{4cm}p{4cm}p{4cm}}+, rather than \verb+\begin{tabular}{lll}+
+This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \verb+\begin{tabular}+ \verb+{p{4cm}p{4cm}p{4cm}}+, rather than \verb+\begin{tabular}{lll}+
 \begin{table}[h]
   \begin{tabular}{lll}
     \lsptoprule
