@@ -100,6 +100,10 @@
 
 \bibliography{lsp-abbrev,lsp-guidelines}  
 
+\usepackage{framed}
+\newcommand{\laundrybox}[2]{\begin{minipage}{.5\textwidth}
+\begin{framed}\textbf{Checklist #1}\midrule\begin{itemize}#2\end{itemize}\end{framed}\end{minipage}}
+\newcommand{\laundryitem}{\item[$\Box$] }
 
 \begin{document}                
 \maketitle                
@@ -108,16 +112,16 @@
 
 
 \include{introduction}
-\include{authors}
-% \include{gsr}
-\include{volumeeditors}
-\include{latex}
-\include{conversion}
-\include{proofreaders}
-\include{indexers}
-\include{typesetters} 
-\include{openness}
-\include{showcases}
+% \include{authors}
+% % \include{gsr}
+% \include{volumeeditors}
+% \include{latex}
+% \include{conversion}
+% \include{proofreaders}
+% \include{indexers}
+% \include{typesetters} 
+% \include{openness}
+% \include{showcases}
 % \include{serieseditors}
 
 \backmatter
