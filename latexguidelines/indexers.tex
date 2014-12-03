@@ -23,11 +23,11 @@ If there are two or more entries on subsequent pages, the index generation will 
 
 Do not use the indexing commands directly before punctuation as it can produce unwanted white space. Put it after the punctuation instead.
 
-If you compile your document with the option \verb+draftmode+ all indexed terms will show up in the margins.
+% If you compile your document with the option \verb+draftmode+ all indexed terms will show up in the margins.
 
 When your are done with adding index terms to your document, the following commands will produce the Subject Index and the Language Index
 \begin{verbatim}
-makeindex -o yourfilename.ind yourfilename.idx
+makeindex -o yourfilename.and yourfilename.adx
 makeindex -o yourfilename.lnd yourfilename.ldx
 makeindex -o yourfilename.snd yourfilename.sdx
 \end{verbatim}
@@ -48,3 +48,17 @@ After your indexed terms are final, check the Name Index for terms which are not
 
 Check your index for overlong lines. Use hyphenations \verb+\mbox{...}+ or \verb+\newline+s in the \verb+.adx+ file to repair these. Again, a recompilation of the index will overwrite your changes.
 % Ja und ein Index ist auch sowas wie ein Inhaltsverzeichnis. Man kann dann zum Beispiel auf einen Blick sehen, dass es in dem Buch viel um Extraposition geht. Das ist mit dem Autorenindex übrigens genauso. Den braucht man theoretisch noch weniger als den Subject-Index, aber man sieht dann eben auf einen Blick, dass Haider viel zitiert wurde. 
+
+\laundrybox{Indexes}{
+\laundryitem Subject index is there
+\laundryitem Language index is there
+\laundryitem Author index is there
+\laundryitem No duplicate terms in subject index
+\laundryitem Subject index has no overlong lines
+\laundryitem No duplicate terms in language index
+\laundryitem Language index has no overlong lines
+\laundryitem Author index has no titles in it
+\laundryitem Author index has no institutions in it
+\laundryitem No duplicate authors in author index
+\laundryitem Author index has no overlong lines
+}

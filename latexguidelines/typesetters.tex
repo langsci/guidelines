@@ -20,7 +20,30 @@ In order to finalize the typesetting of your volume, proceed as follows, in exac
 separate \verb+[p]+age. You can use several of these options, e.g. \verb+\begin{figure}[ht]+ to place a figure either exactly where it is in the document or on the top of this page or another page.  A figure should generally appear as close to the text which refers to it, either on the same page or a following page. If the figure is on a following page, it is preferable that the reader does not have to turn the page. Next to the parameters \verb+[hbpt]+, you can also change the position of the relevant lines of source code to ``move'' a figure to the top or bottom of another page of the pdf. 
 \item check for widows and orphans. If a paragraph is split between pages, there should be at least two lines on both pages. In order to move  an orphan to the following page, use \verb+\newpage+ at the relevant position. In order to pull a widow back to the preceding page, use \verb+\enlargethispage{1+ \verb+\baselineskip}+. This will allow an extra line on this page. You can add more extra lines with \verb+2\baselineskip+ and so on.  
 \item check for split footnotes. Sometimes, long footnotes are split across pages. You can use \verb+\enlargethispage{1\baselineskip}+ as above, or you can try to move the word with the footnote to another page. Sometimes, there are chain dependencies, which can be tough to resolve.
-% \item check the bibliography for widows and orphans. 
-\item check whether the name index contains non-persons, such as ``SIL''. The Name Index is generated from the bibliography, and if the bibliography lists an institution as an author, that institution will figure in the Name Index. Open the \verb+.and+ file and remove the relevant entries. Be aware that if you generate a new index afterwards, your changes will be overwritten. 
+\item check the bibliography for widows and orphans. 
+% \item check whether the name index contains non-persons, such as ``SIL''. The Name Index is generated from the bibliography, and if the bibliography lists an institution as an author, that institution will figure in the Name Index. Open the \verb+.and+ file and remove the relevant entries. Be aware that if you generate a new index afterwards, your changes will be overwritten. 
 \item check the index for overlong lines. Either add relevant information about hyphenation to \verb+localhyphenation.sty+, or open the relevant index file (\verb+.ind+, \verb+.and+,\verb+.lnd+) and fix the issue there.  
 \end{enumerate} 
+
+\laundrybox{Typesetting}{
+\laundryitem Content fits on title page
+\laundryitem ISBN is on back title
+\laundryitem Content fits on spine
+\laundryitem Chapter titles fit toc
+\laundryitem Author names fit line below chapter titles
+\laundryitem Author names fit line in toc
+\laundryitem Even page headers fit page 
+\laundryitem Odd page headers fit page 
+\laundryitem Impressum page has information about authors
+\laundryitem Impressum page has information about proofreaders
+\laundryitem Impressum page has information about typesetters
+\laundryitem Series overview page has information about this title
+\laundryitem Series overview page has information about other titles in series
+\laundryitem All lines in book fit page width  
+\laundryitem All tables fit on pages
+\laundryitem All figures fit on pages
+\laundryitem Tables and figures are placed in sensible positions
+\laundryitem No widows 
+\laundryitem No orphans 
+\laundryitem No split footnotes 
+}
