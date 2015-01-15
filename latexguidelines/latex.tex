@@ -115,6 +115,8 @@ In your \latex editor, there are various ways to create a pdf from your sourceco
 
 In order to include the bibliography, you have to run \verb+bibtex+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
 
+If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume+, which will do this for you and which is found in the skeleton as well. 
+
 \newpage
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp people. The relevant commands are:
 
@@ -138,7 +140,7 @@ The general structure of the document is given by \lsp. You have a couple of opt
 \section{Common commands}\label{sec:latex:commoncommands}
 The wealth of commands available in \latex can be daunting at first sight. However, very soon you will see that you can get a very long way with some very basic commands. The first batch involve the structure of your document, i.e. the various levels of headings. These are:
 \begin{itemize}
- \item \verb+\chapter{titleofheading}+
+\item \verb+\chapter{titleofheading}+
 \item \verb+\section{titleofheading}+
 \item \verb+\subsection{titleofheading}+
 \item \verb+\subsubsection{titleofheading}+
