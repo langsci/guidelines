@@ -122,8 +122,8 @@ footnotetext may be typeset on a page that is different from the one where the f
 In some subdisciplines of linguistics (e.\,g.\ typology) the examples are written in italics as in the
 following example:
 \ea
-\def\exfont{\normalsize\it}
-\gll Piloten         fik frataget    sit certifikat\footnotemark\\
+\def\exfont{\normalsize\itshape}
+\gll Piloten         fik frataget    sit certifikat{\footnotemark}\\
      pilot.{\scshape def} got deprived.of his license\\
 \footnotetext{KorpusDK.}
 \glt `The pilot was deprived of his license to fly.'
@@ -140,7 +140,7 @@ If the series decides to use italics, it has to be ensured that structural marku
 \z 
 \end{verbatim}
 \ea
-\def\exfont{\normalsize\it}
+\def\exfont{\normalsize\itshape}
 \gll ein {\ob}interessantes       Beispiel{\cb}\\
      an   interesting example\\
 \glt `an interesting example'
@@ -158,7 +158,7 @@ In order to align the gloss with the beginning of the source word, and not with 
 \end{verbatim}
 
 \ea
-\def\exfont{\normalsize\it}
+\def\exfont{\normalsize\itshape}
 \gll ein {\ob}interessantes       Beispiel{\cb}\\
      an  \hspaceThis{[}interesting example\\
 \glt `an interesting example'
@@ -419,7 +419,7 @@ by Chris Manning\ia{Chris Manning}.
 \ea
 \label{ex:showcases:avm-avm}
 \begin{avm}
-\[phon   & \< {\it porcupine\/} \>\\
+\[phon   & \< {\itshape porcupine\/} \>\\
   feat-a & \@{10} \[feat-aa & type-aa\\
                     feat-ab & \< \[ synsem|loc|cat|head & type-aba\\
                                     feat-abc \tpv{type-abc} 
@@ -437,7 +437,7 @@ by Chris Manning\ia{Chris Manning}.
 
 \begin{verbatim}
 \begin{avm}
-\[phon   & \< {\it porcupine\/} \>\\
+\[phon   & \< {\itshape porcupine\/} \>\\
   feat-a & \@{10} \[feat-aa & type-aa\\
                     feat-ab & \< \[ synsem|loc|cat|head & type-aba\\
                                     feat-abc \tpv{type-abc} 
@@ -464,7 +464,7 @@ Meurers'\ia{Detmar Meurers} \texttt{avm+}\ispackage{avm+}):
 A more complex example is given in \REF{ex:showcases:avm-complicated}:
 \ea\label{ex:showcases:avm-complicated} 
   \begin{avm}
-    {\it word\/} $\rightarrow$
+    {\itshape word\/} $\rightarrow$
     \[ morphs & $\@{e_1}\bigcirc\cdots\bigcirc\@{e_n}$\\
        morsyn & \@0 $(\@{m_1}\uplus\cdots\uplus\@{m_n})$\\
        rules  & \< \[ morphs & \@{e_1}\\
@@ -481,7 +481,7 @@ A more complex example is given in \REF{ex:showcases:avm-complicated}:
 The code is given below:
 \begin{verbatim}
   \begin{avm}
-    {\it word\/} $\rightarrow$
+    {\itshape word\/} $\rightarrow$
     \[ morphs & $\@{e_1}\bigcirc\cdots\bigcirc\@{e_n}$\\
        morsyn & \@0 $(\@{m_1}\uplus\cdots\uplus\@{m_n})$\\
        rules  & \< \[ morphs & \@{e_1}\\
@@ -518,7 +518,7 @@ The package has a good documentation and we will not repeat all the details here
 
 %% %\ea
 %% \begin{verbatim}
-%% {\it word\/} $\rightarrow$
+%% {\itshape word\/} $\rightarrow$
 %%     \ms{ morphs & $\ibox{e_1}\bigcirc\cdots\bigcirc\ibox{e_n}$\\
 %%          morsyn & \ibox{0} $(\ibox{m_1}\uplus\cdots\uplus\ibox{m_n})$\\
 %%          rules  & \liste{ \ms{ morphs & \ibox{e_1}\\
