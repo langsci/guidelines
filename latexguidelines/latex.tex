@@ -29,10 +29,10 @@ The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can l
     \lsptoprule
     file & content \\
     \midrule
-    \verb+localmetadata.sty+ & information about the author, the title, the ISBN etc \\
-    \verb+localpackages.sty+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
-    \verb+localcommands.sty+ & extra commands you might want to define, e.g. for very frequent abbrevations in your text\\
-    \verb+localhyphenation.sty+ & for words where the \latex hyphenation algorithm does not produce the desired result      \\
+    \verb+localmetadata.tex+ & information about the author, the title, the ISBN etc \\
+    \verb+localpackages.tex+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
+    \verb+localcommands.tex+ & extra commands you might want to define, e.g. for very frequent abbrevations in your text\\
+    \verb+localhyphenation.tex+ & for words where the \latex hyphenation algorithm does not produce the desired result      \\
     \verb+localbibliography.bib+ & your bibliography in \bibtex-format \\
     \verb+chapters/chapter1.tex+ & text \\
     \verb+chapters/chapter2.tex+ & text \\
@@ -51,14 +51,14 @@ For Mac, Texshop (\figref{fig:latex:texshop}) and Texstudio (\figref{fig:latex:t
 For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
 
 \begin{figure}
-\includegraphics[width=\textwidth]{texniccenter.png}
+\includegraphics[height=.4\textheight]{texniccenter.png}
 \caption{Texniccenter}
 \label{fig:latex:texniccenter} 
 \end{figure}
 
 
 \begin{figure}
-\includegraphics[width=\textwidth]{texshop.png}
+\includegraphics[height=.4\textheight]{texshop.png}
 \caption{Texshop}
 \label{fig:latex:texshop} 
 \end{figure}
@@ -115,13 +115,13 @@ In your \latex editor, there are various ways to create a pdf from your sourceco
 
 In order to include the bibliography, you have to run \verb+bibtex+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
 
+\enlargethispage{1em}
 If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume+, which will do this for you and which is found in the skeleton as well. 
 
-\newpage
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp people. The relevant commands are:
 
 \begin{verbatim}
-makeindex -o lsp-skeleton.ind lsp-skeleton.idx
+makeindex -o lsp-skeleton.and lsp-skeleton.adx
 makeindex -o lsp-skeleton.lnd lsp-skeleton.ldx 
 makeindex -o lsp-skeleton.snd lsp-skeleton.sdx
 \end{verbatim} 
@@ -200,6 +200,7 @@ Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The 
 For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \verb+lsp-gb4e+.
 \verb+\langinfo+ should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \verb+\citealt+ rather than \verb+\citep+.
 
+\newpage
 \subsection{Graphics}
 In order to add a graphic, use the following stretch of code
 
@@ -259,8 +260,8 @@ For other special needs, please contact our coordinator at \url{support@langsci-
 
 \section{Adapting the class to your needs}
 
-Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.sty+.
-Addtional commands can be added via \verb+{\newco+ \verb+mmand{commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.sty+. 
+Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.tex+.
+Addtional commands can be added via \verb+{\newco+ \verb+mmand{commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.tex+. 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.

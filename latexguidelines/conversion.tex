@@ -29,41 +29,41 @@ w2l -wrap_lines_after=0 -multilingual=false
 
 \section{Manual postprocessing}
 While the converter tries to convert as much as possible, there are a some places where manual postprocessing is still required.
-These include examples, cross-references and some bibliographical references.
+These include graphics, cross-references and some bibliographical references.
 
-\subsection{Examples}
-The output of automatically converted examples has the example formatting separated from the example content.  
-\begin{verbatim}
-\ea%1
-  \label{ex:1}
-  \langinfo{lg}{fam}{src}\\
-  \gll\\
-      \\
-  \glt
-\z
-
-Ceci n' est pas une pomme
-
- this \textsc{neg}  {\cop.3\sg.\prs} \textsc{neg}   
-\textsc{det.f} apple
-
-``This is not an apple''
-\end{verbatim}
-
-One has to manually join the former and the latter part to get
-
-\begin{verbatim}
-\ea%1
-  \label{ex:1}
-    \langinfo{lg}{fam}{src}\\
-  \gll Ceci n'             est                 pas une pomme \\
-      this \textsc{neg} {\cop.3\sg.\prs} \textsc{neg}   
-      \textsc{det.f} apple\\
-  \glt ``This is not an apple''
-\z 
-\end{verbatim} 
-
-Furthermore, \verb+\langinfo+ has to be adapted to reflect the correct language, family and source of the example, or removed altogether. In this case, one would use  \verb+\langinfo{French}{Indo-European}{René Magritte}\\+
+% \subsection{Examples}
+% The output of automatically converted examples has the example formatting separated from the example content.  
+% \begin{verbatim}
+% \ea%1
+%   \label{ex:1}
+%   \langinfo{lg}{fam}{src}\\
+%   \gll\\
+%       \\
+%   \glt
+% \z
+% 
+% Ceci n' est pas une pomme
+% 
+%  this \textsc{neg}  {\cop.3\sg.\prs} \textsc{neg}   
+% \textsc{det.f} apple
+% 
+% ``This is not an apple''
+% \end{verbatim}
+% 
+% One has to manually join the former and the latter part to get
+% 
+% \begin{verbatim}
+% \ea%1
+%   \label{ex:1}
+%     \langinfo{lg}{fam}{src}\\
+%   \gll Ceci n'             est                 pas une pomme \\
+%       this \textsc{neg} {\cop.3\sg.\prs} \textsc{neg}   
+%       \textsc{det.f} apple\\
+%   \glt ``This is not an apple''
+% \z 
+% \end{verbatim} 
+% 
+% Furthermore, \verb+\langinfo+ has to be adapted to reflect the correct language, family and source of the example, or removed altogether. In this case, one would use  \verb+\langinfo{French}{Indo-European}{René Magritte}\\+
 
 \subsection{Graphics}
 All graphics are commented out by default since the files will not be available on writelatex until you upload them. So the following stretch
@@ -87,3 +87,13 @@ has to become
  \label{fig:chaptername:filehandle}
 \end{figure}
 \end{verbatim}
+
+\subsection{Crossreferences}
+Generally, references to sections and examples should work. Occasionally, there might be problems with stretches like ``(12a)'' or ``(12-15)''.
+
+\subsection{Bibliographical references}
+The most common bibliographical references should work. Where authors have names which consist of two parts (such as ``Van Valin''), the author is often misrecognized as ``Valin''. Also, stretches like ``Smith 2000, 2001a,b, 2002'' will need manual postprocessing. 
+
+
+
+

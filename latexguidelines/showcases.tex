@@ -36,6 +36,8 @@ Grammaticality judgments can be added in brackets. Note that in this case, brace
 \glt `(The man sleeps.)'
 }
 \z
+ 
+\newpage
 \begin{verbatim}
 \ea[*]{
   \gll  Der Mann schläft.\\
@@ -43,7 +45,7 @@ Grammaticality judgments can be added in brackets. Note that in this case, brace
   \glt `The man sleeps.'
   }
 \z
-\end{verbatim}
+\end{verbatim} 
 
 Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respectively. The example in
 \REF{ex:showcases:list} shows how the sentences can be aligned properly. Note that the first example in a list gets \verb+\ea+, the subsequent ones get \verb+\ex+. Also note the empty grammticality judgment for the first example in order to align it with the second example, which has a~*.
@@ -52,31 +54,45 @@ Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respecti
 \ea  \label{ex:showcases:list}
 \ea[]{
 \iw{Linguist}\iw{Nobelpreis}\iw{glauben}
-\gll Ich glaube dem Linguisten nicht, einen Nobelpreis gewonnen zu haben.\\
-     I believe the linguist not a Nobel.prize won to have\\
-\glt  `I don't believe linguist's claim that he won a Nobel prize.'
+\gll Ich glaube dem Linguisten nicht, 
+     einen Nobelpreis gewonnen zu haben.\\
+     I believe the linguist not 
+     a Nobel.prize won to have\\
+\glt  `I don't believe linguist's claim 
+      that he won a Nobel prize.'
 }
 \ex[*]{
-\gll Dem Linguisten einen Nobelpreis  glaube  ich nicht gewonnen zu haben.\\
-     the linguist   a     Nobel.price believe I   not   won      to have\\
+\gll Dem Linguisten einen Nobelpreis  glaube  
+     ich nicht gewonnen zu haben.\\
+     the linguist   a     Nobel.price believe 
+     I   not   won      to have\\
 }
 \z
 \z  
 
 \begin{verbatim}
-\ea
-  \ea[]{
-    \gll Ich glaube  dem Linguisten nicht, einen Nobelpreis  gewonnen zu haben.\\
-         I   believe the linguist   not    a     Nobel.prize won      to have\\
-    \glt  `I don't believe linguist's claim that he won a Nobel prize.'
-    }
-    \ex[*]{
-    \gll Dem Linguisten einen Nobelpreis  glaube  ich nicht gewonnen zu haben.\\
-	the linguist   a     Nobel.price believe I   not   won      to have\\
-    }
-  \z
+
+\ea 
+ \ea[]{
+ \gll Ich glaube dem Linguisten nicht, 
+     einen Nobelpreis gewonnen zu haben.\\
+     I believe the linguist not 
+     a Nobel.prize won to have\\
+ \glt  `I don't believe linguist's claim 
+      that he won a Nobel prize.'
+}
+\end{verbatim}
+\newpage
+\begin{verbatim}
+ \ex[*]{
+ \gll Dem Linguisten einen Nobelpreis  glaube  
+      ich nicht gewonnen zu haben.\\
+      the linguist   a     Nobel.price believe 
+      I   not   won      to have\\
+ }
+ \z
 \z
-  \end{verbatim}
+\end{verbatim}
  
 
 If you want to add a footnote\is{footnote|(} that provides the source of an example as in \REF{ex:showcases:footnote}, you can do
@@ -183,6 +199,8 @@ page~\pageref{ex-typology} are typeset as follows:
   \glt `a small village' 
 \z
 
+\newpage
+
 \begin{verbatim}
 \ea 
   \ea
@@ -246,7 +264,7 @@ Ilmazzita kielet Ingrid. \jambox{(OVS)}
 }
 \zl
 
-The call of \jambox has to follow the linebreak after the gloss:
+The call of \verb+\jambox+ has to follow the linebreak after the gloss:
 \begin{verbatim}
 \ex[]{
 \label{ex-ingrid-kielet-ilmazzita}
