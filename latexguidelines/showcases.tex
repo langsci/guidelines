@@ -763,3 +763,37 @@ This\is{Optimality Theory|(}\is{tabular} section just provides a simple example 
 % % %% \caption{\label{fig-the-boy-was-given-the-ball-tseng}Analysis of \emph{The boy was given the ball} according to \citet{Tseng2007a}}
 % % %% \end{figure}
 % 
+
+\section{Intonation}
+We have created a small command for intonation pattern shown over examples. Use \verb+\intline{height}{text}+ to add a line of the specified height directly over the text. Use \verb+\dline{height}{slope}{length}+ to add a descending line. Finding the right slope and length requires some testing. 
+
+\newpage 
+\begin{verbatim} 
+\ea  
+\gll
+\intline{18}{iˈ}%
+\intline{20}{we}%
+\intline{16}{ra} %
+\intline{14}{mu}%
+-\intline{14}{ˈep} %
+\intline{10}{maa} % 
+\intline{12}{ˈuu}%
+\dline{12}{3}{24}p-i-nen \\
+coconut  scrape-\textsc{ss.seq} food  cook-\textsc{Np-fu}.1s      \\
+\glt`I will scrape a coconut and cook food.'
+\z 
+\end{verbatim}
+
+\ea  
+\gll
+\intline{18}{iˈ}%
+\intline{20}{we}%
+\intline{16}{ra} %
+\intline{14}{mu}%
+-\intline{14}{ˈep} %
+\intline{10}{maa} % 
+\intline{12}{ˈuu}%
+\dline{12}{3}{24}p-i-nen \\
+coconut  scrape-\textsc{ss.seq} food  cook-\textsc{Np-fu}.1s      \\
+\glt`I will scrape a coconut and cook food.'
+\z 

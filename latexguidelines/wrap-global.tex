@@ -24,6 +24,8 @@
 % just for the XeLaTeX logo
 \usepackage{dtklogos}
 % \newcommand{\xelatex}{\XeLaTeX\xspace}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \newcommand{\bibtex}{\BibTeX\xspace}
 
 \usepackage{LSP/lsp-styles/avm}
@@ -96,7 +98,9 @@
 
 \newcommand{\computer}[1]{\texttt{\small #1}}
 \newcommand{\bs}{$\backslash$}
-% \input{localcommands.tex}
+\renewcommand{\bibtex}{\BibTeX}
+\usepackage{xspace}
+\usepackage{listings}
 
 \bibliography{lsp-abbrev,lsp-guidelines}  
 
@@ -113,6 +117,17 @@
  \end{minipage}%
  }
 \newcommand{\laundryitem}{\item[$\Box$] }
+
+
+\newcommand{\intline}[2]{\settowidth{\LSPTmp}{#2}\raisebox{#1pt}{\parbox{.1mm}{\rule{\LSPTmp}{.5pt}}}#2}
+
+\newcommand{\dline}[3]{%
+  \parbox{.1mm}{\begin{picture}(0,0)%
+			  \put(0,#1){\line(#2,-1){#3}}%
+			  \end{picture}%
+  }%
+}
+
 
 \begin{document}                
 \maketitle                

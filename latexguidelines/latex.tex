@@ -258,6 +258,25 @@ Another common requirement is fitting a table or other element which is a bit to
 
 For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
 
+\subsection{Computer code}
+Please use the \verb+listings+ environment. You can change which words should count as keywords.
+
+\begin{verbatim}
+\begin{lstlisting}[language=Python, stringstyle=\color{blue}]
+ greeting = "Hello"
+ addressees = ["World", "Sky"]
+ for addressee in addresses:
+    print greeting, addressee
+\end{lstlisting}
+\end{verbatim}
+
+\begin{lstlisting}[language=Python,stringstyle=\color{blue}]
+ greeting = "Hello"
+ addressees = ["World", "Sky"]
+ for addressee in addresses:
+    print greeting, addressee
+\end{lstlisting}
+
 \section{Adapting the class to your needs}
 
 Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.tex+.
