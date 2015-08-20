@@ -50,6 +50,82 @@ Choose one and be consitent. For edited volumes, the choice is per chapter.
 \subsection{Figures}  
 Please mention the creator and the licensing status of all photographs and all drawings in the caption unless they were created by you. The licensing must be compatible with the license chosen for the book. It is for instance legally not possible to include restricted copyrighted material in an open access book. 
 
+\subsection{Tables}
+Be aware that the book will not be printed on A4/letter paper. This means that you do have less horizontal and vertical space for your tables. Tables should generally not have more than about 6 columns and about 10 rows (\tabref{tab:sentencetable}). If the data in the cells are very, short like numbers, phonemes or very short words for instance, there might be exceptions (\tabref{tab:lexicaltable}).
+
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{X>{\raggedright}XXXXX}
+\lsptoprule
+ & English & German & French & Spanish & Italian  \\
+\midrule
+1 & We wish you a merry christmas & Fröhliche Weihnachten & Joyeux Noël & Feliz Navidad  & Buon natale \\
+2 & How is the weather today?& & &  & \\
+3 & We appreciate your business& & &  & \\
+4 & I do not want to buy this carpet& & &  & \\
+5 & Please circulate& & &  & \\
+6 & Apologies for cross-postings& & &  & \\
+7 & Colorless green ideas sleep furiously& Kleine grüne Ideen schlafen wütend & &  & \\
+8 & The man hit the woman and ran away& & &  & \\
+9 & John gives Mary the book  & & &  & \\
+10 & repeat ad libitum  & & & & \\
+\lspbottomrule
+\end{tabularx}
+\caption{Maximal number of colums and rows in a typical table with sentences.}
+\label{tab:sentencetable}
+\end{table}
+
+
+\begin{table}
+\begin{tabularx}{\textwidth}{XXXXXX}
+\lsptoprule
+ & English & German & French & Spanish & Italian  \\
+\midrule
+1 & one  & eins & un & uno  & uno \\
+2 & two & zwei& deux& dos  &  due\\
+3 & three& & &  & \\
+4 & four & & &  & \\
+5 & five & & &  & \\
+6 & & & &  & \\
+7 & & & &  & \\
+8 & & & &  & \\
+9 & & & &  & \\
+10 & & & & & \\
+11 & & & & & \\
+12 & & & & & \\
+13 & & & & &  \\
+14 & & & & &  \\
+15 & & & & &  \\
+16 & & & & &  \\
+17 & & & & &  \\
+18 & & & & &  \\
+19 & & & & &  \\
+20 & & & & &  \\
+21 & & & & &  \\
+22 & & & & &  \\
+23 & & & & &  \\
+24 & & & & &  \\
+25 & & & & &  \\
+26 & & & & &  \\
+27 & & & & &  \\
+28 & & & & &  \\
+29 & & & & &  \\
+30 & & & & &  \\
+31 & & & & &  \\
+32 & & & & &  \\
+33 & & & & &  \\
+34 & & & & &  \\
+35 & & & & &  \\ 
+\lspbottomrule
+\end{tabularx}
+\caption{Maximal number of colums and rows in a typical lexical table.}
+\label{tab:lexicaltable}
+\end{table}
+
+
+All tables should fit on one page. It is not permitted to break the page in the middle of a table. If your content is very long, split the large table into several smaller ones.
+
 
 \subsection{Abbreviations}
 If you need special abbreviations that are not defined by the Leipzig Glossing Rules, put them in a table in a special section with abbreviations immediately before the first chapter of a monograph. In the case of an edited volume, the lists of abbreviations should be placed immediately before the references of the individual chapters.
@@ -145,8 +221,13 @@ You can use epigrams for your chapters. When using epigrams in edited volumes, m
 \subsection{Aspiration, labialization, velarization etc}
 For phonetic symbols of aspiration and secondary articulation, do not use a superscript normal letter; use the special Unicode characters ʰ ʷ ʲ ˠ ˤ etc. You can define a special command like \verb+{\lab}+ for ʷ for easier input. 
 
-\subsection{Footnotes in section titles}
-You should not use footnotes in section titles. Very often, a plain sentence in the running text will be just as good. If you really want a footnote, insert it after the first sentence of the relevant section.
+\subsection{Footnotes in section titles}\label{sec:footnote}
+You should not use footnotes in section titles.\footnote{The footnote about \sectref{sec:footnote} can easily be added after the first sentence of the running text.} Very often, a plain sentence in the running text will be just as good. If you really want a footnote, insert it after the first sentence of the relevant section.
+
+\subsection{Color}
+Use color sparingly. Color should never be the only means to access information, but can be used as an addition. There are two reasons for this: b/w printers and colorblind people. Your work will not be accessible in those cases if color is the only distinguishing feature. Alternatives to color are using different shapes or shadings instead of color, grouping items, or verbal description. 
+
+
 
 
 \section{Citations and references}
@@ -155,7 +236,7 @@ You should not use footnotes in section titles. Very often, a plain sentence in 
 Please deliver a \bibtex file with all your references together with your submissions. 
 \bibtex can be exported from all common bibliography tools (We recommend BibDesk for the Mac and JabRef for all other platforms). 
 
-Please provide all first and last names of all authors and editors. Do not use {\em et~al.}  in the Bibtex file; this will be generated automatically when inserted.
+Please provide all first and last names of all authors and editors. Do not use {\em et~al.}  in the \bibtex file; this will be generated automatically when inserted.
 
 For bipartite family names like ``von Stechow'', ``Van Eynde'', and ``de Hoop'' make sure that these
 family names are contained in curly brackets.
@@ -168,10 +249,10 @@ The references in your \bibtex file will automatically be typeset correctly. So,
 \bibtex file is correct, authors do not have to worry about this. But there are some things to
 observe in the main text. Please cite as shown in Table~\ref{tab-citation}.
 
-\begin{table}[htbp]
+\begin{table}[bt] 
 \caption{Citation style for \lsp}%
 \label{tab-citation}
-\begin{tabular}{p{1.8cm}>{\small}p{6.2cm}p{4cm}}
+\begin{tabular}{p{1.2cm}>{\small}p{6.2cm}p{3.8cm}}
 \lsptoprule
 citation type & example &yields\\
 \midrule
@@ -192,9 +273,11 @@ no double parentheses   & \raggedright \verb+This is not true+
 			    \verb+\citealt{Bloomfield1933lg}).+& This is not true (\citealt{Saussure16a} and especially \citealt{Bloomfield1933lg}).\\
 \lspbottomrule
 \end{tabular}
+
 \end{table}
 \nocite{Bresnan82b}% something with an editor.
 
+\largerpage[-1]
 If you have an enumeration of references in the text as in \emph{As X, Y, and Z have shown}, please use
 the normal punctuation of the respective language rather than special markup like `;'.
 

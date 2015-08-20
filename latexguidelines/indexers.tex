@@ -5,14 +5,14 @@ For the various ways to add entries to the index, refer to \tabref{tab:latex:ind
 \begin{table}[h]
 \caption{Commands for creating index entries.}
 \label{tab:latex:indexentriese}
- \begin{tabular}{p{2.5cm}>{\small\raggedright}p{6.5cm}l}
+ \begin{tabular}{p{1.9cm}>{\small\raggedright}p{6.5cm}l}
   \lsptoprule
   type & \upshape\normalsize command & indexed term \\
   \midrule
   Subject Index& \verb+Nominalized sentences+ \verb+\is{nominalization} are+ \verb+common.+ & nomina\-lization \\
-  \mbox{Subject Index} identical& \verb+... while \isi{nominalization}+ \verb+ is less frequent ...+  & nomina\-lization \\[2em]
+  \mbox{Subject Index} identical& \verb+... while \isi{nominalization}+ \verb+ is less frequent ...+  & nomina\-lization \\\\
   Language Index & \verb+Varieties of Chinese+ \verb+\il{Sinitic languages}+ \verb+differ in that ...+ & Sinitic languages \\
-  Language Index identical& \verb+The \ili{Sinitic languages},+ \verb+however, ... + & Sinitic languages+ \\[2em]
+  Language Index identical& \verb+The \ili{Sinitic languages},+ \verb+however, ... + & Sinitic languages+ \\\\
   Author Index & \verb+In Homeric \ia{Homer}+ \verb+language, ... + & Homer\\
   \mbox{Author Index} identical & \verb+This contradicts+ \verb+\iai{Homer}, who had+ \verb+advocated ...+ & Homer \\
   \lspbottomrule
@@ -27,10 +27,17 @@ Do not use the indexing commands directly before punctuation as it can produce u
 
 When your are done with adding index terms to your document, the following commands will produce the Subject Index and the Language Index
 \begin{verbatim}
-makeindex -o yourfilename.and yourfilename.adx
-makeindex -o yourfilename.lnd yourfilename.ldx
-makeindex -o yourfilename.snd yourfilename.sdx
+  makeindex -o main.lnd main.ldx
+  makeindex -o main.snd main.sdx
 \end{verbatim}
+
+In order to create the author index, run
+
+\begin{verbatim}
+  sed -i s/.*\\emph.*// main.adx  
+  makeindex -o main.and main.adx
+\end{verbatim}
+
  
 % The author index should be produced automatically.
 % \begin{verbatim} 

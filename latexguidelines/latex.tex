@@ -25,7 +25,7 @@ The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can l
 \begin{table}[htb]
   \caption{File structure of the skeleton}
   \label{tab:latex:skeleton}
-  \begin{tabular}{lp{6cm}}
+  \begin{tabularx}{\textwidth}{Xp{6cm}}
     \lsptoprule
     file & content \\
     \midrule
@@ -38,7 +38,7 @@ The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can l
     \verb+chapters/chapter2.tex+ & text \\
 ... & text \\
     \lspbottomrule
-  \end{tabular}
+  \end{tabularx}
 \end{table}
 
 A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.ind+, \verb+.and+, and \verb+.lnd+ for the indexes.  
@@ -200,7 +200,19 @@ Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The 
 For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \verb+lsp-gb4e+.
 \verb+\langinfo+ should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \verb+\citealt+ rather than \verb+\citep+.
 
-\newpage
+To avoid a page break in an example, put it between \verb+\protectedex{...}+. 
+
+\begin{verbatim}
+\protectedex{
+\ea\label{ex:examplelabel}
+\langinfo{French}{Indo-European}{personal knowledge}\\
+\gll  Jean aim-e                 Marie \\
+      John love-{3\sg.\prs.\ind} Mary \\
+\glt `John loves Mary.'    
+\z
+}
+\end{verbatim}
+ 
 \subsection{Graphics}
 In order to add a graphic, use the following stretch of code
 
@@ -262,7 +274,8 @@ For other special needs, please contact our coordinator at \url{support@langsci-
 Please use the \verb+listings+ environment. You can change which words should count as keywords.
 
 \begin{verbatim}
-\begin{lstlisting}[language=Python, stringstyle=\color{blue}]
+\begin{lstlisting}[language=Python,%
+ stringstyle=\color{blue}]
  greeting = "Hello"
  addressees = ["World", "Sky"]
  for addressee in addresses:
@@ -270,7 +283,9 @@ Please use the \verb+listings+ environment. You can change which words should co
 \end{lstlisting}
 \end{verbatim}
 
-\begin{lstlisting}[language=Python,stringstyle=\color{blue}]
+\newpage
+\begin{lstlisting}[language=Python,%
+ stringstyle=\color{blue}]
  greeting = "Hello"
  addressees = ["World", "Sky"]
  for addressee in addresses:
@@ -280,7 +295,7 @@ Please use the \verb+listings+ environment. You can change which words should co
 \section{Adapting the class to your needs}
 
 Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.tex+.
-Addtional commands can be added via \verb+{\newco+ \verb+mmand{commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.tex+. 
+Addtional commands can be added via \verb+\newco+ \verb+mmand{\commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.tex+. 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.

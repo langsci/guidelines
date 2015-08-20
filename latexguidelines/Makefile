@@ -20,9 +20,10 @@ wrap-global.pdf: wrap-global.tex $(SOURCE)
 	xelatex -no-pdf wrap-global 
 	bibtex -min-crossrefs=200 wrap-global
 	xelatex  -no-pdf wrap-global
-	makeindex -o wrap-global.snd wrap-global.sdx
-	makeindex -o wrap-global.lnd wrap-global.ldx
+	sed -i s/.*\\emph.*// wrap-global.adx #remove titles which biblatex puts into the name index
 	makeindex -o wrap-global.and wrap-global.adx
+	makeindex -o wrap-global.lnd wrap-global.ldx
+	makeindex -o wrap-global.snd wrap-global.sdx
 #	makeindex -o wrap-global.wnd wrap-global.wdx
 #	LSP/bin/reverse-index <wrap-global.wdx >wrap-global.rdx
 #	makeindex -o wrap-global.rnd wrap-global.rdx 	

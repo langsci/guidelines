@@ -119,14 +119,7 @@
 \newcommand{\laundryitem}{\item[$\Box$] }
 
 
-\newcommand{\intline}[2]{\settowidth{\LSPTmp}{#2}\raisebox{#1pt}{\parbox{.1mm}{\rule{\LSPTmp}{.5pt}}}#2}
 
-\newcommand{\dline}[3]{%
-  \parbox{.1mm}{\begin{picture}(0,0)%
-			  \put(0,#1){\line(#2,-1){#3}}%
-			  \end{picture}%
-  }%
-}
 
 
 \begin{document}                
@@ -149,25 +142,28 @@
 % \include{serieseditors}
 
 \backmatter
-
- 
-\clearpage
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{chapter}{List of references}
+\printbibliography   
    
 \addcontentsline{toc}{chapter}{Index} 
 
-\phantomsection%this allows hyperlink in ToC to work
+\phantomsection 
 \addcontentsline{toc}{section}{Name index}
 \ohead{Name index} 
 \printindex 
   
-\phantomsection%this allows hyperlink in ToC to work
+\phantomsection 
 \addcontentsline{toc}{section}{Language index}
 \ohead{Language index} 
 \printindex[lan] 
   
-\phantomsection%this allows hyperlink in ToC to work
+\phantomsection 
 \addcontentsline{toc}{section}{Subject index}
 \ohead{Subject index} 
-\printindex[sbj]                        
+\printindex[sbj]
+                     
 \end{document}
       
+
+
