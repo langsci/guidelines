@@ -6,16 +6,7 @@
 	        ,output=guidelines
 		,oneside
 		  ]{LSP/langsci}   		  
-\hypersetup{pdfdisplaydoctitle=true} 
-\usepackage{xspace}
-\newcommand{\latex}{\LaTeX\xspace}
-% just for the XeLaTeX logo
-\usepackage{dtklogos}\newcommand{\xelatex}{\XeLaTeX\xspace}
-\newcommand{\bibtex}{\BibTeX\xspace}
-\usepackage{./LSP/lsp-styles/lsp-makros}
-\usepackage{./LSP/lsp-styles/lsp-gb4e}
-\usepackage{tabularx}
-\def\exfont{\normalsize\upshape}
+\input{localcommands}
 \BackBody{}
 \typesetter{Sebastian Nordhoff} 
 \author{Stefan Müller, Martin Haspelmath \& Sebastian Nordhoff}
@@ -34,9 +25,10 @@
 \tableofcontents      
 \mainmatter     
 
-\include{typesetters}
-
-\backmatter
-\bibliography{lsp-abbrev,lsp-guidelines}                             
+\include{authors}
+\include{volumeeditors}
+\include{typesetters} 
+\include{proofreaders}
+                          
 \end{document}
       
