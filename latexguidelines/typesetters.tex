@@ -14,10 +14,10 @@ In order to finalize the typesetting of your volume, proceed as follows, in exac
  \item check whether all lines fit the page width. If there are lines which stick out, this is either due to missing information about hyphenation, or there is simply no good way to fit the words in one line. In the former case, add hyphenation information to the file \verb+localhyphenation.sty+. You can also prevent hyphenation of a word by putting it in an \verb+\mbox+. Sometimes, the only solution is to change the sentence slightly. Common operations include changing the place of an adverb or using synonyms.
  \item check whether all tables and figure fit page width (and page length). You can use \verb+\resizebox{\linewidth}{!}{stuff to resize}+ or \verb+\fitpagewidth{...}+  to make them fit.
  \item place all \verb+table+s and \verb+figure+s with the options 
-\verb+[h]+ere, 
-\verb+[t]+op of page, 
-\verb+[b]+ottom of page,
-separate \verb+[p]+age. You can use several of these options, e.g. \verb+\begin{figure}[ht]+ to place a figure either exactly where it is in the document or on the top of this page or another page.  A figure should generally appear as close to the text which refers to it, either on the same page or a following page. If the figure is on a following page, it is preferable that the reader does not have to turn the page. Next to the parameters \verb+[hbpt]+, you can also change the position of the relevant lines of source code to ``move'' a figure to the top or bottom of another page of the pdf. 
+\texttt{[h]}ere, 
+\texttt{[t]}op of page, 
+\texttt{[b]}ottom of page,
+separate \texttt{[p]}age. You can use several of these options, e.g. \verb+\begin{figure}[ht]+ to place a figure either exactly where it is in the document or on the top of this page or another page.  A figure should generally appear as close to the text which refers to it, either on the same page or a following page. If the figure is on a following page, it is preferable that the reader does not have to turn the page. Next to the parameters \verb+[hbpt]+, you can also change the position of the relevant lines of source code to ``move'' a figure to the top or bottom of another page of the pdf. 
 \item check for widows and orphans. If a paragraph is split between pages, there should be at least two lines on both pages. In order to move  an orphan to the following page, use \verb+\newpage+ at the relevant position. In order to pull a widow back to the preceding page, use \verb+\largerpage+. You can also use \verb+\largerpage{2}+, or any other number, if every you really need a much longer page. \largerpage
 
 \item check for split footnotes. Sometimes, long footnotes are split across pages. You can use \verb+\largerpage+ as above, or you can try to move the word with the footnote to another page. Sometimes, there are chain dependencies, which can be tough to resolve.

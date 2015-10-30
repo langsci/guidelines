@@ -11,16 +11,16 @@ There is a skeleton for monographies and a skeleton for edited volumes. Choose w
 Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
 \subsection{Online editor}
-In order to familiarize yourself with \latex, you might also want to try the webservice writelatex.com first (\figref{fig:latex:writelatex}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
+In order to familiarize yourself with \latex, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
 
 \begin{figure}
- \includegraphics[width=\textwidth]{writelatex.png}
-  \caption{Writelatex}
-  \label{fig:latex:writelatex}
+ \includegraphics[width=\textwidth]{overleaf.png}
+  \caption{Overleaf}
+  \label{fig:latex:overleaf}
 \end{figure}
 
 \section{The skeleton}
-The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can leave that name or choose a name more suitable for your book, e.g. \verb+smith.tex+ or \verb+hawaiiangrammar.tex+. That main file draws information from a number of other files which are in the same directory. All those files start with \verb+local...+. Furthermore, the main file includes the chapters, which are found in the directory \verb+chapters/+.
+The skeleton has a main file, which is called \verb+main.tex+. You can leave that name or choose a name more suitable for your book, e.g. \verb+smith.tex+ or \verb+hawaiiangrammar.tex+. That main file draws information from a number of other files which are in the same directory. All those files start with \verb+local...+. Furthermore, the main file includes the chapters, which are found in the directory \verb+chapters/+.
 
 \begin{table}[htb]
   \caption{File structure of the skeleton}
@@ -29,9 +29,9 @@ The skeleton has a main file, which is called \verb+lsp-skeleton.tex+. You can l
     \lsptoprule
     file & content \\
     \midrule
-    \verb+localmetadata.tex+ & information about the author, the title, the ISBN etc \\
+    \verb+localmetadata.tex+ & information about the author, the title, the ISBN, etc. \\
     \verb+localpackages.tex+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
-    \verb+localcommands.tex+ & extra commands you might want to define, e.g. for very frequent abbrevations in your text\\
+    \verb+localcommands.tex+ & extra commands you might want to define, e.\,g.\ for very frequent abbrevations in your text\\
     \verb+localhyphenation.tex+ & for words where the \latex hyphenation algorithm does not produce the desired result      \\
     \verb+localbibliography.bib+ & your bibliography in \bibtex-format \\
     \verb+chapters/chapter1.tex+ & text \\
@@ -146,7 +146,7 @@ The wealth of commands available in \latex can be daunting at first sight. Howev
 \item \verb+\subsubsection{titleofheading}+
 \end{itemize}
 
-These commands give you a numbered title in the right layout. For prefaces, acknowledgements etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
+These commands give you a numbered title in the right layout. For prefaces, acknowledgements, etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
 Other common commands are 
 \verb+\label{la+ \verb+belname}+ 
 to assign a label, and 
@@ -233,9 +233,9 @@ In order to add a table, use the following stretch of code:
     \lsptoprule
     German  & French  & Spanish \\
     \midrule
-    Zelle   & cellule & célula    \\
-    Zelle   & cellule & célula    \\
-    Zelle   & cellule & célula    \\
+    Zelle   & cellule & celda    \\
+    Zelle   & cellule & celda    \\
+    Zelle   & cellule & celda    \\
     \lspbottomrule
   \end{tabular}
   \caption{Some good caption.}
@@ -249,9 +249,9 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
     \lsptoprule
     German  & French  & Spanish \\
     \midrule
-    Zelle   & cellule & célula    \\
-    Zelle   & cellule & célula    \\
-    Zelle   & cellule & célula    \\
+    Zelle   & cellule & celda    \\
+    Zelle   & cellule & celda    \\
+    Zelle   & cellule & celda    \\
     \lspbottomrule
   \end{tabular}
   \caption{Some good caption.}
@@ -263,9 +263,11 @@ You should not assume that a figure or table will be placed exactly where it app
 \subsection{Footnotes}
 In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word {\footnotemark} word word}+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures.
 
+\subsection{Landscape}
 
 A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, use \verb+sidewaysfigure+ or \verb+sidewaystable+ instead of the normal \verb+figure+ or \verb+table+.
 
+\subsection{Fitting large content on the page}
 Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, use \verb+\resizebox{\linewidth}{!}+ \verb+{stuff to resize}+.
 
 For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 

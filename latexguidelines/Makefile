@@ -1,5 +1,6 @@
 # specify your main target here:
 all: wrap-global.pdf
+	xelatex wrap-proofreaders.tex
 
 # specify the main file and all the files that you are including
 SOURCE=authors.tex \
