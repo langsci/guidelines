@@ -1,21 +1,22 @@
 %% -*- coding:utf-8 -*-
 \documentclass[number=0
                 ,series=guidelines,
-                ,isbn=000-0-000000-00-0,
-                ,url=http://langsci-press.org/catalog/book/0,
 	        ,output=guidelines    % long|short|inprep   
-	        ,biblatex
+	        ,modfonts, nonflat
 	        %,blackandwhite
 	        %,smallfont
 % 	        ,draftmode  
-		  ]{LSP/langsci}    
+		  ]{langsci/langscibook}    
                       
 \author{Sebastian Nordhoff and Stefan Müller}
 \title{Language Science Press guidelines}  
 \subtitle{Complete set of guidelines}
 \BackTitle{Language Science Press guidelines}  
 
-\input{localcommands.tex}
+\usepackage{tabularx}
+\usepackage{langsci/styles/langsci-gb4e}
+\usepackage{langsci/styles/langsci-optional}
+% \input{localcommands.tex}
 \begin{document}                
 \maketitle                
 \tableofcontents      
