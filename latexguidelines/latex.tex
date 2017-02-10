@@ -232,7 +232,7 @@ In order to add a table, use the following stretch of code:
 
 \begin{verbatim}
 \begin{table} 
-  \begin{tabular}{lll}
+  \begin{tabularx}{\textwidth}{XXX}
     \lsptoprule
     German  & French  & Spanish \\
     \midrule
@@ -240,15 +240,16 @@ In order to add a table, use the following stretch of code:
     Zelle   & cellule & celda    \\
     Zelle   & cellule & celda    \\
     \lspbottomrule
-  \end{tabular}
+  \end{tabularx}
   \caption{Some good caption.}
   \label{tab:chapterhandle:keytotable}
 \end{table}
 \end{verbatim}
 
-This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. If your cells get to wide, use \verb+\begin{tabular}+ \verb+{p{4cm}p{4cm}p{4cm}}+, rather than \verb+\begin{tabular}{lll}+
+This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. 
+
 \begin{table}[h]
-  \begin{tabular}{lll}
+  \begin{tabularx}{\textwidth}{XXX}
     \lsptoprule
     German  & French  & Spanish \\
     \midrule
@@ -256,22 +257,47 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
     Zelle   & cellule & celda    \\
     Zelle   & cellule & celda    \\
     \lspbottomrule
-  \end{tabular}
+  \end{tabularx}
   \caption{Some good caption.}
   \label{tab:chapterhandle:keytotable}
 \end{table}
 
 You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used. 
 
+You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\textwidth+, or \verb+.5\textwidth+.
+
+\verb+XXX+ tells \latex to split the available space into three equal portions and to justify the content inside the cells. 
+
+In order to give explicit width, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
+This will set the column width to 1.75cm and justify the cell contents. If you would rather have left-aligned content without hyphenation, use \verb+L{1.75cm}+, for center use \verb+C{1.75cm}+, for right-aligned use \verb+R{1.75cm}+.
+
+If you want columns of equal width, use \verb+X+ as above for justified, \verb+Q+ for left-aligned, \verb+S+ for right aligned and \verb+Z+ for centered.
+
+If you want the cell to be exactly the width of its content, use \verb+l+, \verb+r+, \verb+c+, respectively. You can mix all column types freely as in \tabref{tab:colmixes}. In case you find this to complex, stick to \verb+l+ and \verb+X+ for a start.
+
+\begin{table}
+ \begin{tabularx}{\textwidth}{lXrR{2cm}Qc}
+\lsptoprule
+l & X & r & R\{2cm\} & Q & c \\
+\midrule
+  start & long cell with extraordinarily long wrapping words & .95 & This content is very long but does not hyphenate. It is right-aligned. The cell has a width of 2cm. & This cell, together with cells in column 2, take up remaining space shared equally. It does not hyphenate. & center\\
+s & & .0001 & &&  c \\ 
+\lspbottomrule
+\end{tabularx} 
+\caption{Illlustration of different column types.}
+\label{tab:colmixes}
+\end{table}
+
+
 \subsection{Footnotes}
-In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word {\footnotemark} word word}+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures.
+In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word {\footnotemark} word word+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures. Add the content in the running text, either in the main body of the text or as a footnote. 
 
 \subsection{Landscape}
 
 A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, use \verb+sidewaysfigure+ or \verb+sidewaystable+ instead of the normal \verb+figure+ or \verb+table+.
 
 \subsection{Fitting large content on the page}
-Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, use \verb+\resizebox{\linewidth}{!}+ \verb+{stuff to resize}+.
+Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, use \verb+\fittable{stuff to resize}+. This works for figures as well. 
 
 For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
 
@@ -287,8 +313,7 @@ Please use the \verb+listings+ environment. You can change which words should co
     print greeting, addressee
 \end{lstlisting}
 \end{verbatim}
-
-\newpage
+ 
 \begin{lstlisting}[language=Python,%
  stringstyle=\color{blue}]
  greeting = "Hello"
