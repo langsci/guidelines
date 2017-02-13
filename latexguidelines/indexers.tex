@@ -12,7 +12,7 @@ For the various ways to add entries to the index, refer to \tabref{tab:latex:ind
   Subject Index& \verb+Nominalized sentences+ \verb+\is{nominalization} are+ \verb+common.+ & nomina\-lization \\
   \mbox{Subject Index} identical& \verb+... while \isi{nominalization}+ \verb+ is less frequent ...+  & nomina\-lization \\\\
   Language Index & \verb+Varieties of Chinese+ \verb+\il{Sinitic languages}+ \verb+differ in that ...+ & Sinitic languages \\
-  Language Index identical& \verb+The \ili{Sinitic languages},+ \verb+however, ... + & Sinitic languages+ \\\\
+  Language Index identical& \verb+The \ili{Sinitic languages},+ \verb+however, ... + & Sinitic languages \\\\
   Author Index & \verb+In Homeric \ia{Homer}+ \verb+language, ... + & Homer\\
   \mbox{Author Index} identical & \verb+This contradicts+ \verb+\iai{Homer}, who had+ \verb+advocated ...+ & Homer \\
   \lspbottomrule
@@ -51,9 +51,12 @@ After the creation of the indexes, check for every index whether it contains onl
 
 For the Name Index, make sure that every author has exactly one entry. Common errors include abbreviated names, middle initials which are present in one entry but absent in another, different transcriptions of a name, and diacritics. These issues are fixed by opening your bibliography file and conforming the names of the authors there.
 
-After your indexed terms are final, check the Name Index for terms which are not names. This happens if one of your cited works has an institution as the author. Open the \verb+.adx+ file and remove that entry. Be aware that a recompilation of your index will overwrite your changes.
+After your indexed terms are final, check the Name Index for terms which are not names. This happens if one of your cited works has an institution as the author. Open the \verb+.adx+ file and remove that entry. Be aware that a recompilation of your index will overwrite your changes. You can also adapt the \verb+Makefile+ to automatically remove such items in future compilations. 
 
-Check your index for overlong lines. Use hyphenations \verb+\mbox{...}+ or \verb+\newline+s in the \verb+.adx+ file to repair these. Again, a recompilation of the index will overwrite your changes.
+\subsection{See also}
+We provide a file \verb+localseealso.tex+ where you can list crossreferences in the index. 
+
+% Check your index for overlong lines. Use hyphenations \verb+\mbox{...}+ or \verb+\newline+s in the \verb+.adx+ file to repair these. Again, a recompilation of the index will overwrite your changes.
 % Ja und ein Index ist auch sowas wie ein Inhaltsverzeichnis. Man kann dann zum Beispiel auf einen Blick sehen, dass es in dem Buch viel um Extraposition geht. Das ist mit dem Autorenindex übrigens genauso. Den braucht man theoretisch noch weniger als den Subject-Index, aber man sieht dann eben auf einen Blick, dass Haider viel zitiert wurde. 
 
 \laundrybox{Indexes}{

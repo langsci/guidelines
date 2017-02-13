@@ -1,6 +1,9 @@
 %% -*- coding:utf-8 -*-
 \chapter{\LaTeX}
 
+\section{Screencasts}
+Please note that we have screencasts available for many topics relating to {\latex} at \url{http://langsci-press.org/forAuthors} supplementing these guidelines.
+
 \section{Installation of the \texttt{langsci} class}
 \subsection{Local installation}
 For your first book, the easiest way will be to download the skeleton from \url{http://langsci-press.org/templatesAndTools}.
@@ -8,7 +11,7 @@ There is a skeleton for monographies and a skeleton for edited volumes. Choose w
  
 % If you are dealing with Language Science Press books on a regular basis, you might want to opt for a system wide installation. The LSP class can be downloaded from \url{...} and will be available on CTAN in the near future.
 
-Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
+% Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
 \subsection{Online editor}
 In order to familiarize yourself with \latex, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
@@ -19,8 +22,10 @@ In order to familiarize yourself with \latex, you might also want to try the web
   \label{fig:latex:overleaf}
 \end{figure}
 
+
 \section{The skeleton}
-The skeleton has a main file, which is called \verb+main.tex+. You can leave that name or choose a name more suitable for your book, e.g. \verb+smith.tex+ or \verb+hawaiiangrammar.tex+. That main file draws information from a number of other files which are in the same directory. All those files start with \verb+local...+. Furthermore, the main file includes the chapters, which are found in the directory \verb+chapters/+.
+The skeleton has a main file, which is called \verb+main.tex+. 
+That main file draws information from a number of other files which are in the same directory. All those files start with \verb+local...+. Furthermore, the main file includes the chapters, which are found in the directory \verb+chapters/+.
 
 \begin{table}[htb]
   \caption{File structure of the skeleton}
@@ -111,12 +116,13 @@ For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
 % \verb+xstring+. 
 % 
 \section{Producing the document}
-In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+
+In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
+
+
 
 In order to include the bibliography, you have to run \verb+bibtex+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
-
-\enlargethispage{1em}
-If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume+, which will do this for you and which is found in the skeleton as well. 
+ 
+If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume.sh+, which will do this for you and which is found in the skeleton as well. 
 
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp people. The relevant commands are:
 
@@ -132,7 +138,7 @@ The general structure of the document is given by \lsp. You have a couple of opt
 \begin{itemize}
  \item You can choose the skeleton for monograph or edited volume
  \item You can add additional chapters to the directory \verb+chapters+, for instance\\ \verb+chapters/chapter4.tex+ or \verb+chapters/introduction.tex+. Make sure to add \verb+\include{chapters/introduction}+ (without \verb+.tex+) to your main file.
- \item You can add a preface, acknowledgements, or a list of abbreviations with\\ \verb+\addchap{Preface}+.
+ \item You can add a preface, acknowledgements, or a list of abbreviations by removing the \verb+%+ from the relevant line in \verb+main.tex+.
  \end{itemize}
 
 
@@ -146,7 +152,8 @@ The wealth of commands available in \latex can be daunting at first sight. Howev
 \item \verb+\subsubsection{titleofheading}+
 \end{itemize}
 
-These commands give you a numbered title in the right layout. For prefaces, acknowledgements, etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
+These commands give you a numbered title in the right layout.
+%  For prefaces, acknowledgements, etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
 Other common commands are 
 \verb+\label{la+ \verb+belname}+ 
 to assign a label, and 
@@ -161,8 +168,10 @@ Other commands very often used in academic texts are \verb+\citet{somework}+ and
 
 
 If some text should not be in the normal font, use 
-\verb+\textit{text to chan+ \verb+ge}+ for italics, 
-\verb+\textsc{text to change}+ for small capitals. There is generally no need to use boldface. If you want to use boldface, get in touch with your series editors.
+\verb+\textit{text to change}+ for italics, 
+\verb+\textbf{text to change}+ for boldface, 
+\verb+\textsc{text to change}+ for small capitals. Boldface must not be used in running text. It may be used for emphasis in linguistic examples. 
+There is generally no need to use underlining. If you want to use underlining, get in touch with support.
 
 \subsection{Linguistic examples}
 Linguistic examples are typeset like this
@@ -189,18 +198,18 @@ This gives you
 \z
 
 Rough alignment of glosses in the source text can be helpful, but is not necessary.
-Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
+% Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
+% 
+% \begin{verbatim}
+% \ea\label{ex:examplelabel}
+% \langinfo{French}{Indo-European}{personal knowledge}\\
+% \gll  Jean aim-e                 Marie \\
+%       John love-{3\sg.\prs.\ind} Mary \\
+% \glt `John loves Mary.'    
+% \z
+% \end{verbatim}
 
-\begin{verbatim}
-\ea\label{ex:examplelabel}
-\langinfo{French}{Indo-European}{personal knowledge}\\
-\gll  Jean aim-e                 Marie \\
-      John love-{3\sg.\prs.\ind} Mary \\
-\glt `John loves Mary.'    
-\z
-\end{verbatim}
-
-For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \verb+lsp-gb4e+.
+For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \verb+langsci-gb4e+.
 \verb+\langinfo+ should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \verb+\citealt+ rather than \verb+\citep+.
 
 To avoid a page break in an example, put it between \verb+\protectedex{...}+. 
@@ -217,7 +226,7 @@ To avoid a page break in an example, put it between \verb+\protectedex{...}+.
 \end{verbatim}
  
 \subsection{Graphics}
-In order to add a graphic, use the following stretch of code
+In order to add a graphics file, use the following stretch of code
 
 \begin{verbatim}
 \begin{figure}
@@ -226,6 +235,8 @@ In order to add a graphic, use the following stretch of code
   \label{fig:chapterhandle:keytofigure}
 \end{figure}
 \end{verbatim}
+
+You can adapt the height, or use \verb+\textwidth+ instead of \verb+\textheight+.
 
 \subsection{Tables}
 In order to add a table, use the following stretch of code:
@@ -261,6 +272,8 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
   \caption{Some good caption.}
   \label{tab:chapterhandle:keytotable}
 \end{table}
+
+You can use \verb+\tablevspace+ for separation of groups within a table. 
 
 You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used. 
 
@@ -305,8 +318,7 @@ For other special needs, please contact our coordinator at \url{support@langsci-
 Please use the \verb+listings+ environment. You can change which words should count as keywords.
 
 \begin{verbatim}
-\begin{lstlisting}[language=Python,%
- stringstyle=\color{blue}]
+\begin{lstlisting}[language=Python, stringstyle=\color{blue}]
  greeting = "Hello"
  addressees = ["World", "Sky"]
  for addressee in addresses:
@@ -314,8 +326,7 @@ Please use the \verb+listings+ environment. You can change which words should co
 \end{lstlisting}
 \end{verbatim}
  
-\begin{lstlisting}[language=Python,%
- stringstyle=\color{blue}]
+\begin{lstlisting}[language=Python, stringstyle=\color{blue}]
  greeting = "Hello"
  addressees = ["World", "Sky"]
  for addressee in addresses:
@@ -328,7 +339,7 @@ Additional packages can be added via \verb+\usepackage{packagename}+ in the file
 Addtional commands can be added via \verb+\newco+ \verb+mmand{\commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.tex+. 
 
 
-Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the `showcases' guideline to see how to typeset these elements.
+Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the ``showcases'' guideline to see how to typeset these elements.
 
 
  
