@@ -272,3 +272,22 @@
 \newcommand{\threedigitexamples}{\exewidth{(234)}}
 \newcommand{\fourdigitexamples}{\exewidth{(2345)}}
 
+\newcommand{\barplot}[2]{
+  \begin{tikzpicture}
+    \begin{axis}[
+	axis lines*=left, 
+        width  = \textwidth,
+	height = .3\textheight,
+    	nodes near coords, 
+	xtick=data,
+	x tick label style={}, 
+	ylabel={\%},  
+	ymin=0,
+	symbolic x coords={#1},
+	]
+	\addplot+[ybar,lsRichGreen!80!black,fill=lsRichGreen] plot coordinates {
+	    #2
+	}; 
+    \end{axis} 
+  \end{tikzpicture} 
+}

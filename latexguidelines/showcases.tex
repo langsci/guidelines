@@ -323,143 +323,97 @@ Linguistic trees can be typeset with the \verb+forest+ package. An example is gi
 ]
 ]
 \end{forest}
-
-A more complicated example, showing the power of the \verb+forest+ package is given below
-
-\begin{verbatim}
- \begin{forest}
-myGP1/.style={
-GP1,
-delay={where tier={x}{
-for children={content=\textipa{##1}}}{}},
-tikz={\draw[dotted](.south)--
-(!1.north west)--(!l.north east)--cycle;},
-for children={l+=5mm,no edge}
-}
-[VP[DP[John,tier=word,myGP1
-[O[x[dZ]]]
-[R[N[x[6]]]]
-[O[x[n]]]
-[R[N[x]]]
-]][V’[V[loves,tier=word,myGP1
-[O[x[l]]]
-[R[N[x[a]]]]
-[O[x[v]]]
-[R[N[x]]]
-[O[x[z]]]
-[R[N[x]]]
-]][DP[Mary,tier=word,myGP1
-[O[x[m]]]
-[R[N[x[e]]]]
-[O[x[r]]]
-[R[N[x[i]]]]
-]]]]
-\end{forest}%
-\end{verbatim}
-\begin{forest}
-myGP1/.style={
-GP1,
-delay={where tier={x}{
-for children={content=\textipa{##1}}}{}},
-tikz={\draw[dotted](.south)--
-(!1.north west)--(!l.north east)--cycle;},
-for children={l+=5mm,no edge}
-}
-[VP[DP[John,tier=word,myGP1
-[O[x[dZ]]]
-[R[N[x[6]]]]
-[O[x[n]]]
-[R[N[x]]]
-]][V’[V[loves,tier=word,myGP1
-[O[x[l]]]
-[R[N[x[a]]]]
-[O[x[v]]]
-[R[N[x]]]
-[O[x[z]]]
-[R[N[x]]]
-]][DP[Mary,tier=word,myGP1
-[O[x[m]]]
-[R[N[x[e]]]]
-[O[x[r]]]
-[R[N[x[i]]]]
-]]]]
-\end{forest}%
+% 
+% A more complicated example, showing the power of the \verb+forest+ package is given below
+% 
+% \begin{verbatim}
+%  \begin{forest}
+% myGP1/.style={
+% GP1,
+% delay={where tier={x}{
+% for children={content=\textipa{##1}}}{}},
+% tikz={\draw[dotted](.south)--
+% (!1.north west)--(!l.north east)--cycle;},
+% for children={l+=5mm,no edge}
+% }
+% [VP[DP[John,tier=word,myGP1
+% [O[x[dZ]]]
+% [R[N[x[6]]]]
+% [O[x[n]]]
+% [R[N[x]]]
+% ]][V’[V[loves,tier=word,myGP1
+% [O[x[l]]]
+% [R[N[x[a]]]]
+% [O[x[v]]]
+% [R[N[x]]]
+% [O[x[z]]]
+% [R[N[x]]]
+% ]][DP[Mary,tier=word,myGP1
+% [O[x[m]]]
+% [R[N[x[e]]]]
+% [O[x[r]]]
+% [R[N[x[i]]]]
+% ]]]]
+% \end{forest}%
+% \end{verbatim}
+% \begin{forest}
+% myGP1/.style={
+% GP1,
+% delay={where tier={x}{
+% for children={content=\textipa{##1}}}{}},
+% tikz={\draw[dotted](.south)--
+% (!1.north west)--(!l.north east)--cycle;},
+% for children={l+=5mm,no edge}
+% }
+% [VP[DP[John,tier=word,myGP1
+% [O[x[dZ]]]
+% [R[N[x[6]]]]
+% [O[x[n]]]
+% [R[N[x]]]
+% ]][V’[V[loves,tier=word,myGP1
+% [O[x[l]]]
+% [R[N[x[a]]]]
+% [O[x[v]]]
+% [R[N[x]]]
+% [O[x[z]]]
+% [R[N[x]]]
+% ]][DP[Mary,tier=word,myGP1
+% [O[x[m]]]
+% [R[N[x[e]]]]
+% [O[x[r]]]
+% [R[N[x[i]]]]
+% ]]]]
+% \end{forest}%
 
 \section{Diagrams}
-\begin{verbatim}
- \begin{figure} 
-  \begin{tikzpicture}
-    \begin{axis}[
-        axis lines*=left, 
-        bar width=15pt,
-        width  = \textwidth,
-            nodes near coords,
-        enlargelimits=0.15,
-        legend style={at={(0.1,0.22)},anchor=west},
-        ylabel={\%},
-        y=0.7mm,
-        ymin=0,
-        symbolic x coords={P01,P02,P04,P05,P06,P07,P08,P10,P12,P14,P15,P16},
-        xtick=data,
-        x tick label style={},
-        colormap={bw}{gray(0cm)=(0); gray(1cm)=(1)}
-        ]
-        \addplot+[ybar,lsRichGreen!80!black,fill=lsRichGreen] plot coordinates {
-            (P01,19.47733441) 
-            (P02,04.99311069) 
-            (P04,01.22486586)
-            (P05,42.31766084) 
-            (P06,06.04866269) 
-            (P07,23.33898154) 
-            (P08,00.87072019) 
-            (P10,34.98803246) 
-            (P12,05.73730353)
-            (P14,00.92677696)
-            (P15,06.41368016)
-            (P16,02.25249973)
-        }; 
-    \end{axis} 
-  \end{tikzpicture}
-  \caption{Ratio of Fixation Time in the Caption Area in relation to Fixation Time to the Whole Screen}
-\end{figure}
 
+For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barplot}). More complicated programs can be drawn with tikz as well, please contact support. For diagrams consisting only of lines, curves, boxes, and symbols, please provide the data, we will draw them in tikz. For heatmaps and the like, please provide high resolution graphics files. 
+
+
+
+\begin{verbatim}
+\begin{figure} 
+  \barplot{P01,P02,P03}{
+	      (P01,19.47733441) 
+	      (P02,04.99311069) 
+	      (P03,01.22486586)
+  }
+  \caption{Ratio of fixation time in the caption area in
+ relation to fixation time to the whole screen}
+\end{figure}
 \end{verbatim}
 
 \begin{figure} 
-  \begin{tikzpicture}
-    \begin{axis}[
-	axis lines*=left, 
-	bar width=15pt,
-        width  = \textwidth,
-    	nodes near coords,
-	enlargelimits=0.15,
-	legend style={at={(0.1,0.22)},anchor=west},
-	ylabel={\%},
-	y=0.7mm,
-	ymin=0,
-	symbolic x coords={P01,P02,P04,P05,P06,P07,P08,P10,P12,P14,P15,P16},
-	xtick=data,
-	x tick label style={},
-	colormap={bw}{gray(0cm)=(0); gray(1cm)=(1)}
-	]
-	\addplot+[ybar,lsRichGreen!80!black,fill=lsRichGreen] plot coordinates {
-	    (P01,19.47733441) 
-	    (P02,04.99311069) 
-	    (P04,01.22486586)
-	    (P05,42.31766084) 
-	    (P06,06.04866269) 
-	    (P07,23.33898154) 
-	    (P08,00.87072019) 
-	    (P10,34.98803246) 
-	    (P12,05.73730353)
-	    (P14,00.92677696)
-	    (P15,06.41368016)
-	    (P16,02.25249973)
-	}; 
-    \end{axis} 
-  \end{tikzpicture}
+  \barplot{P01,P02,P03}{
+	      (P01,19.47733441) 
+	      (P02,04.99311069) 
+	      (P03,01.22486586)
+  }
   \caption{Ratio of fixation time in the caption area in relation to fixation time to the whole screen}
+  \label{fig:barplot}
 \end{figure}
+
+ 
 
 % \section{DRSes: \texttt{drs}}
 % 
