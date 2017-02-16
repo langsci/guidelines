@@ -42,6 +42,7 @@ That main file draws information from a number of other files which are in the s
     \verb+chapters/chapter1.tex+ & text \\
     \verb+chapters/chapter2.tex+ & text \\
 ... & text \\
+    \verb+localseealso.tex+ & cross-references for the index  \\
     \lspbottomrule
   \end{tabularx}
 \end{table}
@@ -116,6 +117,7 @@ For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
 % \verb+xstring+. 
 % 
 \section{Producing the document}
+For an introduction to producing documents with \latex, see our screencast at \url{http://langsci-press.org/forAuthors}.
 In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
 
 
@@ -155,16 +157,16 @@ The wealth of commands available in \latex can be daunting at first sight. Howev
 These commands give you a numbered title in the right layout.
 %  For prefaces, acknowledgements, etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
 Other common commands are 
-\verb+\label{la+ \verb+belname}+ 
+\verb+\label{labelname}+ 
 to assign a label, and 
 \verb+\ref{labelname}+
 to refer to a label. It is good practice to use 
 \verb+\sectref{labelname}+,
 \verb+\tabref{labelname}+,
 \verb+\figref{labelname}+,
-to refer to sections, tables, and figures, respectively. A reference to this section will be \verb+see \sectref{sec:latex:commonco+ \verb+mmands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
+to refer to sections, tables, and figures, respectively. A reference to this section will be \verb+see \sectref{sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
-Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99+ \verb+--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidlines for bibliographies for more information.
+Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidelines for bibliographies for more information.
 
 
 If some text should not be in the normal font, use 
@@ -197,7 +199,7 @@ This gives you
 \glt `John loves Mary.'    
 \z
 
-Rough alignment of glosses in the source text can be helpful, but is not necessary.
+Rough alignment of glosses in the source text can be helpful, but is not necessary. \latex will take care of alignment of the glosses automatically. 
 % Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
 % 
 % \begin{verbatim}
@@ -230,7 +232,7 @@ In order to add a graphics file, use the following stretch of code
 
 \begin{verbatim}
 \begin{figure}
-  \includegraphics[height=.3\textheight]{filename.png}
+  \includegraphics[height=.3\textheight]{figures/filename.png}
   \caption{Some good caption.}
   \label{fig:chapterhandle:keytofigure}
 \end{figure}
@@ -239,6 +241,7 @@ In order to add a graphics file, use the following stretch of code
 You can adapt the height, or use \verb+\textwidth+ instead of \verb+\textheight+.
 
 \subsection{Tables}
+\subsubsection{Basic tables}
 In order to add a table, use the following stretch of code:
 
 \begin{verbatim}
@@ -281,6 +284,7 @@ You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\t
 
 \verb+XXX+ tells \latex to split the available space into three equal portions and to justify the content inside the cells. 
 
+\subsubsection{Tweaking tables}
 In order to give explicit width, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
 This will set the column width to 1.75cm and justify the cell contents. If you would rather have left-aligned content without hyphenation, use \verb+L{1.75cm}+, for center use \verb+C{1.75cm}+, for right-aligned use \verb+R{1.75cm}+.
 
@@ -293,7 +297,7 @@ If you want the cell to be exactly the width of its content, use \verb+l+, \verb
 \lsptoprule
 l & X & r & R\{2cm\} & Q & c \\
 \midrule
-  start & long cell with extraordinarily long wrapping words & .95 & This content is very long but does not hyphenate. It is right-aligned. The cell has a width of 2cm. & This cell, together with cells in column 2, take up remaining space shared equally. It does not hyphenate. & center\\
+  start & long cell w/   wrapping words & .95 & This content is very long but does not hyphenate. It is right-aligned. The cell has a width of 2cm. & This cell, together with cells in column 2, takes up all remaining space, shared equally. It does not hyphenate. & center\\
 s & & .0001 & &&  c \\ 
 \lspbottomrule
 \end{tabularx} 
@@ -336,7 +340,7 @@ Please use the \verb+listings+ environment. You can change which words should co
 \section{Adapting the class to your needs}
 
 Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.tex+.
-Addtional commands can be added via \verb+\newco+ \verb+mmand{\commandname}{commanddefinition}+ in the file \verb+localcomm+ \verb+ands.tex+. 
+Addtional commands can be added via \verb+\newcommand{\commandname}{commanddefinition}+ in the file \verb+localcommands.tex+. 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the ``showcases'' guideline to see how to typeset these elements.

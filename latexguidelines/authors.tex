@@ -22,7 +22,7 @@ The back matter is structured as follows:
  Appendix A & optional \\
  Appendix B & optional \\
  further appendices & optional \\
- Bibliography & obligatory \\
+ List of references & obligatory \\
  Author index & obligatory \\
  Language index  & optional (advisable if the book talks about a larger number of languages)\\
  Subject index & obligatory \\
@@ -40,7 +40,7 @@ The generic rules are complemented by the following house rules:
 \subsection{Academic \emph{we}}
 
 Monographs and articles that are authored by a single author should use the pronoun \emph{I} rather
-than \emph{we} as in ``As I have shown in Section~3''.	
+than \emph{we} as in ``As I have shown in Section~3 {\dots}''.	
  
 
 \subsection{British vs.\ American English}
@@ -48,14 +48,14 @@ Choose one and be consistent. For edited volumes, the choice is per chapter.
 
 
 \subsection{Figures}  
-Please mention the creator and the licensing status of all photographs and all drawings in the caption unless they were created by you. The licensing must be compatible with the license chosen for the book. It is for instance legally not possible to include restricted copyrighted material in an open access book. 
+Please mention the creator and the licensing status of all photographs and all drawings in the caption unless they were created by you. The licensing must be compatible with the license chosen for the book. It is legally not possible to include restricted copyrighted material in an open access book. 
 
 Photographs should be in jpg format. For all drawings, maps, diagrams, etc., a vector format (*svg, *eps, *ps, *pdf) is preferred, *png is acceptable. For *jpg and *png, resolution should be at least 320 dpi. 
 
 See \url{http://userblogs.fu-berlin.de/langsci-press/2016/12/12/graphics-and-images/} for more information.
 
 \subsection{Tables}
-Be aware that the book will not be printed on A4/letter paper. Our paper is 17cm x 24cm; A4 is 21cm x 29.4cm.  This means that you have less horizontal and vertical space for your tables. Tables should generally not have more than about 6 columns and about 10 rows (\tabref{tab:sentencetable}). If the data in the cells are very, short like numbers, phonemes or very short words for instance, there might be exceptions (\tabref{tab:lexicaltable}).
+Be aware that the book will not be printed on A4/letter paper. Our paper is 17cm x 24cm; A4 is 21cm x 29.4cm.  This means that you have less horizontal and vertical space for your tables. Tables should generally not have more than about 6 columns and about 10 rows (\tabref{tab:sentencetable}). If the data in the cells are very, short like numbers, phonemes or very short words, there might be exceptions (\tabref{tab:lexicaltable}).
 
 
 
@@ -183,7 +183,7 @@ You should use the numbered example environment only for linguistic examples, th
 
 \subsection{Quotations}
 
-If long passages are quoted, they should be indented and the quote should be followed by the exact reference. Use the quotation environment \latex provides:
+If long passages are quoted, they should be indented and the quote should be followed by the exact reference. Use the \verb+quotation+ environment \latex provides:
 \begin{quote}
 Precisely constructed models for linguistic structure can play an
 important role, both negative and positive, in the process of discovery 
@@ -206,7 +206,7 @@ be translated inline, long quotes should be translated in a footnote.
 
 \subsection{Cross-references in the text}
 
-Please use the cross-referencing mechanisms of your text editing/type setting software. Using such
+Please use the cross-referencing mechanisms of your text editing/typesetting software. Using such
 cross-referencing mechanisms is less error-prone when you shift text blocks around and in addition
 all these cross-references will be turned into hyperlinks between document parts, which makes the
 final documents much more useful.
@@ -217,7 +217,7 @@ final documents much more useful.
 %% [COMMENT: Bei Grammatiken ist es durchaus üblich, dass alle Beispiele im Buch durchnummeriert werden. Auch in Rießlers Arbeit sind die Beispiele komplett durchnummeriert. Ich bin mir nicht sicher, wie wichtig diese Regelung ist, und ob wir nicht Volldurchnummerierung auch erlauben sollten.]
 
  
-Depending on the series and the language the book is published in authors may  use the § sign or the word \emph{Section}. 
+Depending on the series and the language the book is published in, cross-references to sections use the § sign or the word \emph{Section}. 
 
 % \subsection{Epigrams}
 % You can use epigrams for your chapters. When using epigrams in edited volumes, make sure that the combination of epigram and abstract leaves room for the actual chapter to start on the same page.
@@ -247,9 +247,9 @@ family names are contained in curly brackets.
 % These authors will then be cited as \citet{VanEynde2006a} and \citet{vonStechow84a}.
  Note that Dutch names like ``de Hoop'' are not treated differently from other surnames.
 
-Many bibliographies have inconsistent capitalization. We do not use Title Case, i.e. all words are spelled as they would be spelled in running text (sentence case). Hence, we use \em A grammar of Tagalog \em and not \em A Grammar of Tagalog\em. There are two strategies to achieve this: decapitalization with protection, or literal output. If you use decapitalization with protection, all titles and booktitles will be decapitalized  If there is a proper name in a title, enclose it in \verb+{}+ to prevent decapitalization, e.g. \verb+title = {The Languages of {A}frica}+. Use the same procedure for German nouns and all other characters in titles which should not be decapitalized. This is not necessary for other fields, especially the author and editor fields, where capitalization is kept as is. You can use your *bib file for publisher requiring title case and for publishers requiring sentence case.
+Many bibliographies have inconsistent capitalization. We do not use Title Case, i.e. all words are spelled as they would be spelled in running text (sentence case). Hence, we use \em A grammar of Tagalog \em and not \em A Grammar of Tagalog\em. There are two strategies to achieve this: \textsc{decapitalization with protection}, or \textsc{literal output}. If you use decapitalization with protection, all titles and booktitles will be decapitalized  If there is a proper name in a title, enclose it in \verb+{}+ to prevent decapitalization, e.g. \verb+title = {The Languages of {A}frica}+. Use the same procedure for German nouns and all other characters in titles which should not be decapitalized. This is not necessary for other fields, especially the author and editor fields, where capitalization is kept as is. You can use your *bib file for publisher requiring title case and for publishers requiring sentence case.
 
-If you opt for literal output, add the option \verb+undecapitalize+ to \verb+main.tex+. In this case, it is your task to lowercase all words in Title Case in your bibliography. You cannot use your *bib file for publishers which require Title Case anymore. 
+If you opt for literal output, add the option \verb+undecapitalize+ to \verb+main.tex+. In this case, it is your task to lowercase all words in Title Case in your bibliography (\verb+title = {The languages of Africa}+). You cannot use your *bib file for publishers which require Title Case anymore. 
 
 The references in your \bibtex file will automatically be typeset correctly. So, provided the
 \bibtex file is correct, authors do not have to worry about this. But there are some things to

@@ -4,8 +4,7 @@ There is a huge amount of packages that can be used for various purposes. \citet
 reference book. This section discusses some aspects of some packages that are relevant for
 linguistics. Every \latex package comes with a documentation and users should consult these
 documentations, too. The purpose of this section is to point users to the packages that we think
-serve their purpose best and that are compatible with other packages and the \lsp classes, as this
-book proves.
+serve their purpose best and that are compatible with other packages and the \lsp classes.
 
 \section{Glossed examples}
 
@@ -14,8 +13,7 @@ Thiersch\ia{Thiersch, Craig}. The modified package is called \texttt{lsp-gb4e}.
 % % It is contained in the styles directory that is delivered with the \lsp \latex classes. It differs from the original package in loading a version of \texttt{gloss} that was modified by Alexis Dimitriadis\ia{Alexis Dimitriadis} in order to be compatible with \texttt{jambox} (see Section~\ref{sec-jambox}).
 
 Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
-\ea\label{ex:showcases:simple}
-\iw{Mann}\iw{schlafen}
+\ea\label{ex:showcases:simple} 
 \gll Der Mann schläft.\\
      the man  sleeps\\
 \glt `The man sleeps.'
@@ -29,8 +27,7 @@ Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
 \end{verbatim}
 
 Grammaticality judgments can be added in brackets. Note that in this case, braces have to be used around the rest of the example
-\ea[*]{\label{ex:showcases:ungrammatical}
-\iw{Mann}\iw{schlafen}
+\ea[*]{\label{ex:showcases:ungrammatical} 
 \gll Der Mann schlafen.\\
      the man  sleep\\
 \glt `(The man sleeps.)'
@@ -52,8 +49,7 @@ Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respecti
 
 
 \ea  \label{ex:showcases:list}
-\ea[]{
-\iw{Linguist}\iw{Nobelpreis}\iw{glauben}
+\ea[]{ 
 \gll Ich glaube dem Linguisten nicht, 
      einen Nobelpreis gewonnen zu haben.\\
      I believe the linguist not 
@@ -64,7 +60,7 @@ Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respecti
 \ex[*]{
 \gll Dem Linguisten einen Nobelpreis  glaube  
      ich nicht gewonnen zu haben.\\
-     the linguist   a     Nobel.price believe 
+     the linguist   a     Nobel.prize believe 
      I   not   won      to have\\
 }
 \z
@@ -87,7 +83,7 @@ Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respecti
  \ex[*]{
  \gll Dem Linguisten einen Nobelpreis  glaube  
       ich nicht gewonnen zu haben.\\
-      the linguist   a     Nobel.price believe 
+      the linguist   a     Nobel.prize believe 
       I   not   won      to have\\
  }
  \z
@@ -135,15 +131,7 @@ footnotetext may be typeset on a page that is different from the one where the f
 
 % You can use up to \verb+\glllllll+ if you need additional lines.
 
-In some subdisciplines of linguistics (e.\,g.\ typology) the examples are written in italics as in the
-following example:
-\ea
-\def\exfont{\normalsize\itshape}
-\gll Piloten         fik frataget    sit certifikat{\footnotemark}\\
-     pilot.{\scshape def} got deprived.of his license\\
-\footnotetext{KorpusDK.}
-\glt `The pilot was deprived of his license to fly.'
-\z 
+In some subdisciplines of linguistics (e.\,g.\ typology) the examples are written in italics.
 This is done automatically according to the series you publish in. 
 % of course this is not true for the code above ... 
 
@@ -393,7 +381,7 @@ For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barpl
 
 \begin{verbatim}
 \begin{figure} 
-  \barplot{P01,P02,P03}{
+  \barplot{Person}{\%}{P01,P02,P03}{
 	      (P01,19.47733441) 
 	      (P02,04.99311069) 
 	      (P03,01.22486586)
@@ -404,7 +392,7 @@ For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barpl
 \end{verbatim}
 
 \begin{figure} 
-  \barplot{P01,P02,P03}{
+  \barplot{Person}{\%}{P01,P02,P03}{
 	      (P01,19.47733441) 
 	      (P02,04.99311069) 
 	      (P03,01.22486586)

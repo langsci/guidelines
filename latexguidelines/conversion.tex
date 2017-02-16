@@ -1,6 +1,6 @@
 \chapter{Conversion} 
 \section{Conversion using the webservice}
-While it is preferable to work in \latex from the start, this is not always possible. For edited volumes, for instance, it is common that not all authors can acquire the necessary skills in due course. For those cases, you can use the templates for MS Word and LibreOffice provided on \url{http://langsci-press.org/templatesAndTools}. Follow the instructions in the templates. When you are finished, upload your file to \url{http://glottotopia.org/doc2tex/home}. This will give you a file which you can copy into the skeleton (\figref{fig:conversion:glottotopia}). You have the choice between ``raw'' and ``mod''. Generally, `mod' is preferable as a number of adaptations for linguists and \lsp are already in place. If you run into problems with ``mod'', you can use  ``raw'' as a fallback. You can then either copy and paste the converted document to a file of your own, or you can open the document directly in overleaf (\figref{fig:conversion:overleaf}).
+While it is preferable to work in \latex from the start, this is not always possible. For edited volumes, for instance, it is common that not all authors can acquire the necessary skills in due course. For those cases, you can use the templates for MS Word and LibreOffice provided on \url{http://langsci-press.org/templatesAndTools}. Follow the instructions in the templates. When you are finished, upload your file to \url{http://glottotopia.org/doc2tex/home}. This will give you a file which you can copy into the skeleton (\figref{fig:conversion:glottotopia}). You have the choice between ``raw'' and ``mod''. Generally,  ``mod'' is preferable as a number of adaptations for linguists and \lsp are already in place. If you run into problems with ``mod'', you can use  ``raw'' as a fallback. You can then either copy and paste the converted document to a file of your own, or you can open the document directly in Overleaf (\figref{fig:conversion:overleaf}).
 
 \begin{figure}
 \includegraphics[width=\textwidth]{converter.png} 
@@ -10,7 +10,7 @@ While it is preferable to work in \latex from the start, this is not always poss
 
 \begin{figure}
 \includegraphics[width=\textwidth]{conversionwritelatex.png} 
-\caption{Opening the converted document on overleaf.}
+\caption{Opening the converted document on Overleaf.}
 \label{fig:conversion:overleaf}
 \end{figure}
 
@@ -66,7 +66,7 @@ These include graphics, cross-references and some bibliographical references.
 % Furthermore, \verb+\langinfo+ has to be adapted to reflect the correct language, family and source of the example, or removed altogether. In this case, one would use  \verb+\langinfo{French}{Indo-European}{René Magritte}\\+
 
 \subsection{Graphics}
-All graphics are commented out by default since the files will not be available on overleaf until you upload them. So the following stretch
+All graphics are commented out by default since the files will not be available on Overleaf until you upload them. So the following stretch
 
 \begin{verbatim}
  \begin{figure}[h]
@@ -88,8 +88,8 @@ has to become
 \end{figure}
 \end{verbatim}
 
-\subsection{Crossreferences}
-Generally, references to sections and examples should work. Occasionally, there might be problems with stretches like ``(12a)'' or ``(12-15)''.
+\subsection{Cross-references}
+Generally, references to sections and examples should work. Occasionally, there might be problems with stretches like ``(12a)'' or ``(12-15)''. These have to be fixed manually.
 
 \subsection{Bibliographical references}
 The most common bibliographical references should work. Where authors have names which consist of two parts (such as ``Van Valin''), the author is often misrecognized as ``Valin''. Also, stretches like ``Smith 2000, 2001a,b, 2002'' will need manual postprocessing. 

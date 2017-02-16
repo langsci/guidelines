@@ -1,4 +1,5 @@
 \chapter{Indexing}
+\section{Basic indexing}
 \lsp books have an obligatory Name Index and an obligatory Subject Index. The Language Index is optional and should be used if your work makes reference to more than one language. 
 For the various ways to add entries to the index, refer to \tabref{tab:latex:indexentriese}. For every index, there are two commands. The shorter one adds a term to the relevant index but does not change your text. This is useful if the term you want to add to your index does not appear in exactly the same way in the text. If the term is indeed identical, you can use the command with an extra \verb+i+.
 
@@ -9,22 +10,24 @@ For the various ways to add entries to the index, refer to \tabref{tab:latex:ind
   \lsptoprule
   type & \upshape\normalsize command & indexed term \\
   \midrule
-  Subject Index& \verb+Nominalized sentences+ \verb+\is{nominalization} are+ \verb+common.+ & nomina\-lization \\
-  \mbox{Subject Index} identical& \verb+... while \isi{nominalization}+ \verb+ is less frequent ...+  & nomina\-lization \\\\
-  Language Index & \verb+Varieties of Chinese+ \verb+\il{Sinitic languages}+ \verb+differ in that ...+ & Sinitic languages \\
-  Language Index identical& \verb+The \ili{Sinitic languages},+ \verb+however, ... + & Sinitic languages \\\\
-  Author Index & \verb+In Homeric \ia{Homer}+ \verb+language, ... + & Homer\\
-  \mbox{Author Index} identical & \verb+This contradicts+ \verb+\iai{Homer}, who had+ \verb+advocated ...+ & Homer \\
+  Subject index& \verb+Nominalized sentences+ \verb+\is{nominalization} are+ \verb+common.+ & nomina\-lization \\
+  \mbox{Subject index} identical& \verb+... while \isi{nominalization}+ \verb+ is less frequent ...+  & nomina\-lization \\\\
+  Language index & \verb+Varieties of Chinese+ \verb+\il{Sinitic languages}+ \verb+differ in that ...+ & Sinitic languages \\
+  Language index identical& \verb+The \ili{Sinitic languages},+ \verb+however, ... + & Sinitic languages \\\\
+  Author index & \verb+In Homeric \ia{Homer}+ \verb+language, ... + & Homer\\
+  \mbox{Author index} identical & \verb+This contradicts+ \verb+\iai{Homer}, who had+ \verb+advocated ...+ & Homer \\
   \lspbottomrule
  \end{tabular}
 \end{table}
 
-If there are two or more entries on subsequent pages, the index generation will automatically produce a range. So, instead of `33,34,35,36', it will print out `33--36'. You can produce ranges yourself by using \verb+\is{someterm|(}+ for the start and  \verb+\is{someterm|)}+ for the end of the range. 
-
 Do not use the indexing commands directly before punctuation as it can produce unwanted white space. Put it after the punctuation instead.
+
+\subsection{Ranges}
+If there are two or more entries on subsequent pages, the index generation will automatically produce a range. So, instead of `33,34,35,36', it will print out `33--36'. You can produce ranges yourself by using \verb+\is{someterm|(}+ for the start and  \verb+\is{someterm|)}+ for the end of the range. 
 
 % If you compile your document with the option \verb+draftmode+ all indexed terms will show up in the margins.
 
+\subsection{Creation of the indexes}
 When your are done with adding index terms to your document, the following commands will produce the Subject Index and the Language Index
 \begin{verbatim}
   makeindex -o main.lnd main.ldx
