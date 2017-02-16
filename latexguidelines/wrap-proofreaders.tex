@@ -1,12 +1,12 @@
 %% -*- coding:utf-8 -*-
-\documentclass[ number=0
+\documentclass[number=0
                 ,series=guidelines,
-                ,isbn=000-0-000000-00-0,
-                ,url=http://langsci-press.org/catalog/book/0,
-	        ,output=guidelines
-		,oneside
-		  ]{LSP/langsci}   		  
-\input{localcommands}
+	        ,output=guidelines    % long|short|inprep   
+	        ,modfonts, nonflat
+	        %,blackandwhite
+	        %,smallfont
+% 	        ,draftmode  
+		  ]{langsci/langscibook}    	   
 \BackBody{}
 \typesetter{Sebastian Nordhoff} 
 \author{Stefan Müller, Martin Haspelmath \& Sebastian Nordhoff}
@@ -19,11 +19,15 @@
 \title{Language Science Press proofreading guidelines}  
 \subtitle{General rules for proofreaders}
 \BackTitle{Language Science Press proofreading guidelines}    
-
+\usepackage{langsci/styles/langsci-gb4e}
+\usepackage{langsci/styles/langsci-optional} 
+\input{localpackages.tex}
+\input{localcommands.tex}
 \begin{document}                
 \maketitle                
 \tableofcontents      
 \mainmatter     
+ 
 
 \include{proofreaders}
 \include{authors}
