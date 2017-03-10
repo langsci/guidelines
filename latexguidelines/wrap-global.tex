@@ -15,8 +15,15 @@
  
 \usepackage{langsci/styles/langsci-gb4e}
 \usepackage{langsci/styles/langsci-optional} 
-\input{localpackages.tex}
-\input{localcommands.tex}
+\usepackage{listings}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    
+\let\bibtex\BibTeX
+\let\BibTex\BibTeX
+\let\latex\LaTeX
+% \input{localpackages.tex}
+% \input{localcommands.tex}
 \begin{document}                
 \maketitle                
 \tableofcontents      

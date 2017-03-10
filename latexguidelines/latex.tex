@@ -2,7 +2,7 @@
 \chapter{\LaTeX}
 
 \section{Screencasts}
-Please note that we have screencasts available for many topics relating to {\latex} at \url{http://langsci-press.org/forAuthors} supplementing these guidelines.
+Please note that we have screencasts available for many topics relating to {\LaTeX} at \url{http://langsci-press.org/forAuthors} supplementing these guidelines.
 
 \section{Installation of the \texttt{langsci} class}
 \subsection{Local installation}
@@ -14,7 +14,7 @@ There is a skeleton for monographies and a skeleton for edited volumes. Choose w
 % Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
 \subsection{Online editor}
-In order to familiarize yourself with \latex, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
+In order to familiarize yourself with \LaTeX, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
 
 \begin{figure}
  \includegraphics[width=\textwidth]{overleaf.png}
@@ -37,8 +37,8 @@ That main file draws information from a number of other files which are in the s
     \verb+localmetadata.tex+ & information about the author, the title, the ISBN, etc. \\
     \verb+localpackages.tex+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
     \verb+localcommands.tex+ & extra commands you might want to define, e.\,g.\ for very frequent abbrevations in your text\\
-    \verb+localhyphenation.tex+ & for words where the \latex hyphenation algorithm does not produce the desired result      \\
-    \verb+localbibliography.bib+ & your bibliography in \bibtex-format \\
+    \verb+localhyphenation.tex+ & for words where the \LaTeX hyphenation algorithm does not produce the desired result      \\
+    \verb+localbibliography.bib+ & your bibliography in \BibTex-format \\
     \verb+chapters/chapter1.tex+ & text \\
     \verb+chapters/chapter2.tex+ & text \\
 ... & text \\
@@ -50,11 +50,11 @@ That main file draws information from a number of other files which are in the s
 A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.ind+, \verb+.and+, and \verb+.lnd+ for the indexes.  
 
 \section{Using the \texttt{langsci} class}
-There are a variety of programs for making writing \latex documents easier.
+There are a variety of programs for making writing \LaTeX documents easier.
 
 % For Microsoft Windows, Texniccenter is the most popular one (\figref{fig:latex:texniccenter}).
 For Mac, Texshop (\figref{fig:latex:texshop}) and Texstudio (\figref{fig:latex:texstudio}) are popular choices.
-For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
+For Linux, Kile is a very good \LaTeX editor (\figref{fig:latex:kile}).
 
 % \begin{figure}
 % \includegraphics[height=.4\textheight]{texniccenter.png}
@@ -117,8 +117,8 @@ For Linux, Kile is a very good \latex editor (\figref{fig:latex:kile}).
 % \verb+xstring+. 
 % 
 \section{Producing the document}
-For an introduction to producing documents with \latex, see our screencast at \url{http://langsci-press.org/forAuthors}.
-In your \latex editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
+For an introduction to producing documents with \LaTeX, see our screencast at \url{http://langsci-press.org/forAuthors}.
+In your \LaTeX editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
 
 
 
@@ -146,7 +146,7 @@ The general structure of the document is given by \lsp. You have a couple of opt
 
 
 \section{Common commands}\label{sec:latex:commoncommands}
-The wealth of commands available in \latex can be daunting at first sight. However, very soon you will see that you can get a very long way with some very basic commands. The first batch involve the structure of your document, i.e. the various levels of headings. These are:
+The wealth of commands available in \LaTeX can be daunting at first sight. However, very soon you will see that you can get a very long way with some very basic commands. The first batch involve the structure of your document, i.e. the various levels of headings. These are:
 \begin{itemize}
 \item \verb+\chapter{titleofheading}+
 \item \verb+\section{titleofheading}+
@@ -199,7 +199,7 @@ This gives you
 \glt `John loves Mary.'    
 \z
 
-Rough alignment of glosses in the source text can be helpful, but is not necessary. \latex will take care of alignment of the glosses automatically. 
+Rough alignment of glosses in the source text can be helpful, but is not necessary. \LaTeX will take care of alignment of the glosses automatically. 
 % Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
 % 
 % \begin{verbatim}
@@ -282,7 +282,7 @@ You should not assume that a figure or table will be placed exactly where it app
 
 You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\textwidth+, or \verb+.5\textwidth+.
 
-\verb+XXX+ tells \latex to split the available space into three equal portions and to justify the content inside the cells. 
+\verb+XXX+ tells \LaTeX to split the available space into three equal portions and to justify the content inside the cells. 
 
 \subsubsection{Tweaking tables}
 In order to give explicit width, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
