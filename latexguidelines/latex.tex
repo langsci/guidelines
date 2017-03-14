@@ -1,20 +1,20 @@
 %% -*- coding:utf-8 -*-
-\chapter{\LaTeX}
+\chapter{\LaTeX\xspace}
 
 \section{Screencasts}
-Please note that we have screencasts available for many topics relating to {\LaTeX} at \url{http://langsci-press.org/forAuthors} supplementing these guidelines.
+Please note that we have screencasts available for many topics relating to {\LaTeX\xspace} at \url{http://langsci-press.org/forAuthors} supplementing these guidelines.
 
 \section{Installation of the \texttt{langsci} class}
 \subsection{Local installation}
 For your first book, the easiest way will be to download the skeleton from \url{http://langsci-press.org/templatesAndTools}.
-There is a skeleton for monographies and a skeleton for edited volumes. Choose what is appropriate for you.
+There is a skeleton for monographs and a skeleton for edited volumes. Choose what is appropriate for you.
  
 % If you are dealing with Language Science Press books on a regular basis, you might want to opt for a system wide installation. The LSP class can be downloaded from \url{...} and will be available on CTAN in the near future.
 
 % Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
 \subsection{Online editor}
-In order to familiarize yourself with \LaTeX, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
+In order to familiarize yourself with \LaTeX\xspace, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
 
 \begin{figure}
  \includegraphics[width=\textwidth]{overleaf.png}
@@ -37,7 +37,7 @@ That main file draws information from a number of other files which are in the s
     \verb+localmetadata.tex+ & information about the author, the title, the ISBN, etc. \\
     \verb+localpackages.tex+ & extra packages you might require, for instance for syntactic trees or Hebrew text\\
     \verb+localcommands.tex+ & extra commands you might want to define, e.\,g.\ for very frequent abbrevations in your text\\
-    \verb+localhyphenation.tex+ & for words where the \LaTeX hyphenation algorithm does not produce the desired result      \\
+    \verb+localhyphenation.tex+ & for words where the \LaTeX\xspace hyphenation algorithm does not produce the desired result      \\
     \verb+localbibliography.bib+ & your bibliography in \BibTex-format \\
     \verb+chapters/chapter1.tex+ & text \\
     \verb+chapters/chapter2.tex+ & text \\
@@ -50,11 +50,11 @@ That main file draws information from a number of other files which are in the s
 A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.ind+, \verb+.and+, and \verb+.lnd+ for the indexes.  
 
 \section{Using the \texttt{langsci} class}
-There are a variety of programs for making writing \LaTeX documents easier.
+There are a variety of programs for making writing \LaTeX\xspace documents easier.
 
 % For Microsoft Windows, Texniccenter is the most popular one (\figref{fig:latex:texniccenter}).
-For Mac, Texshop (\figref{fig:latex:texshop}) and Texstudio (\figref{fig:latex:texstudio}) are popular choices.
-For Linux, Kile is a very good \LaTeX editor (\figref{fig:latex:kile}).
+For Mac OS, Texshop (\figref{fig:latex:texshop}) and Texstudio (\figref{fig:latex:texstudio}) are popular choices. The latter is also available on Windows.
+For Linux, Kile is a very good \LaTeX\xspace editor (\figref{fig:latex:kile}).
 
 % \begin{figure}
 % \includegraphics[height=.4\textheight]{texniccenter.png}
@@ -117,8 +117,8 @@ For Linux, Kile is a very good \LaTeX editor (\figref{fig:latex:kile}).
 % \verb+xstring+. 
 % 
 \section{Producing the document}
-For an introduction to producing documents with \LaTeX, see our screencast at \url{http://langsci-press.org/forAuthors}.
-In your \LaTeX editor, there are various ways to create a pdf from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
+For an introduction to producing documents with \LaTeX\xspace, see our screencast at \url{http://langsci-press.org/forAuthors}.
+In your \LaTeX\xspace editor, there are various ways to create a \textsc{pdf} from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
 
 
 
@@ -126,7 +126,7 @@ In order to include the bibliography, you have to run \verb+bibtex+ to read the 
  
 If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume.sh+, which will do this for you and which is found in the skeleton as well. 
 
-The creation of the indexes is a bit more complicated. You can leave this to the \lsp people. The relevant commands are:
+The creation of the indexes is a bit more complicated. You can leave this to the \lsp staff. The relevant commands are:
 
 \begin{verbatim}
 makeindex -o lsp-skeleton.and lsp-skeleton.adx
@@ -146,7 +146,7 @@ The general structure of the document is given by \lsp. You have a couple of opt
 
 
 \section{Common commands}\label{sec:latex:commoncommands}
-The wealth of commands available in \LaTeX can be daunting at first sight. However, very soon you will see that you can get a very long way with some very basic commands. The first batch involve the structure of your document, i.e. the various levels of headings. These are:
+The wealth of commands available in \LaTeX\xspace can be daunting at first sight. However, very soon you will see that you can get a very long way with some very basic commands. The first batch involve the structure of your document, i.e. the various levels of headings. These are:
 \begin{itemize}
 \item \verb+\chapter{titleofheading}+
 \item \verb+\section{titleofheading}+
@@ -164,7 +164,8 @@ to refer to a label. It is good practice to use
 \verb+\sectref{labelname}+,
 \verb+\tabref{labelname}+,
 \verb+\figref{labelname}+,
-to refer to sections, tables, and figures, respectively. A reference to this section will be \verb+see \sectref{sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
+\verb+\REF{labelname}+,
+to refer to sections, tables, figures, and linguistic examples, respectively. A reference to this section will be \verb+see \sectref{sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
 Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidelines for bibliographies for more information.
 
@@ -199,7 +200,7 @@ This gives you
 \glt `John loves Mary.'    
 \z
 
-Rough alignment of glosses in the source text can be helpful, but is not necessary. \LaTeX will take care of alignment of the glosses automatically. 
+Rough alignment of glosses in the source text can be helpful, but is not necessary. \LaTeX\xspace will take care of alignment of the glosses automatically. 
 % Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
 % 
 % \begin{verbatim}
@@ -282,7 +283,7 @@ You should not assume that a figure or table will be placed exactly where it app
 
 You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\textwidth+, or \verb+.5\textwidth+.
 
-\verb+XXX+ tells \LaTeX to split the available space into three equal portions and to justify the content inside the cells. 
+\verb+XXX+ tells \LaTeX\xspace to split the available space into three equal portions and to justify the content inside the cells. 
 
 \subsubsection{Tweaking tables}
 In order to give explicit width, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
@@ -307,7 +308,7 @@ s & & .0001 & &&  c \\
 
 
 \subsection{Footnotes}
-In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word {\footnotemark} word word+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures. Add the content in the running text, either in the main body of the text or as a footnote. 
+In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word\footnotemark word word+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures. Add the content in the running text, either in the main body of the text or as a footnote. 
 
 \subsection{Landscape}
 
@@ -319,7 +320,7 @@ Another common requirement is fitting a table or other element which is a bit to
 For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
 
 \subsection{Computer code}
-Please use the \verb+listings+ environment. You can change which words should count as keywords.
+Please use the \verb+listings+ environment. You can change which words should count as keywords. A list of pre-defined languages can be found in the user guide of the \verb+Listings+ package.
 
 \begin{verbatim}
 \begin{lstlisting}[language=Python, stringstyle=\color{blue}]
@@ -339,8 +340,8 @@ Please use the \verb+listings+ environment. You can change which words should co
 
 \section{Adapting the class to your needs}
 
-Additional packages can be added via \verb+\usepackage{packagename}+ in the file \verb+localpackages.tex+.
-Addtional commands can be added via \verb+\newcommand{\commandname}{commanddefinition}+ in the file \verb+localcommands.tex+. 
+Additional packages can be added via \verb+\usepackage{package}+ in the file\linebreak \verb+localpackages.tex+.
+Addtional commands can be added via \begin{verbatim}\newcommand{\commandname}{commanddefinition}\end{verbatim} in the file \verb+localcommands.tex+. 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the ``showcases'' guideline to see how to typeset these elements.

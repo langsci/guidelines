@@ -2,15 +2,15 @@
 
 There is a huge amount of packages that can be used for various purposes. \citet{MG2013a} is a good
 reference book. This section discusses some aspects of some packages that are relevant for
-linguistics. Every \latex package comes with a documentation and users should consult these
+linguistics. Every \LaTeX\xspace package comes with a documentation and users should consult these
 documentations, too. The purpose of this section is to point users to the packages that we think
 serve their purpose best and that are compatible with other packages and the \lsp classes.
 
 \section{Glossed examples}
 
 Glossed\is{glossing|(}\ispackageb{lsp-gb4e} examples are typeset with a modified version of the \texttt{gb4e}\ispackage{gb4e} package by Craig
-Thiersch\ia{Thiersch, Craig}. The modified package is called \texttt{lsp-gb4e}. 
-% % It is contained in the styles directory that is delivered with the \lsp \latex classes. It differs from the original package in loading a version of \texttt{gloss} that was modified by Alexis Dimitriadis\ia{Alexis Dimitriadis} in order to be compatible with \texttt{jambox} (see Section~\ref{sec-jambox}).
+Thiersch\ia{Thiersch, Craig}. The modified package is called \texttt{langsci-gb4e}. 
+% % It is contained in the styles directory that is delivered with the \lsp \LaTeX\xspace classes. It differs from the original package in loading a version of \texttt{gloss} that was modified by Alexis Dimitriadis\ia{Alexis Dimitriadis} in order to be compatible with \texttt{jambox} (see Section~\ref{sec-jambox}).
 
 Simple examples like \REF{ex:showcases:simple} can be typeset as shown below.
 \ea\label{ex:showcases:simple} 
@@ -43,6 +43,7 @@ Grammaticality judgments can be added in brackets. Note that in this case, brace
   }
 \z
 \end{verbatim} 
+
 
 Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respectively. The example in
 \REF{ex:showcases:list} shows how the sentences can be aligned properly. Note that the first example in a list gets \verb+\ea+, the subsequent ones get \verb+\ex+. Also note the empty grammticality judgment for the first example in order to align it with the second example, which has a~*.
@@ -89,7 +90,6 @@ Lists of examples can be typeset with nested \verb+\ea+  and \verb+\z+  respecti
  \z
 \z
 \end{verbatim}
- 
 
 If you want to add a footnote\is{footnote|(} that provides the source of an example as in \REF{ex:showcases:footnote}, you can do
 this as follows:
@@ -375,7 +375,7 @@ Linguistic trees can be typeset with the \verb+forest+ package. An example is gi
 
 \section{Diagrams}
 
-For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barplot}). More complicated programs can be drawn with tikz as well, please contact support. For diagrams consisting only of lines, curves, boxes, and symbols, please provide the data, we will draw them in tikz. For heatmaps and the like, please provide high resolution graphics files. 
+For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barplot}). More complicated programs can be drawn with Ti\textit{k}Z as well, please contact support. For diagrams consisting only of lines, curves, boxes, and symbols, please provide the data, we will draw them in Ti\textit{k}Z. For heatmaps and the like, please provide high resolution graphics files. 
 
 
 
@@ -688,10 +688,10 @@ For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barpl
 % % % % \section{\texttt{varioref}}
 % % % % 
 % % % % \texttt{varioref}\ispackageb{varioref} is loaded by the \lsp class file. You can use \vref \iscommand{vref} to refer to floating
-% % % % objects like figures and tables. \latex automatically determines whether the floating object is on
+% % % % objects like figures and tables. \LaTeX\xspace automatically determines whether the floating object is on
 % % % % the same page or further away. If the float is on the next page and the next page is to the right of
-% % % % the current page, \latex will insert an appropriate text like \emph{on the facing page}. If we are
-% % % % on a right page, \latex will insert something like \emph{on the next page} or \emph{on the facing page}. If the float is further
+% % % % the current page, \LaTeX\xspace will insert an appropriate text like \emph{on the facing page}. If we are
+% % % % on a right page, \LaTeX\xspace will insert something like \emph{on the next page} or \emph{on the facing page}. If the float is further
 % % % % away, a page number will be provided.
 % % % % \ispackagee{varioref}
 % % % % 
@@ -701,7 +701,7 @@ For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barpl
 % % % % \section{\texttt{german} for hyphenation}
 % % % % 
 % % % % If\is{hyphenation|(}\ispackageb{german} you write things like \head-driven or very long paths like
-% % % % {\scshape snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX{} does not do hyphenation
+% % % % {\scshape snysem$|$""loc$|$""cat$|$""head$|$""mod$|$""loc}, \LaTeX\xspace{} does not do hyphenation
 % % % % (in the part following the dash).
 % % % % 
 % % % % german.sty+ provides additional markup that allows for proper hyphenation:
