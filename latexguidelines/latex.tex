@@ -165,7 +165,7 @@ to refer to a label. It is good practice to use
 \verb+\tabref{labelname}+,
 \verb+\figref{labelname}+,
 \verb+\REF{labelname}+,
-to refer to sections, tables, figures, and linguistic examples, respectively. A reference to this section will be \verb+see \sectref{sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
+to refer to sections, tables, figures, and linguistic examples, respectively. A reference to this section will be \verb+see \sectref}+ \verb+{sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
 Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidelines for bibliographies for more information.
 
@@ -196,7 +196,7 @@ This gives you
 \ea\label{ex:examplelabel}
 \langinfo{French}{Indo-European}{personal knowledge}\\
 \gll  Jean aim-e Marie \\
-      John love-{3\sg.\prs.\ind} Mary \\
+      John love-\textsc{3s.pres.ind}  Mary \\
 \glt `John loves Mary.'    
 \z
 
@@ -207,7 +207,7 @@ Rough alignment of glosses in the source text can be helpful, but is not necessa
 % \ea\label{ex:examplelabel}
 % \langinfo{French}{Indo-European}{personal knowledge}\\
 % \gll  Jean aim-e                 Marie \\
-%       John love-{3\sg.\prs.\ind} Mary \\
+%       John love-\textsc{3s.pres.ind}  Mary \\
 % \glt `John loves Mary.'    
 % \z
 % \end{verbatim}
@@ -222,7 +222,7 @@ To avoid a page break in an example, put it between \verb+\protectedex{...}+.
 \ea\label{ex:examplelabel}
 \langinfo{French}{Indo-European}{personal knowledge}\\
 \gll  Jean aim-e                 Marie \\
-      John love-{3\sg.\prs.\ind} Mary \\
+      John love-\textsc{3s.pres.ind}  Mary \\
 \glt `John loves Mary.'    
 \z
 }
@@ -286,7 +286,7 @@ You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\t
 \verb+XXX+ tells \LaTeX\xspace to split the available space into three equal portions and to justify the content inside the cells. 
 
 \subsubsection{Tweaking tables}
-In order to give explicit width, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
+In order to assign explicit width to a column, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
 This will set the column width to 1.75cm and justify the cell contents. If you would rather have left-aligned content without hyphenation, use \verb+L{1.75cm}+, for center use \verb+C{1.75cm}+, for right-aligned use \verb+R{1.75cm}+.
 
 If you want columns of equal width, use \verb+X+ as above for justified, \verb+Q+ for left-aligned, \verb+S+ for right aligned and \verb+Z+ for centered.
@@ -310,8 +310,9 @@ s & & .0001 & &&  c \\
 \subsection{Footnotes}
 In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word\footnotemark word word+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures. Add the content in the running text, either in the main body of the text or as a footnote. 
 
+\newpage
 \subsection{Landscape}
-
+ 
 A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, use \verb+sidewaysfigure+ or \verb+sidewaystable+ instead of the normal \verb+figure+ or \verb+table+.
 
 \subsection{Fitting large content on the page}
