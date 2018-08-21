@@ -7,13 +7,13 @@ Please note that we have screencasts available for many topics relating to {\LaT
 \section{Installation of the \texttt{langsci} class}
 \subsection{Local installation}
 For your first book, the easiest way will be to download the skeleton from \url{http://langsci-press.org/templatesAndTools}.
-There is a skeleton for monographs and a skeleton for edited volumes. Choose what is appropriate for you.
+There is a skeleton for monographs, one for edited volumes, and one for papers in edited volumes. Choose what is appropriate for you.
  
 % If you are dealing with Language Science Press books on a regular basis, you might want to opt for a system wide installation. The LSP class can be downloaded from \url{...} and will be available on CTAN in the near future.
 
 % Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
-\subsection{Online editor}
+\subsection{Online editor}\todo{adapt to v2}
 In order to familiarize yourself with \LaTeX\xspace, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
 
 \begin{figure}
@@ -30,7 +30,7 @@ That main file draws information from a number of other files which are in the s
 \begin{table}[htb]
   \caption{File structure of the skeleton}
   \label{tab:latex:skeleton}
-  \begin{tabularx}{\textwidth}{Xp{6cm}}
+  \begin{tabularx}{\textwidth}{lQ}
     \lsptoprule
     file & content \\
     \midrule
@@ -47,7 +47,7 @@ That main file draws information from a number of other files which are in the s
   \end{tabularx}
 \end{table}
 
-A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.ind+, \verb+.and+, and \verb+.lnd+ for the indexes.  
+A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.snd+, \verb+.and+, and \verb+.lnd+ for the indexes.  
 
 \section{Using the \texttt{langsci} class}
 There are a variety of programs for making writing \LaTeX\xspace documents easier.
@@ -122,9 +122,9 @@ In your \LaTeX\xspace editor, there are various ways to create a \textsc{pdf} fr
 
 
 
-In order to include the bibliography, you have to run \verb+bibtex+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
+In order to include the bibliography, you have to run \verb+biber+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
  
-If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume.sh+, which will do this for you and which is found in the skeleton as well. 
+% If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume.sh+, which will do this for you and which is found in the skeleton as well. 
 
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp staff. The relevant commands are:
 
@@ -165,7 +165,7 @@ to refer to a label. It is good practice to use
 \verb+\tabref{labelname}+,
 \verb+\figref{labelname}+,
 \verb+\REF{labelname}+,
-to refer to sections, tables, figures, and linguistic examples, respectively. A reference to this section will be \verb+see \sectref}+ \verb+{sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
+to refer to sections, tables, figures, and linguistic examples, respectively. A reference to this section will be \verb+see \sectref{+ \verb+sec:latex:commoncommands}+, which will produce ``see \sectref{sec:latex:commoncommands}''.
 
 Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidelines for bibliographies for more information.
 
@@ -180,8 +180,7 @@ There is generally no need to use underlining. If you want to use underlining, g
 Linguistic examples are typeset like this
 
 \begin{verbatim}
-\ea\label{ex:examplelabel}
-\langinfo{French}{Indo-European}{personal knowledge}\\
+\ea\label{ex:examplelabel} 
 \gll  Jean aim-e                    Marie \\
       John love-\textsc{3s.pres.ind} Mary \\
 \glt `John loves Mary.'    
@@ -193,8 +192,7 @@ Linguistic examples are typeset like this
 \newcommand{\ind}{\textsc{ind}}
 This gives you
 % \todo{fix index}
-\ea\label{ex:examplelabel}
-\langinfo{French}{Indo-European}{personal knowledge}\\
+\ea\label{ex:examplelabel} 
 \gll  Jean aim-e Marie \\
       John love-\textsc{3s.pres.ind}  Mary \\
 \glt `John loves Mary.'    
@@ -219,8 +217,7 @@ To avoid a page break in an example, put it between \verb+\protectedex{...}+.
 
 \begin{verbatim}
 \protectedex{
-\ea\label{ex:examplelabel}
-\langinfo{French}{Indo-European}{personal knowledge}\\
+\ea\label{ex:examplelabel} 
 \gll  Jean aim-e                 Marie \\
       John love-\textsc{3s.pres.ind}  Mary \\
 \glt `John loves Mary.'    
@@ -234,7 +231,7 @@ In order to add a graphics file, use the following stretch of code
 \begin{verbatim}
 \begin{figure}
   \includegraphics[height=.3\textheight]{figures/filename.png}
-  \caption{Some good caption.}
+  \caption{Some good caption}
   \label{fig:chapterhandle:keytofigure}
 \end{figure}
 \end{verbatim}
@@ -256,7 +253,7 @@ In order to add a table, use the following stretch of code:
     Zelle   & cellule & celda    \\
     \lspbottomrule
   \end{tabularx}
-  \caption{Some good caption.}
+  \caption{Some good caption}
   \label{tab:chapterhandle:keytotable}
 \end{table}
 \end{verbatim}
@@ -273,7 +270,7 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
     Zelle   & cellule & celda    \\
     \lspbottomrule
   \end{tabularx}
-  \caption{Some good caption.}
+  \caption{Some good caption}
   \label{tab:chapterhandle:keytotable}
 \end{table}
 
@@ -289,7 +286,7 @@ You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\t
 In order to assign explicit width to a column, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
 This will set the column width to 1.75cm and justify the cell contents. If you would rather have left-aligned content without hyphenation, use \verb+L{1.75cm}+, for center use \verb+C{1.75cm}+, for right-aligned use \verb+R{1.75cm}+.
 
-If you want columns of equal width, use \verb+X+ as above for justified, \verb+Q+ for left-aligned, \verb+S+ for right aligned and \verb+Z+ for centered.
+If you want columns of equal width, use \verb+X+ as above for justified, \verb+Q+ for left-aligned, \verb+Y+ for right aligned and \verb+Z+ for centered.
 
 If you want the cell to be exactly the width of its content, use \verb+l+, \verb+r+, \verb+c+, respectively. You can mix all column types freely as in \tabref{tab:colmixes}. In case you find this to complex, stick to \verb+l+ and \verb+X+ for a start.
 
@@ -308,7 +305,7 @@ s & & .0001 & &&  c \\
 
 
 \subsection{Footnotes}
-In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word\footnotemark word word+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures. Add the content in the running text, either in the main body of the text or as a footnote. 
+In order to add footnotes, use the command \verb+\footnote{...}+. If you want to use a footnote in an example, use \verb+word\footnotemark word word+ and add a line with \verb+\footnotetext{text of the footnote}+ just before the translation of the example. You should not add footnotes to tables or figures. Add the content in the running text, either in the main body of the text or as a footnote. Footnotes come after puncutation.\footnote{Footnotes before puncutation create ugly holes in the text.}
 
 \newpage
 \subsection{Landscape}
