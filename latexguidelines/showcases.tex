@@ -251,25 +251,26 @@ In case your movement arrows cross each other, please specify names and distance
 \z
 Note that you have to assign the \verb+[Group]+ to both tail and head, but \verb+*+ and \verb+[Spacing]+ are only valid as head arguments.
 
-\subsection{Correcting spacing}
-As arrows are further distanced from their respective text, they may interfere with following lines. It's advisable to adjust the line spacing in these cases. If you use simple example environments, a \verb+\doublespacing+ will suffice:\largerpage
-
-\begin{exe}\doublespacing
-\ex\ConnectTail{This}[A] is \ConnectTail{an} \ConnectHead{example} of \ConnectHead*[2ex]{movement}[A].
-\ex Another Sentence
-
-\singlespacing
-\begin{lstlisting}
-\begin{exe}
-    \doublespacing
-    \ex\ConnectTail{This}[A] is \ConnectTail{an} \ConnectHead{example} of \ConnectHead*[2ex]{movement}[A].
-    \ex Another Sentence
-\end{exe}
-\end{lstlisting}
-\end{exe}
-Make sure that \verb+\doublespacing+ is given \emph{inside} the example environment, so that it will only be applied to this example.
-
-Using movement arrows with glossing and in trees is still under development.
+% \subsection{Correcting spacing}
+% As arrows are further distanced from their respective text, they may interfere with following lines. It's advisable to adjust the line spacing in these cases. If you use simple example environments, a \verb+\doublespacing+ will suffice:\largerpage
+% 
+% \begin{exe}\doublespacing
+% \ex\ConnectTail{This}[A] is \ConnectTail{an} \ConnectHead{example} of \ConnectHead*[2ex]{movement}[A].
+% \ex Another Sentence
+% 
+% \largerpage[-1]
+% \singlespacing
+% \begin{lstlisting}
+% \begin{exe}
+%     \doublespacing
+%     \ex\ConnectTail{This}[A] is \ConnectTail{an} \ConnectHead{example} of \ConnectHead*[2ex]{movement}[A].
+%     \ex Another Sentence
+% \end{exe}
+% \end{lstlisting}
+% \end{exe}
+% Make sure that \verb+\doublespacing+ is given \emph{inside} the example environment, so that it will only be applied to this example.
+% 
+% Using movement arrows with glossing and in trees is still under development.
 
 \section{\texttt{jambox}}
 \label{sec-jambox}

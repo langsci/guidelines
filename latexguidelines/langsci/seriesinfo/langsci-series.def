@@ -15,12 +15,14 @@
 \newcommand{\eotmsig}{eotmsig}
 \newcommand{\eurosla}{eurosla}
 \newcommand{\hpls}{hpls}
-\newcommand{\lv}{lv}		%Language Variation
+\newcommand{\loc}{loc}
+\newcommand{\lv}{lv}            %Language Variation
 \newcommand{\mi}{mi}
 \newcommand{\nc}{nc}		%Niger Congo
 \newcommand{\ogs}{ogs}		%Open Generative Syntax
 \newcommand{\osl}{osl}		%Open Slavic Linguistics
 \newcommand{\pmwe}{pmwe}		%Phraseology and Multi-Word Expressions
+\newcommand{\scl}{scl}
 \newcommand{\sidl}{sidl}
 \newcommand{\silp}{silp}	%Studies in Laboratory Phonology
 \newcommand{\tbls}{tbls}	%Textbooks in Language Sciences
@@ -68,15 +70,20 @@
 \ifx\lsSeries\eurosla
 	\newcommand{\lsSeriesTitle}{Eurosla Studies~\lsSeriesNumber}
 	\newcommand{\lsSeriesColor}{lsMidOrange}
+	\renewcommand{\lsISSN}{2626-2665}	
 \fi
 \ifx\lsSeries\hpls
 	\newcommand{\lsSeriesTitle}{History and Philosophy of the Language Sciences~\lsSeriesNumber}
 	\newcommand{\lsSeriesColor}{lsSoftGreen}
 \fi
+\ifx\lsSeries\loc
+        \newcommand{\lsSeriesTitle}{Languages of the Caucasus~\lsSeriesNumber}
+        \newcommand{\lsSeriesColor}{lsLightWine}
+\fi
 \ifx\lsSeries\lv
-	\newcommand{\lsSeriesTitle}{Language Variation~\lsSeriesNumber}
-	\newcommand{\lsSeriesColor}{lsDarkWine}
-	\renewcommand{\lsISSN}{2366-7818}
+        \newcommand{\lsSeriesTitle}{Language Variation~\lsSeriesNumber}
+        \newcommand{\lsSeriesColor}{lsDarkWine}
+        \renewcommand{\lsISSN}{2366-7818}
 \fi
 \ifx\lsSeries\mi
 	\newcommand{\lsSeriesTitle}{Morphological Investigations~\lsSeriesNumber}
@@ -86,6 +93,8 @@
 \ifx\lsSeries\nc
 	\newcommand{\lsSeriesTitle}{Niger-Congo Comparative Studies~\lsSeriesNumber}
 	\newcommand{\lsSeriesColor}{lsRed}
+	\renewcommand{\lsISSN}{2627-0048} %online
+% 	\renewcommand{\lsISSN}{2626-3513} %print 
 \fi
 \ifx\lsSeries\ogs
 	\newcommand{\lsSeriesTitle}{Open Generative Syntax~\lsSeriesNumber}
