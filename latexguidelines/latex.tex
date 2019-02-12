@@ -13,8 +13,9 @@ There is a skeleton for monographs, one for edited volumes, and one for papers i
 
 % Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
 
-\subsection{Online editor}\todo{adapt to v2}
-In order to familiarize yourself with \LaTeX\xspace, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{http://bit.ly/1u05Xgr} and select ``open as template''. Click on [Project] at the very top to see all files. The most important file is \verb+chapters/filename.tex+.
+\subsection{Online editor}
+% \todo{adapt to v2}
+In order to familiarize yourself with \LaTeX\xspace, you might also want to try the webservice \url{overleaf.com} first (\figref{fig:latex:overleaf}). Visit \url{https://www.overleaf.com/latex/templates/langsci-template-for-monographs-2018-slash-11/brdsfhcmfxzd} and select ``open as template''. The files are listed on the left hand side. The most important file is \verb+chapters/filename.tex+.
 
 \begin{figure}
  \includegraphics[width=\textwidth]{overleaf.png}
@@ -118,7 +119,9 @@ For Linux, Kile is a very good \LaTeX\xspace editor (\figref{fig:latex:kile}).
 % 
 \section{Producing the document}
 For an introduction to producing documents with \LaTeX\xspace, see our screencast at \url{http://langsci-press.org/forAuthors}.
-In your \LaTeX\xspace editor, there are various ways to create a \textsc{pdf} from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
+In your \LaTeX\xspace editor, there are various ways to create a \textsc{pdf} from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://www.overleaf.com/learn/latex/Errors} 
+and
+\url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
 
 
 
@@ -129,9 +132,9 @@ In order to include the bibliography, you have to run \verb+biber+ to read the b
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp staff. The relevant commands are:
 
 \begin{verbatim}
-makeindex -o lsp-skeleton.and lsp-skeleton.adx
-makeindex -o lsp-skeleton.lnd lsp-skeleton.ldx 
-makeindex -o lsp-skeleton.snd lsp-skeleton.sdx
+makeindex -o main.and main.adx
+makeindex -o main.lnd main.ldx 
+makeindex -o main.snd main.sdx
 \end{verbatim} 
 
 
@@ -336,10 +339,11 @@ Please use the \verb+listings+ environment. You can change which words should co
     print greeting, addressee
 \end{lstlisting}
 
+\largerpage[2]
 \section{Adapting the class to your needs}
-
 Additional packages can be added via \verb+\usepackage{package}+ in the file\linebreak \verb+localpackages.tex+.
 Addtional commands can be added via \begin{verbatim}\newcommand{\commandname}{commanddefinition}\end{verbatim} in the file \verb+localcommands.tex+. 
+\clearpage 
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the ``showcases'' guideline to see how to typeset these elements.

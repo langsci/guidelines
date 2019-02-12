@@ -1,13 +1,13 @@
 %% -*- coding:utf-8 -*-
-\documentclass[number=0
-                ,series=guidelines,
+\documentclass[series=guidelines,
 	        ,output=guidelines    % long|short|inprep   
+	        ,guidelines
 	        ,modfonts, nonflat
 	        %,blackandwhite
 	        %,smallfont
 % 	        ,draftmode  
 		  ]{langsci/langscibook}    
-                      
+\renewcommand{\lsSeries}{guidelines}                      
 \author{Sebastian Nordhoff and Stefan Müller}
 \title{Language Science Press guidelines}  
 \subtitle{Complete set of guidelines}
@@ -28,6 +28,7 @@
 \include{volumeeditors}
 \include{latex}
 \include{conversion}
+\include{sanitycheck}
 \include{proofreaders}
 \include{indexers}
 \include{typesetters} 
