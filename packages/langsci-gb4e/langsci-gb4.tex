@@ -1,0 +1,242 @@
+\documentclass[output=paper]{langscibook}
+\author{Sebastian Nordhoff}
+\title{langsci-gb4e}
+
+\usepackage{langsci-gb4e}
+\usepackage{langsci-optional}
+\usepackage{listings}
+\lstset{  
+    basicstyle=\fontfamily{pcr}\selectfont\footnotesize\color{blue},
+    keywordstyle=\color{black}\bfseries, % style for keywords
+    numbers=none, % where to put the line-numbers
+    numberstyle=\tiny, % the size of the fonts that are used for the line-numbers     
+    backgroundcolor=\color{gray},
+    showspaces=false, % show spaces adding particular underscores
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false, % show tabs within strings adding particular underscores
+    frame=single, % adds a frame around the code
+    tabsize=2, % sets default tabsize to 2 spaces
+    rulesepcolor=\color{gray},
+    rulecolor=\color{black},
+    captionpos=b, % sets the caption-position to bottom
+    breaklines=true, % sets automatic line breaking
+    breakatwhitespace=false, 
+}
+\newcommand{\cmd}[1]{\texttt{\textbackslash#1}}
+\newcommand{\env}[1]{\texttt{#1}}
+\begin{document}
+  \maketitle
+
+\section{Introduction}
+This document describes the \texttt{langsci-gb4e} package for typesetting linguistic examples. It builds upon the popular \texttt{gb4e} (by a) and \texttt{cgloss} (by X) packages. It also includes the package \texttt{jambox} by Alexis Dimitriadis. 
+\section{History}
+\section{Standard usage}
+This manual starts with the most common cases and describes the foundations and the more complicated cases later. 
+
+To produce a standard example, use \cmd{ea} before and \cmd{z} after
+ 
+\begin{minipage}{.45\textwidth}
+\begin{lstlisting}
+  \ea 
+  The cat is on the mat
+  \z
+\end{lstlisting}
+\end{minipage}
+\parbox[b]{.45\textwidth}{
+  \ea 
+  The cat is on the mat
+  \z
+  }
+
+\section{Judgments}  
+  To add judgments, there is a quick and dirty way and a proper way. 
+
+\subsection{Quick and dirty way}  
+Simply add a \texttt{*} in front of the sentence (or any other judgment). In groups of examples, this will look bad because vertical alignment is off (\ref{ex:judg1}--\ref{ex:judg2}).
+
+\begin{minipage}{.45\textwidth}
+\begin{lstlisting}
+  \ea 
+  The cat is on the mat
+  \z
+  \ea 
+  * The cat are on the mat
+  \z
+\end{lstlisting}
+\end{minipage}
+\parbox[b]{.45\textwidth}{
+  \ea\label{ex:judg1} 
+  The cat is on the mat
+  \z
+  \ea\label{ex:judg2} 
+  * The cat are on the mat
+  \z
+  }
+  
+\subsection{Proper way}  
+The proper way puts the judgment between \texttt{[]} and does the same for empty judgments in a group. The sentence itself is put in \texttt{\{\}}. In this way, the examples align nicely. (\ref{ex:judg3}--\ref{ex:judg4}).
+  
+\begin{minipage}{.45\textwidth}
+\begin{lstlisting}
+  \ea[]{ 
+  The cat is on the mat
+  }
+  \z 
+  \ea[*]{ 
+  The cat are on the mat
+  }
+  \z
+\end{lstlisting}
+\end{minipage}
+\parbox[b]{.45\textwidth}{
+  \ea[]{\label{ex:judg3}
+  The cat is on the mat
+  }
+  \z 
+  \ea[*]{\label{ex:judg4}
+  The cat are on the mat
+  }
+  \z
+  }
+  
+ 
+\subsection{Lists of examples}
+If there are several examples in a row, you can use only one \cmd{z} at the very end and use \cmd{ex} instead of \cmd{ea} for examples after the first one (\ref{ex:ex:second}--\ref{ex:ex:end}).
+
+\begin{minipage}{.45\textwidth}
+\begin{lstlisting}
+\ea I like the flowers
+\ex I like the daffodils
+\ex I like the mountains
+\ex I like the rolling hills
+\z
+\end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{
+\ea I like the flowers\label{ex:ex:start}
+\ex I like the daffodils\label{ex:ex:second}
+\ex I like the mountains
+\ex I like the rolling hills\label{ex:ex:end}
+\z
+}
+
+\subsection{Subexamples}
+There are three predefined level of examples. \cmd{ea} opens a new level and prints the first identifier; \cmd{z} closes the last level. \cmd{ex} adds a further example but does not change levels. 
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\ea one
+    \ea eins
+    \ex una
+    \z
+\ex two
+    \ea zwei
+    \ex dos
+    \z
+\ex three
+    \ea drei
+        \ea who needs all these
+        \ex levels of subexamples
+        \z
+    \z
+\z
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{
+\ea one
+    \ea eins
+    \ex una
+    \z
+\ex two
+    \ea zwei
+    \ex dos
+    \z
+\ex three
+    \ea drei
+        \ea who needs all these
+        \ex levels of subexamples
+        \z
+    \z
+\z
+}
+
+\section{The environments \texttt{exe} and \texttt{xlist}}
+The commands \cmd{ea} and \cmd{z} are shorthands for the environments \env{exe} (highest level) and \env{xlist} (subexamples and below). \cmd{ea} works like \verb+\begin{exe}\ex+ or \verb+\begin{xlist}\ex+, as the case may be. \cmd{z} works like \verb+\end{exe}+ or \verb+\end{xlist}+. In some cases, it can be necessary to resort to the environments instead of the shorthands, but this is rare. 
+
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\begin{exe}
+    \ex one
+    \begin{xlist}
+        \ex eins
+        \ex una
+    \end{xlist}
+    \ex two
+    \begin{xlist}
+        \ex zwei
+        \ex dos
+    \end{xlist}    
+    \ex three
+    \begin{xlist}
+        \ex drei        
+        \begin{xlist}
+            \ex who needs all these
+            \ex levels of subexamples
+        \end{xlist}
+    \end{xlist}
+\end{exe}
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{
+\begin{exe}
+    \ex one
+    \begin{xlist}
+        \ex eins
+        \ex una
+    \end{xlist}
+    \ex two
+    \begin{xlist}
+        \ex zwei
+        \ex dos
+    \end{xlist}    
+    \ex three
+    \begin{xlist}
+        \ex drei        
+        \begin{xlist}
+            \ex who needs all these
+            \ex levels of subexamples
+        \end{xlist}
+    \end{xlist}
+\end{exe}
+}
+
+
+
+
+\section{Advanced examples}
+Sometimes, you want to have a particular identifier for a particular example. This can be achieved with \cmd{exi}.
+
+\ea Normal example
+\exi{(0)} Particular example
+\ex Normal example
+\z
+
+\subsection{exi}
+\subsection{primes}
+\subsection{crossrefs}
+\subsection{repeated}
+\section{glossing}
+\subsection{gll}
+\subsection{glll}
+\subsection{glt}
+\subsection{~}
+\subsection{\ O}
+\section{series}
+\section{lgr}
+\section{jambox}
+\section{what's removed}
+\subsection{Xbar}
+\subsection{arrows}
+\subsection{greek}
+\end{document}
