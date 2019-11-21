@@ -1,11 +1,9 @@
-\documentclass[output=guidelines]{langscibook}
+\documentclass[output=paper]{langscibook}
 \author{Sebastian Nordhoff}
 \title{langsci-gb4e}
-
+\abstract{\vspace*{-2\baselineskip}}
 \usepackage{langsci-gb4e}
-\usepackage{langsci-optional}
-\usepackage{langsci-lgr}
-\usepackage{jambox}
+\usepackage{langsci-lgr} 
 \usepackage{listings}
 \lstset{  
     basicstyle=\fontfamily{pcr}\selectfont\footnotesize\color{black},
@@ -592,7 +590,57 @@ You can adjust the appearance of the different elements and lines in Interlinear
     
 If you publish with Language Science Press, the right configuration for your series will automatically be loaded.
 
+You can toggle the extra vertical space between the interlinear text and the translation with \cmd{nogltOffset} and \cmd{resetgltOffset}. 
  
+\begin{lstlisting}
+\ea    
+\gll Dit is een zin.\\ 
+    this is a sentence\\
+\glt `This translation has standard vertical space from the gloss'
+\z
+
+\nogltOffset
+
+\ea 
+\gll Dit is een zin.\\ 
+    this is a sentence\\
+\glt `This translation has less vertical space from the gloss'
+\z
+
+\resetgltOffset
+
+\ea 
+\gll Dit is een zin.\\ 
+    this is a sentence\\
+\glt `This translation has standard vertical space from the gloss again'
+\z
+\end{lstlisting}
+
+\ea 
+\gll Dit is een zin.\\ 
+    this is a sentence\\
+\glt `This translation has standard vertical space from the gloss'
+\z
+
+\nogltOffset
+
+\ea 
+\gll Dit is een zin.\\ 
+    this is a sentence\\
+\glt `This translation has less vertical space from the gloss'
+\z
+
+\resetgltOffset
+
+\ea 
+\gll Dit is een zin.\\ 
+    this is a sentence\\
+\glt `This translation has standard vertical space from the gloss again'
+\z 
+
+
+
+
 \section{Jambox}
 \subsection{Simple cases}
 To add annotations to examples, use \cmd{jambox}.
@@ -685,6 +733,8 @@ Jambox only works with interlinear examples if the aligned lines are enclosed in
 
 \section{What's removed}
 The original gb4e files had additional macros for adding bars on letters for early generative grammar, for arrows, and for greek letters. These solutions have become obsolete with the advent of Unicode and TikZ. These legacy commands are therefore removed from \texttt{langsci-gb4e}.
+
+Some versions of gb4e used the counter \texttt{equation} to be able to mix math formulae and lingustic examples, using the same numbering system for both. This is considered bad practice since you cannot be sure that the layout of these two environments will correspond. You might end up with example "(17)" followed by formula "3.18". This is maximally confusing and very difficult to debug once you run into it. If you want your math formulae with the same counters as linguistic examples, simply use \cmd{ea}...\cmd{z} around them. 
 
 \section{Gotchas}
 \begin{enumerate}
