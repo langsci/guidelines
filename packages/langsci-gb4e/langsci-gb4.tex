@@ -4,13 +4,15 @@
 
 \usepackage{langsci-gb4e}
 \usepackage{langsci-optional}
+\usepackage{langsci-lgr}
+\usepackage{jambox}
 \usepackage{listings}
 \lstset{  
-    basicstyle=\fontfamily{pcr}\selectfont\footnotesize\color{blue},
+    basicstyle=\fontfamily{pcr}\selectfont\footnotesize\color{black},
     keywordstyle=\color{black}\bfseries, % style for keywords
     numbers=none, % where to put the line-numbers
     numberstyle=\tiny, % the size of the fonts that are used for the line-numbers     
-    backgroundcolor=\color{gray},
+    backgroundcolor=\color{lightgray},
     showspaces=false, % show spaces adding particular underscores
     showstringspaces=false, % underline spaces within strings
     showtabs=false, % show tabs within strings adding particular underscores
@@ -26,6 +28,79 @@
 \newcommand{\env}[1]{\texttt{#1}}
 \begin{document}
   \maketitle
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%      File: langsci-cgloss.sty
+%%    Author: Language Science Press (http://langsci-press.org)
+%%      Date: 2016-01-16 16:47:43 UTC
+%%   Purpose: This file contains an adpated version of the cgloss
+%%            package for glossing linguistic examples.
+%%  Language: LaTeX
+%%   Licence:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% -*- LaTeX -*-
+
+% Modified version of cgloss4e.sty.  Hacked and renamed cgloss.sty
+% by Alexis Dimitriadis (alexis@babel.ling.upenn.edu)
+
+% Following borrows from Covington's style files inspired by Midnight by M.
+% de Groot, adapted to be used with gb4e.sty: examples beginning with \ex can
+% contain glosses directly. Default is
+% Linguistic Inquiry style with all lines in \rm; to change a line (eg. to
+% \it for a particular journal, change the appropriate line: e.g.,
+% \let\eachwordone=\rm in a copy of this file. Note that it will NOT work
+% to put \it before the line as the words are parsed separately.
+
+% Use \singlegloss to force single-spaced glosses even in double-space
+% environments. Works also in footnotes (^M as delimiter replaced by
+% \\)---hpk
+%
+
+% Changes by Alexis Dimitriadis
+%
+% Removed flushleft environment and initial vskip to make macros usable
+% on the same line with earlier and/or later text, e.g.,
+% \item Q: \gll ... \\
+%               ... \\   \hfill (Greek)
+%    \trans Q: `...'
+% Note: Text following the gloss will appear on line one of the example;
+% To get a line break, insert one manually with \\ or use \trans or \glt.
+% (\gln does not end the line, since it was already the
+% case in cgloss4e that a translation must be ended with a line break).
+%
+% Modified \glt to keep translation on the same page as the text.
+
+% BUGS: does not work very gracefully with double spacing (struts are not
+% automatically inserted after the \vboxes used by the macros).
+% In double space mode without \nosinglegloss, when a translation
+% is not given, the next line of text is single-spaced from the glossed text.
+% With \nosinglegloss, the translation is set too close to the bottom line.
+
+
+%%%
+%%% Sentences with word-by-word glosses
+%%%
+
+% See covingtn.tex for full documentation.  Some examples:
+%
+% Displayed sentence with gloss and translation:
+%
+%             \gll Dit is een Nederlands voorbeeld.\\
+%                  This is a Dutch example.\\
+%             \glt `This is an example in Dutch.'
+%
+% Same, using bracketing where words do not correspond one-to-one:
+%
+%             \gll Dit is een voorbeeldje     in het Nederlands.\\
+%                  This is a {little example} in {}  Dutch.\\
+%             \glt `This is a little example in Dutch.'
+%
+% If you want to align 3 lines rather than two, use \glll instead of \gll.
+%
+% Layout is critical between \gll (or \glll) and \glt (or \gln).
+%
+% Thanks to Marcel R. van der Goot for permission to reproduce code.  
 
 \section{Introduction}
 This document describes the \texttt{langsci-gb4e} package for typesetting linguistic examples. It builds upon the popular \texttt{gb4e} (by a) and \texttt{cgloss} (by X) packages. It also includes the package \texttt{jambox} by Alexis Dimitriadis. 
@@ -215,28 +290,406 @@ The commands \cmd{ea} and \cmd{z} are shorthands for the environments \env{exe} 
 
 
 \section{Advanced examples}
+\subsection{Custom identifiers}
 Sometimes, you want to have a particular identifier for a particular example. This can be achieved with \cmd{exi}.
 
-\ea Normal example
-\exi{(0)} Particular example
-\ex Normal example
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\begin{exe}
+    \ex Normal example
+    \exi{(0)} Particular example
+    \ex Normal example
+\end{exe}
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{
+\begin{exe}
+    \ex Normal example
+    \exi{(0)} Particular example
+    \ex Normal example
+\end{exe}
+}
+
+
+\subsection{Primes}
+To repeat an example with a prime, give the original example a \cmd{label} and use that label in conjuction with the command \cmd{exp}.
+
+\noindent
+\begin{minipage}{.67\textwidth}
+\begin{lstlisting}
+\begin{exe}
+    \ex\label{ex:original} A cat is on the mat.
+    \exp{ex:original} On the mat is a cat.
+\end{exe}
+ \end{lstlisting}
+\end{minipage}
+\parbox{.33\textwidth}{
+\begin{exe}
+    \ex \label{ex:original} A cat is on the mat.
+    \exp{ex:original} On the mat is a cat.
+\end{exe}
+}
+
+\subsection{Repeated examples for convenience}
+Sometimes, examples are repeated in papers further down, but they should retain the same number as the original example. This can be achieved with \cmd{exr}.
+
+
+\noindent
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\begin{exe}
+    \ex\label{ex:firstmat} A cat is on the mat. 
+    \ex A dog is on the mat. 
+    \ex A mouse is on the mat. 
+    \exr{ex:firstmat} A cat is on the mat. 
+\end{exe}
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{
+\begin{exe}
+    \ex\label{ex:firstmat} A cat is on the mat. 
+    \ex A dog is on the mat. 
+    \ex A mouse is on the mat. 
+    \exr{ex:firstmat} A cat is on the mat. 
+\end{exe}
+}
+
+
+\subsection{Cross-references}
+You can refer to examples with \cmd{xref\{ex:original\}}, which will give you the example number in parentheses as in \REF{ex:original}, and with \cmd{xxref\{label2\}\{label3\}}, which will give you \xxref{ex:original}{ex:firstmat}
+
+\subsection{Examples without identifiers}
+Use \cmd{sn} for examples without identifiers.
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\begin{exe}
+    \ex A cat is on the mat. 
+    \sn This sentence no identifier
+    \ex A dog is on the mat. 
+\end{exe}
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{
+\begin{exe}
+    \ex A cat is on the mat. 
+    \sn This sentence no identifier
+    \ex A dog is on the mat. 
+\end{exe}
+}
+
+\subsection{Tweaks}
+Use \cmd{exewidth}{(222)} to set the width reserved for identifiers to three-digits. 
+
+Use \cmd{judgewidth\{??\}} to reserve space of the width of ?? for judgements. 
+
+Example sentences with \cmd{ex} or \cmd{ea} normally do not use hyphenation. If you would like hyphenation, use \cmd{eanoraggedright}.
+
+When you have an example is the last item in a footnote, there can be excess vertical space. In these cases, use \cmd{zlast} instead of \cmd{z}. This will drop the extra vertical space.
+
+ 
+\section{Glossing}
+\subsection{Common glossing}
+Interlinear examples are a main feature of linguistic texts. They are built as follows: 
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\ea
+\gll carte de crédit\\
+     card  of credit\\
+\glt `credit card'     
+\z
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{ 
+\ea
+\gll carte de crédit\\
+     card  of credit\\
+\glt `credit card'     
+\z 
+}
+
+The important elements are \cmd{ea} and \cmd{z} to produce the example environment; \cmd{gll} to introduce the glossing environment; the \texttt{\textbackslash\textbackslash} to close the first line and the second line; and \cmd{glt} for the translation. 
+
+The command automatically wraps the line as required. 
+\begin{lstlisting}
+\ea
+\gll la carte de crédit que tu as trouvée sur la place devant la gare\\
+     the card  of credit \textsc{rel} you have found on the place in.front.of the station\\
+\glt `The credit card which you found on the square in front of the station.'     
+\z
+ \end{lstlisting}
+\ea
+\gll la carte de crédit que tu as trouvée sur la place devant la gare\\
+     the card  of credit \textsc{rel} you have found on the place in.front.of the station\\
+\glt `The credit card which you found on the square in front of the station.'     
 \z
 
-\subsection{exi}
-\subsection{primes}
-\subsection{crossrefs}
-\subsection{repeated}
-\section{glossing}
-\subsection{gll}
-\subsection{glll}
-\subsection{glt}
-\subsection{~}
-\subsection{\ O}
-\section{series}
-\section{lgr}
-\section{jambox}
-\section{what's removed}
-\subsection{Xbar}
-\subsection{arrows}
-\subsection{greek}
+
+
+\subsection{More than two aligned lines}
+\cmd{gll} aligns the items of the first and the second line. If you want to align more lines, simply adjust the number of l's (up to 8).
+
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\ea
+\gllll carte de crédit\\
+       carta  di credito\\
+       tarjeta  de credito\\
+       card  of credit\\
+\glt `credit card'     
+\z
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{ 
+\ea
+\gllll carte de crédit\\
+       carta  di credito\\
+       tarjeta  de credito\\
+       card  of credit\\
+\glt `credit card'     
+\z
+}
+
+
+\subsection{Empty glosses}
+To skip words when aliging, you can use \texttt{\textasciitilde} or \texttt{\{\}}
+
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\ea
+\glll carte de crédit\\ 
+      card  of credit\\
+      N     ~  N\\
+\glt `credit card'     
+\z
+\ea
+\glll carte de crédit\\ 
+      card  of credit\\
+      N    {}  N\\
+\glt `credit card'     
+\z
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{ 
+\ea
+\glll carte de crédit\\ 
+      card  of credit\\
+      N     ~  N\\
+\glt `credit card'     
+\z
+\ea
+\glll carte de crédit\\ 
+      card  of credit\\
+      N    {}  N\\
+\glt `credit card'     
+\z
+}
+
+
+\subsection{n:1 glosses}\label{sec:n1glosses}
+Sometimes there are expressions consisting of more than one word which should nevertheless be glossed by only one word. In those cases, use \texttt{\{\}} to enclose the multi-word expression. 
+
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\ea
+\gll Juan murió {de repente}\\
+     Juan died suddenly\\
+\glt `Juan died suddenly'     
+\z
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{ 
+\ea
+\gll Juan murió {de repente}\\
+     Juan died suddenly\\
+\glt `Juan died suddenly'     
+\z
+}
+
+\section{Leipzig Glossing Rules}
+The Leipzig Glossing Rules provide an inventory of agreed abbreviations for linguistic categories. They can be accessed via commands in ALLCAPS, e.g. \cmd{QUOT} for {\QUOT} (quotative).
+ 
+\begin{lstlisting}
+\ea
+\gll Je suis ven-u-e hier\\
+     1\SG{} \COP.1\SG.\PRS.\IND{} come-\PTCP-\F{} yesterday\\
+\glt `I came yesterday'     
+\z
+ \end{lstlisting}
+\ea
+\gll Je suis ven-u-e hier\\
+     1\SG{} \COP.1\SG.\PRS.\IND{} come-\PTCP-\F{} yesterday\\
+\glt `I came yesterday'     
+\z
+
+The extra \texttt{\{\}} are necessary to prevent {\LaTeX} from eating the white space after the command, which is necessary to get the alignment right. Compare \REF{ex:wrongalignment}.
+
+\begin{lstlisting}
+\ea
+\gll Je suis ven-u-e hier\\
+     1\SG \COP.1\SG.\PRS.\IND come-\PTCP-\F yesterday\\
+\glt `I came yesterday'     
+\z
+ \end{lstlisting}
+\ea\label{ex:wrongalignment}
+\gll Je suis ven-u-e hier\\
+     1\SG \COP.1\SG.\PRS.\IND come-\PTCP-\F yesterday\\
+\glt `I came yesterday'     
+\z   
+
+If you need glosses which are not in the Leipzig Glossing Rules, you can add them with \cmd{newcommand\{}\cmd{MYCATEGORY\}\{}\cmd{textsc\{mycategory\}\}}.
+
+
+\section{Judgments and interlinear examples}
+In order to use judgments in brackets [], you have to enclose the interlinear lines in braces \{\} as follows:
+
+\begin{minipage}{.55\textwidth}
+\begin{lstlisting}
+\begin{exe}
+\ex[]{
+\gll carte de crédit\\ 
+     card  of credit\\ 
+\glt `credit card'     
+}
+\ex[*]{
+\gll carte à crédit\\ 
+     card  on credit\\  
+}
+\end{exe}
+ \end{lstlisting}
+\end{minipage}
+\parbox{.45\textwidth}{ 
+\begin{exe}
+\ex[]{
+\gll carte de crédit\\ 
+     card  of credit\\ 
+\glt `credit card'     
+}
+\ex[*]{
+\gll carte à crédit\\ 
+     card  on credit\\  
+}
+\end{exe}
+}
+
+\section{Customization}
+You can adjust the appearance of the different elements and lines in Interlinear examples with the following commands:
+\begin{itemize}
+\item  \cmd{exfont\{\textbackslash itshape\}} for the first line
+\item  \cmd{glossfont\{...\}} for the interlinear glosses 
+\item  \cmd{transfont\{...\}} for the translation 
+\item  \cmd{exnrfont\{...\}} for the numbered identifier
+\medskip 
+\item  \cmd{fnexfont\{...\}} for the first line of an example in a foonote
+\item  \cmd{fnglossfont\{...\}} for the interlinear glosses of an example in a foonote
+\item  \cmd{fntransfont\{...\}} for the translation of an example in a foonote
+\item  \cmd{fnexnrfont\{...\}} for the numbered identifier of an example in a foonote
+\end{itemize}
+    
+If you publish with Language Science Press, the right configuration for your series will automatically be loaded.
+
+ 
+\section{Jambox}
+\subsection{Simple cases}
+To add annotations to examples, use \cmd{jambox}.
+
+
+\begin{lstlisting}
+\begin{exe}
+\ex John loves dogs\jambox{(mammals)}
+\ex John loves eagles\jambox{(birds)}
+\ex John loves turtles\jambox{(amphibians)}   
+\end{exe}
+ \end{lstlisting}
+ 
+\begin{exe}
+\ex John loves dogs\jambox{(mammals)}
+\ex John loves eagles\jambox{(birds)}
+\ex John loves turtles\jambox{(amphibians)}   
+\end{exe}  
+
+
+
+To maximize horizontal distance, use \cmd{jambox*}, but then you lose left-alignment.
+
+\begin{lstlisting} 
+\begin{exe}
+\ex John loves dogs\jambox*{(mammals)}
+\ex John loves eagles\jambox*{(birds)}
+\ex John loves turtles\jambox*{(amphibians)}   
+\end{exe}
+ \end{lstlisting}
+ 
+\begin{exe}
+\settowidth\jamwidth{(amphibians)}
+\ex John loves dogs\jambox*{(mammals)}
+\ex John loves eagles\jambox*{(birds)}
+\ex John loves turtles\jambox*{(amphibians)}   
+\end{exe}  
+
+
+You can control the distance from the right margins via \cmd{jamwidth}
+
+\begin{lstlisting}
+\settowidth\jamwidth{(amphibians)}
+\begin{exe}
+\ex John loves dogs\jambox{(mammals)}
+\ex John loves eagles\jambox{(birds)}
+\ex John loves turtles\jambox{(amphibians)}   
+\end{exe}
+ \end{lstlisting}
+ 
+\begin{exe}
+\settowidth\jamwidth{(amphibians)}
+\ex John loves dogs\jambox{(mammals)}
+\ex John loves eagles\jambox{(birds)}
+\ex John loves turtles\jambox{(amphibians)}   
+\end{exe}  
+
+
+\subsection{Jambox and interlinear examples} 
+Jambox only works with interlinear examples if the aligned lines are enclosed in \texttt{\{\}}. 
+
+\begin{lstlisting}
+\begin{exe} 
+\ex{
+\gll carte de crédit\\
+     card of credit \\}\jambox{(French)}
+\glt `credit card'
+
+\ex{
+\gll Kredit-karte\\
+     credit-card \\}\jambox{(German)}
+\glt `credit card'
+\end{exe} 
+ \end{lstlisting}
+ 
+\begin{exe} 
+\ex{
+\gll carte de crédit\\
+     card of credit \\}\jambox{(French)}
+\glt `credit card'
+
+\ex{
+\gll Kredit-karte\\
+     credit-card \\}\jambox{(German)}
+\glt `credit card'
+\end{exe} 
+
+
+
+
+\section{What's removed}
+The original gb4e files had additional macros for adding bars on letters for early generative grammar, for arrows, and for greek letters. These solutions have become obsolete with the advent of Unicode and TikZ. These legacy commands are therefore removed from \texttt{langsci-gb4e}.
+
+\section{Gotchas}
+\begin{enumerate}
+\item Make sure to never end an item to be glossed with a command like \cmd{textschwa} or \cmd{PASS}. This will eat up the space separating this word from the next one and will glue them together. 
+\item When highlighting aligned words with \cmd{textit} or \cmd{textbf}, do so individually (\verb+My words \textit{are} \textit{highlighted}+). Do not use \verb+My words+ \verb+\textit{are highlighted}+ as this will lead to \textit{are highlighted} being treated as a mulitword expression for purposes of alignment (see §\ref{sec:n1glosses}).
+\end{enumerate}
+ 
 \end{document}
