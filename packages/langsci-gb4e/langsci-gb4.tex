@@ -5,9 +5,18 @@
 \usepackage{langsci-gb4e}
 \usepackage{langsci-lgr} 
 \usepackage{listings}
-\lstset{  
+\lstdefinelanguage{Ini}
+{  
+  tag=[s]{[]},
+  tagstyle=\color{blue}\bfseries,
+  usekeywordsintag=true
+}[html]
+\lstset{ 
+    alsoletter={\\}, 
+    morekeywords={\\ea, \\ex, \\exi, \\exr, \\exp, \\gll, \\glll, \\gllll, \\glt, \\ea, \\z, \\begin, \\end, \\\\, \\textsc, \\textit, \\textbf, \\SG, \\COP, \\PRS, \\IND, \\PTCP, \\F, \\jambox, \\jambox*,  \\settowidth, \\jamwidth, \\nogltOffset, \\resetgltOffset, exe, xlist, \\ex\\label, ex, :, original, ex:, firstmat, \\settowidth\\jamwidth, \\sn, \[\], \[*\]},    
     basicstyle=\fontfamily{pcr}\selectfont\footnotesize\color{black},
-    keywordstyle=\color{black}\bfseries, % style for keywords
+    keywordstyle=\color{blue}\bfseries, % style for keywords
+    commentstyle=\color{green}\bfseries, % style for keywords
     numbers=none, % where to put the line-numbers
     numberstyle=\tiny, % the size of the fonts that are used for the line-numbers     
     backgroundcolor=\color{lightgray},
@@ -20,8 +29,9 @@
     rulecolor=\color{black},
     captionpos=b, % sets the caption-position to bottom
     breaklines=true, % sets automatic line breaking
-    breakatwhitespace=false, 
+    breakatwhitespace=false 
 }
+
 \newcommand{\cmd}[1]{\texttt{\textbackslash#1}}
 \newcommand{\env}[1]{\texttt{#1}}
 \begin{document}
@@ -100,24 +110,26 @@
 %
 % Thanks to Marcel R. van der Goot for permission to reproduce code.  
 
+\lehead{langsci-gb4e}
+\rohead{langsci-gb4e}
 \section{Introduction}
-This document describes the \texttt{langsci-gb4e} package for typesetting linguistic examples. It builds upon the popular \texttt{gb4e} (by a) and \texttt{cgloss} (by X) packages. It also includes the package \texttt{jambox} by Alexis Dimitriadis. 
-\section{History}
+This document describes the \texttt{langsci-gb4e} package for typesetting linguistic examples. It builds upon the popular \texttt{gb4e}  and \texttt{cgloss} (by Hans-Peter Kolb, Craig Thiersch, improved by Alexis Dimitriadis) packages. It also includes the package \texttt{jambox} by Alexis Dimitriadis. 
+% \section{History}
 \section{Standard usage}
 This manual starts with the most common cases and describes the foundations and the more complicated cases later. 
 
 To produce a standard example, use \cmd{ea} before and \cmd{z} after
  
-\begin{minipage}{.45\textwidth}
+\begin{minipage}[t]{.45\textwidth}
 \begin{lstlisting}
   \ea 
-  The cat is on the mat
+  The cat is on the mat.
   \z
 \end{lstlisting}
-\end{minipage}
-\parbox[b]{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
   \ea 
-  The cat is on the mat
+  The cat is on the mat.
   \z
   }
 
@@ -127,53 +139,53 @@ To produce a standard example, use \cmd{ea} before and \cmd{z} after
 \subsection{Quick and dirty way}  
 Simply add a \texttt{*} in front of the sentence (or any other judgment). In groups of examples, this will look bad because vertical alignment is off (\ref{ex:judg1}--\ref{ex:judg2}).
 
-\begin{minipage}{.45\textwidth}
+\begin{minipage}[t]{.45\textwidth}
 \begin{lstlisting}
   \ea 
-  The cat is on the mat
+  The cat is on the mat.
   \z
   \ea 
-  * The cat are on the mat
+  * The cat are on the mat.
   \z
 \end{lstlisting}
-\end{minipage}
-\parbox[b]{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
   \ea\label{ex:judg1} 
-  The cat is on the mat
+  The cat is on the mat.
   \z
   \ea\label{ex:judg2} 
-  * The cat are on the mat
+  * The cat are on the mat.
   \z
   }
   
 \subsection{Proper way}  
-The proper way puts the judgment between \texttt{[]} and does the same for empty judgments in a group. The sentence itself is put in \texttt{\{\}}. In this way, the examples align nicely. (\ref{ex:judg3}--\ref{ex:judg4}).
+The proper way puts the judgment between \texttt{[]} and does the same for empty judgments in a group. The sentence itself is put in \texttt{\{\}}. In this way, the examples align nicely (\ref{ex:judg3}--\ref{ex:judg4}).
   
-\begin{minipage}{.45\textwidth}
+\begin{minipage}[t]{.45\textwidth}
 \begin{lstlisting}
   \ea[]{ 
-  The cat is on the mat
+  The cat is on the mat.
   }
   \z 
   \ea[*]{ 
-  The cat are on the mat
+  The cat are on the mat.
   }
   \z
 \end{lstlisting}
-\end{minipage}
-\parbox[b]{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
   \ea[]{\label{ex:judg3}
-  The cat is on the mat
+  The cat is on the mat.
   }
   \z 
   \ea[*]{\label{ex:judg4}
-  The cat are on the mat
+  The cat are on the mat.
   }
   \z
   }
   
  
-\subsection{Lists of examples}
+\section{Lists of examples}
 If there are several examples in a row, you can use only one \cmd{z} at the very end and use \cmd{ex} instead of \cmd{ea} for examples after the first one (\ref{ex:ex:second}--\ref{ex:ex:end}).
 
 \begin{minipage}{.45\textwidth}
@@ -184,7 +196,7 @@ If there are several examples in a row, you can use only one \cmd{z} at the very
 \ex I like the rolling hills
 \z
 \end{lstlisting}
-\end{minipage}
+\end{minipage}~
 \parbox{.45\textwidth}{
 \ea I like the flowers\label{ex:ex:start}
 \ex I like the daffodils\label{ex:ex:second}
@@ -193,10 +205,10 @@ If there are several examples in a row, you can use only one \cmd{z} at the very
 \z
 }
 
-\subsection{Subexamples}
+\section{Subexamples}
 There are three predefined level of examples. \cmd{ea} opens a new level and prints the first identifier; \cmd{z} closes the last level. \cmd{ex} adds a further example but does not change levels. 
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.5\textwidth}
 \begin{lstlisting}
 \ea one
     \ea eins
@@ -214,8 +226,8 @@ There are three predefined level of examples. \cmd{ea} opens a new level and pri
     \z
 \z
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
 \ea one
     \ea eins
     \ex una
@@ -237,7 +249,7 @@ There are three predefined level of examples. \cmd{ea} opens a new level and pri
 The commands \cmd{ea} and \cmd{z} are shorthands for the environments \env{exe} (highest level) and \env{xlist} (subexamples and below). \cmd{ea} works like \verb+\begin{exe}\ex+ or \verb+\begin{xlist}\ex+, as the case may be. \cmd{z} works like \verb+\end{exe}+ or \verb+\end{xlist}+. In some cases, it can be necessary to resort to the environments instead of the shorthands, but this is rare. 
 
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.5\textwidth}
 \begin{lstlisting}
 \begin{exe}
     \ex one
@@ -260,8 +272,8 @@ The commands \cmd{ea} and \cmd{z} are shorthands for the environments \env{exe} 
     \end{xlist}
 \end{exe}
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
 \begin{exe}
     \ex one
     \begin{xlist}
@@ -289,9 +301,9 @@ The commands \cmd{ea} and \cmd{z} are shorthands for the environments \env{exe} 
 
 \section{Advanced examples}
 \subsection{Custom identifiers}
-Sometimes, you want to have a particular identifier for a particular example. This can be achieved with \cmd{exi}.
+Sometimes, you want to have a particular identifier for a particular example. This can be achieved with \cmd{exi}.\medskip
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \begin{exe}
     \ex Normal example
@@ -299,8 +311,8 @@ Sometimes, you want to have a particular identifier for a particular example. Th
     \ex Normal example
 \end{exe}
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
 \begin{exe}
     \ex Normal example
     \exi{(0)} Particular example
@@ -313,15 +325,15 @@ Sometimes, you want to have a particular identifier for a particular example. Th
 To repeat an example with a prime, give the original example a \cmd{label} and use that label in conjuction with the command \cmd{exp}.
 
 \noindent
-\begin{minipage}{.67\textwidth}
+\begin{minipage}[t]{.67\textwidth}
 \begin{lstlisting}
 \begin{exe}
     \ex\label{ex:original} A cat is on the mat.
     \exp{ex:original} On the mat is a cat.
 \end{exe}
  \end{lstlisting}
-\end{minipage}
-\parbox{.33\textwidth}{
+\end{minipage}~
+\parbox[t]{.33\textwidth}{
 \begin{exe}
     \ex \label{ex:original} A cat is on the mat.
     \exp{ex:original} On the mat is a cat.
@@ -333,7 +345,7 @@ Sometimes, examples are repeated in papers further down, but they should retain 
 
 
 \noindent
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \begin{exe}
     \ex\label{ex:firstmat} A cat is on the mat. 
@@ -342,8 +354,8 @@ Sometimes, examples are repeated in papers further down, but they should retain 
     \exr{ex:firstmat} A cat is on the mat. 
 \end{exe}
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
 \begin{exe}
     \ex\label{ex:firstmat} A cat is on the mat. 
     \ex A dog is on the mat. 
@@ -354,24 +366,24 @@ Sometimes, examples are repeated in papers further down, but they should retain 
 
 
 \subsection{Cross-references}
-You can refer to examples with \cmd{xref\{ex:original\}}, which will give you the example number in parentheses as in \REF{ex:original}, and with \cmd{xxref\{label2\}\{label3\}}, which will give you \xxref{ex:original}{ex:firstmat}
+You can refer to examples with \cmd{xref\{ex:original\}}, which will give you the example number in parentheses as in \REF{ex:original}, and with \cmd{xxref\{ex:original\}\{ex:firstmat\}}, which will give you \xxref{ex:original}{ex:firstmat}.
 
 \subsection{Examples without identifiers}
 Use \cmd{sn} for examples without identifiers.
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \begin{exe}
     \ex A cat is on the mat. 
-    \sn This sentence no identifier
+    \sn ← This sentence no identifier
     \ex A dog is on the mat. 
 \end{exe}
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{
+\end{minipage}~
+\parbox[t]{.45\textwidth}{
 \begin{exe}
     \ex A cat is on the mat. 
-    \sn This sentence no identifier
+    \sn ← This sentence no identifier
     \ex A dog is on the mat. 
 \end{exe}
 }
@@ -383,14 +395,14 @@ Use \cmd{judgewidth\{??\}} to reserve space of the width of ?? for judgements.
 
 Example sentences with \cmd{ex} or \cmd{ea} normally do not use hyphenation. If you would like hyphenation, use \cmd{eanoraggedright}.
 
-When you have an example is the last item in a footnote, there can be excess vertical space. In these cases, use \cmd{zlast} instead of \cmd{z}. This will drop the extra vertical space.
+When you have an example which happens to be the last item in a footnote, there can be excess vertical space. In these cases, use \cmd{zlast} instead of \cmd{z}. This will drop the extra vertical space.
 
  
 \section{Glossing}
 \subsection{Common glossing}
 Interlinear examples are a main feature of linguistic texts. They are built as follows: 
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \ea
 \gll carte de crédit\\
@@ -398,8 +410,8 @@ Interlinear examples are a main feature of linguistic texts. They are built as f
 \glt `credit card'     
 \z
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{ 
+\end{minipage}~
+\parbox[t]{.45\textwidth}{ 
 \ea
 \gll carte de crédit\\
      card  of credit\\
@@ -429,7 +441,7 @@ The command automatically wraps the line as required.
 \cmd{gll} aligns the items of the first and the second line. If you want to align more lines, simply adjust the number of l's (up to 8).
 
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \ea
 \gllll carte de crédit\\
@@ -439,8 +451,8 @@ The command automatically wraps the line as required.
 \glt `credit card'     
 \z
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{ 
+\end{minipage}~
+\parbox[t]{.45\textwidth}{ 
 \ea
 \gllll carte de crédit\\
        carta  di credito\\
@@ -455,7 +467,7 @@ The command automatically wraps the line as required.
 To skip words when aliging, you can use \texttt{\textasciitilde} or \texttt{\{\}}
 
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \ea
 \glll carte de crédit\\ 
@@ -470,8 +482,8 @@ To skip words when aliging, you can use \texttt{\textasciitilde} or \texttt{\{\}
 \glt `credit card'     
 \z
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{ 
+\end{minipage}~
+\parbox[t]{.45\textwidth}{ 
 \ea
 \glll carte de crédit\\ 
       card  of credit\\
@@ -491,20 +503,20 @@ To skip words when aliging, you can use \texttt{\textasciitilde} or \texttt{\{\}
 Sometimes there are expressions consisting of more than one word which should nevertheless be glossed by only one word. In those cases, use \texttt{\{\}} to enclose the multi-word expression. 
 
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \ea
 \gll Juan murió {de repente}\\
      Juan died suddenly\\
-\glt `Juan died suddenly'     
+\glt `Juan died suddenly.'     
 \z
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{ 
+\end{minipage}~
+\parbox[t]{.45\textwidth}{ 
 \ea
 \gll Juan murió {de repente}\\
      Juan died suddenly\\
-\glt `Juan died suddenly'     
+\glt `Juan died suddenly.'     
 \z
 }
 
@@ -518,13 +530,13 @@ The Leipzig Glossing Rules provide an inventory of agreed abbreviations for ling
 \glt `I came yesterday'     
 \z
  \end{lstlisting}
-\ea
+\ea\label{ex:correctalignment}
 \gll Je suis ven-u-e hier\\
      1\SG{} \COP.1\SG.\PRS.\IND{} come-\PTCP-\F{} yesterday\\
 \glt `I came yesterday'     
 \z
 
-The extra \texttt{\{\}} are necessary to prevent {\LaTeX} from eating the white space after the command, which is necessary to get the alignment right. Compare \REF{ex:wrongalignment}.
+The extra \texttt{\{\}} are necessary to prevent {\LaTeX} from eating the white space after the command, which is necessary to get the alignment right. Compare \REF{ex:wrongalignment} without \texttt{\{\}} to \REF{ex:correctalignment}.
 
 \begin{lstlisting}
 \ea
@@ -543,9 +555,9 @@ If you need glosses which are not in the Leipzig Glossing Rules, you can add the
 
 
 \section{Judgments and interlinear examples}
-In order to use judgments in brackets [], you have to enclose the interlinear lines in braces \{\} as follows:
+In order to use judgments in brackets \texttt{[]}, you have to enclose the interlinear lines in braces \texttt{\{\}} as follows:
 
-\begin{minipage}{.55\textwidth}
+\begin{minipage}[t]{.55\textwidth}
 \begin{lstlisting}
 \begin{exe}
 \ex[]{
@@ -559,8 +571,8 @@ In order to use judgments in brackets [], you have to enclose the interlinear li
 }
 \end{exe}
  \end{lstlisting}
-\end{minipage}
-\parbox{.45\textwidth}{ 
+\end{minipage}~
+\parbox[t]{.45\textwidth}{ 
 \begin{exe}
 \ex[]{
 \gll carte de crédit\\ 
@@ -585,7 +597,7 @@ You can adjust the appearance of the different elements and lines in Interlinear
 \item  \cmd{fnexfont\{...\}} for the first line of an example in a foonote
 \item  \cmd{fnglossfont\{...\}} for the interlinear glosses of an example in a foonote
 \item  \cmd{fntransfont\{...\}} for the translation of an example in a foonote
-\item  \cmd{fnexnrfont\{...\}} for the numbered identifier of an example in a foonote
+\item  \cmd{fnexnrfont\{...\}} for the numbered identifier of an example in a foonote 
 \end{itemize}
     
 If you publish with Language Science Press, the right configuration for your series will automatically be loaded.
@@ -595,48 +607,48 @@ You can toggle the extra vertical space between the interlinear text and the tra
 \begin{lstlisting}
 \ea    
 \gll Dit is een zin.\\ 
-    this is a sentence\\
-\glt `This translation has standard vertical space from the gloss'
+     this is a sentence\\
+\glt `This translation has standard vertical space.'
 \z
 
 \nogltOffset
 
 \ea 
 \gll Dit is een zin.\\ 
-    this is a sentence\\
-\glt `This translation has less vertical space from the gloss'
+     this is a sentence\\
+\glt `This translation has less vertical space.'
 \z
 
 \resetgltOffset
 
 \ea 
 \gll Dit is een zin.\\ 
-    this is a sentence\\
-\glt `This translation has standard vertical space from the gloss again'
+     this is a sentence\\
+\glt `This translation has standard vertical space again.'
 \z
 \end{lstlisting}
 
-\ea 
+\ea    
 \gll Dit is een zin.\\ 
-    this is a sentence\\
-\glt `This translation has standard vertical space from the gloss'
+     this is a sentence\\
+\glt `This translation has standard vertical space.'
 \z
 
 \nogltOffset
 
 \ea 
 \gll Dit is een zin.\\ 
-    this is a sentence\\
-\glt `This translation has less vertical space from the gloss'
+     this is a sentence\\
+\glt `This translation has less vertical space.'
 \z
 
 \resetgltOffset
 
 \ea 
 \gll Dit is een zin.\\ 
-    this is a sentence\\
-\glt `This translation has standard vertical space from the gloss again'
-\z 
+     this is a sentence\\
+\glt `This translation has standard vertical space again.'
+\z
 
 
 
@@ -648,16 +660,16 @@ To add annotations to examples, use \cmd{jambox}.
 
 \begin{lstlisting}
 \begin{exe}
-\ex John loves dogs\jambox{(mammals)}
-\ex John loves eagles\jambox{(birds)}
-\ex John loves turtles\jambox{(amphibians)}   
+\ex John loves dogs.\jambox{(mammals)}
+\ex John loves eagles.\jambox{(birds)}
+\ex John loves turtles.\jambox{(amphibians)}   
 \end{exe}
  \end{lstlisting}
  
 \begin{exe}
-\ex John loves dogs\jambox{(mammals)}
-\ex John loves eagles\jambox{(birds)}
-\ex John loves turtles\jambox{(amphibians)}   
+\ex John loves dogs.\jambox{(mammals)}
+\ex John loves eagles.\jambox{(birds)}
+\ex John loves turtles.\jambox{(amphibians)}   
 \end{exe}  
 
 
@@ -666,9 +678,9 @@ To maximize horizontal distance, use \cmd{jambox*}, but then you lose left-align
 
 \begin{lstlisting} 
 \begin{exe}
-\ex John loves dogs\jambox*{(mammals)}
-\ex John loves eagles\jambox*{(birds)}
-\ex John loves turtles\jambox*{(amphibians)}   
+\ex John loves dogs.\jambox*{(mammals)}
+\ex John loves eagles.\jambox*{(birds)}
+\ex John loves turtles.\jambox*{(amphibians)}   
 \end{exe}
  \end{lstlisting}
  
@@ -685,17 +697,17 @@ You can control the distance from the right margins via \cmd{jamwidth}
 \begin{lstlisting}
 \settowidth\jamwidth{(amphibians)}
 \begin{exe}
-\ex John loves dogs\jambox{(mammals)}
-\ex John loves eagles\jambox{(birds)}
-\ex John loves turtles\jambox{(amphibians)}   
+\ex John loves dogs.\jambox{(mammals)}
+\ex John loves eagles.\jambox{(birds)}
+\ex John loves turtles.\jambox{(amphibians)}   
 \end{exe}
  \end{lstlisting}
  
 \begin{exe}
 \settowidth\jamwidth{(amphibians)}
-\ex John loves dogs\jambox{(mammals)}
-\ex John loves eagles\jambox{(birds)}
-\ex John loves turtles\jambox{(amphibians)}   
+\ex John loves dogs.\jambox{(mammals)}
+\ex John loves eagles.\jambox{(birds)}
+\ex John loves turtles.\jambox{(amphibians)}   
 \end{exe}  
 
 
@@ -732,13 +744,13 @@ Jambox only works with interlinear examples if the aligned lines are enclosed in
 
 
 \section{What's removed}
-The original gb4e files had additional macros for adding bars on letters for early generative grammar, for arrows, and for greek letters. These solutions have become obsolete with the advent of Unicode and TikZ. These legacy commands are therefore removed from \texttt{langsci-gb4e}.
+The original \texttt{gb4e} files had additional macros for adding bars on letters for early generative grammar, for arrows, and for greek letters. These solutions have become obsolete with the advent of Unicode and TikZ. These legacy commands are therefore removed from \texttt{langsci-gb4e}.
 
 % Some versions of gb4e used the counter \texttt{equation} to be able to mix math formulae and lingustic examples, using the same numbering system for both. This is considered bad practice since you cannot be sure that the layout of these two environments will correspond. You might end up with example "(17)" followed by formula "3.18". This is maximally confusing and very difficult to debug once you run into it. If you want your math formulae with the same counters as linguistic examples, simply use \cmd{ea}...\cmd{z} around them. 
 
 \section{Gotchas}
 \begin{enumerate}
-\item Make sure to never end an item to be glossed with a command like \cmd{textschwa} or \cmd{PASS}. This will eat up the space separating this word from the next one and will glue them together. 
+\item Make sure to never end an item to be glossed with a command like \cmd{textschwa} or \cmd{PASS}. This will eat up the space separating this word from the next one and will glue them together (cf. \REF{ex:wrongalignment}). 
 \item When highlighting aligned words with \cmd{textit} or \cmd{textbf}, do so individually (\verb+My words \textit{are} \textit{highlighted}+). Do not use \verb+My words+ \verb+\textit{are highlighted}+ as this will lead to \textit{are highlighted} being treated as a mulitword expression for purposes of alignment (see §\ref{sec:n1glosses}).
 \end{enumerate}
  
