@@ -8,10 +8,10 @@ Please note that we have screencasts available for many topics relating to {\LaT
 \subsection{Local installation}
 For your first book, the easiest way will be to download the skeleton from \url{http://langsci-press.org/templatesAndTools}.
 There is a skeleton for monographs, one for edited volumes, and one for papers in edited volumes. Choose what is appropriate for you.
- 
+
 % If you are dealing with Language Science Press books on a regular basis, you might want to opt for a system wide installation. The LSP class can be downloaded from \url{...} and will be available on CTAN in the near future.
 
-% Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available. 
+% Language Science Press uses the Libertine fonts. If there are not found on your system, please contact your system administrator to install them. If for whatever reason the fonts cannot be installed, we provide a skeleton which does not require the Libertine fonts. The creation of the book will be the same, but the look will be slightly different. Before the book enters the final production phase, a system with the correct fonts has to available.
 
 \subsection{Online editor}
 % \todo{adapt to v2}
@@ -25,7 +25,7 @@ In order to familiarize yourself with \LaTeX\xspace, you might also want to try 
 
 
 \section{The skeleton}
-The skeleton has a main file, which is called \verb+main.tex+. 
+The skeleton has a main file, which is called \verb+main.tex+.
 That main file draws information from a number of other files which are in the same directory. All those files start with \verb+local...+. Furthermore, the main file includes the chapters, which are found in the directory \verb+chapters/+.
 
 \begin{table}[htb]
@@ -48,7 +48,7 @@ That main file draws information from a number of other files which are in the s
   \end{tabularx}
 \end{table}
 
-A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.snd+, \verb+.and+, and \verb+.lnd+ for the indexes.  
+A number of auxiliary files are generated on the fly, these are  \verb+.toc+ for the table of contents; \verb+.bbl+ for the bibliography; and \verb+.snd+, \verb+.and+, and \verb+.lnd+ for the indexes.
 
 \section{Using the \texttt{langsci} class}
 There are a variety of programs for making writing \LaTeX\xspace documents easier.
@@ -60,82 +60,82 @@ For Linux, Kile is a very good \LaTeX\xspace editor (\figref{fig:latex:kile}).
 % \begin{figure}
 % \includegraphics[height=.4\textheight]{texniccenter.png}
 % \caption{Texniccenter}
-% \label{fig:latex:texniccenter} 
+% \label{fig:latex:texniccenter}
 % \end{figure}
 
 
 \begin{figure}
 \includegraphics[height=.4\textheight]{texshop.png}
 \caption{Texshop}
-\label{fig:latex:texshop} 
+\label{fig:latex:texshop}
 \end{figure}
 
 \begin{figure}
 \includegraphics[width=\textwidth]{texstudio.jpg}
 \caption{Texstudio}
-\label{fig:latex:texstudio} 
+\label{fig:latex:texstudio}
 \end{figure}
 
 
 \begin{figure}
 \includegraphics[width=\textwidth]{kile.png}
 \caption{Kile}
-\label{fig:latex:kile} 
+\label{fig:latex:kile}
 \end{figure}
 
-  
+
 % \subsection{Included packages}
-% The following packages are already loaded by default: 
-% \verb+amssymb+, 
-% \verb+authorindex+, 
-% \verb+biblatex+, 
-% \verb+booktabs+, 
-% \verb+chngcntr+, 
-% \verb+chngcntr+, 
-% \verb+datetime+, 
-% \verb+epigraph+, 
-% \verb+etex+, 
-% \verb+floatrow+, 
-% \verb+fontspec+, 
-% \verb+geometry+, 
-% \verb+graphicx+, 
-% \verb+hyperref +, 
-% \verb+ifxetex+, 
-% \verb+index+, 
-% \verb+microtype+, 
-% \verb+natbib+, 
-% \verb+newtxmath+, 
-% \verb+pbox+, 
-% \verb+pst-barcode +, 
-% \verb+rotating+, 
-% \verb+scrpage2+, 
-% \verb+showidx+, 
-% \verb+textpos+, 
-% \verb+tocstyle+, 
-% \verb+url+, 
-% \verb+xcolor+, 
-% \verb+xspace+, 
-% \verb+xstring+. 
-% 
+% The following packages are already loaded by default:
+% \verb+amssymb+,
+% \verb+authorindex+,
+% \verb+biblatex+,
+% \verb+booktabs+,
+% \verb+chngcntr+,
+% \verb+chngcntr+,
+% \verb+datetime+,
+% \verb+epigraph+,
+% \verb+etex+,
+% \verb+floatrow+,
+% \verb+fontspec+,
+% \verb+geometry+,
+% \verb+graphicx+,
+% \verb+hyperref +,
+% \verb+ifxetex+,
+% \verb+index+,
+% \verb+microtype+,
+% \verb+natbib+,
+% \verb+newtxmath+,
+% \verb+pbox+,
+% \verb+pst-barcode +,
+% \verb+rotating+,
+% \verb+scrpage2+,
+% \verb+showidx+,
+% \verb+textpos+,
+% \verb+tocstyle+,
+% \verb+url+,
+% \verb+xcolor+,
+% \verb+xspace+,
+% \verb+xstring+.
+%
 \section{Producing the document}
 For an introduction to producing documents with \LaTeX\xspace, see our screencast at \url{http://langsci-press.org/forAuthors}.
-In your \LaTeX\xspace editor, there are various ways to create a \textsc{pdf} from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://www.overleaf.com/learn/latex/Errors} 
+In your \LaTeX\xspace editor, there are various ways to create a \textsc{pdf} from your sourcecode. Choose \verb+xelatex+. The first time you run it, it will produce a pdf with all the text, but with no table of contents. When you run it again, you will see the table of contents and the text. There are chances that your editor will show error messages. Common causes are unmatched braces or \verb+\begin{...}+ not followed by \verb+\end{...}+. See \url{https://www.overleaf.com/learn/latex/Errors}
 and
 \url{https://github.com/langsci/latex/wiki/Troubeshooting} for a list of common errors and remedies.
 
 
 
 In order to include the bibliography, you have to run \verb+biber+ to read the bibliography, and then again \verb+xelatex+ to include it into your document. Pay attention to error messages and warnings.
- 
-% If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume.sh+, which will do this for you and which is found in the skeleton as well. 
+
+% If you are using the skeleton for edited volumes, you have to run  \verb+bibtex+ on all \verb+*-blx.aux+-files (one for each chapter). If this is too cumbersome, you can also use the program \verb+bibtexvolume.sh+, which will do this for you and which is found in the skeleton as well.
 
 The creation of the indexes is a bit more complicated. You can leave this to the \lsp staff. The relevant commands are:
 
 \begin{verbatim}
 makeindex -o main.and main.adx
-makeindex -o main.lnd main.ldx 
+makeindex -o main.lnd main.ldx
 makeindex -o main.snd main.sdx
-\end{verbatim} 
+\end{verbatim}
 
 
 \section{Adapting the structure of the document}
@@ -158,12 +158,12 @@ The wealth of commands available in \LaTeX\xspace can be daunting at first sight
 \end{itemize}
 
 These commands give you a numbered title in the right layout.
-%  For prefaces, acknowledgements, etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+. 
-Other common commands are 
-\verb+\label{labelname}+ 
-to assign a label, and 
+%  For prefaces, acknowledgements, etc., which are not numbered, use \verb+\addchap{Preface}+ instead of \verb+\chapter{Preface}+.
+Other common commands are
+\verb+\label{labelname}+
+to assign a label, and
 \verb+\ref{labelname}+
-to refer to a label. It is good practice to use 
+to refer to a label. It is good practice to use
 \verb+\sectref{labelname}+,
 \verb+\tabref{labelname}+,
 \verb+\figref{labelname}+,
@@ -173,20 +173,20 @@ to refer to sections, tables, figures, and linguistic examples, respectively. A 
 Other commands very often used in academic texts are \verb+\citet{somework}+ and \verb+\citep{somework}+. Use the former to cite a work in the running text and the latter to cite it in parentheses. In order to avoid double parentheses, you can use  \verb+\citealt{somework}+. Page numbers are added with \verb+\citet[99--123]{somework}+. Make sure to use a double hyphen for ranges, which will give a dash in the pdf. Citations work with keys from your \bibtex file. In the examples above \verb+somework+ is the key of a record in your \bibtex file. When \verb+somework+ is cited in the document, the pdf will show the right citation in the right style, and the work will be added automatically to the list of references at the very end. Please refer to the guidelines for bibliographies for more information.
 
 
-If some text should not be in the normal font, use 
-\verb+\textit{text to change}+ for italics, 
-\verb+\textbf{text to change}+ for boldface, 
-\verb+\textsc{text to change}+ for small capitals. Boldface must not be used in running text. It may be used for emphasis in linguistic examples. 
+If some text should not be in the normal font, use
+\verb+\textit{text to change}+ for italics,
+\verb+\textbf{text to change}+ for boldface,
+\verb+\textsc{text to change}+ for small capitals. Boldface must not be used in running text. It may be used for emphasis in linguistic examples.
 There is generally no need to use underlining. If you want to use underlining, get in touch with support.
 
 \subsection{Linguistic examples}
 Linguistic examples are typeset like this
 
 \begin{verbatim}
-\ea\label{ex:examplelabel} 
+\ea\label{ex:examplelabel}
 \gll  Jean aim-e                    Marie \\
       John love-\textsc{3s.pres.ind} Mary \\
-\glt `John loves Mary.'    
+\glt `John loves Mary.'
 \z
 \end{verbatim}
 
@@ -195,39 +195,39 @@ Linguistic examples are typeset like this
 \newcommand{\ind}{\textsc{ind}}
 This gives you
 % \todo{fix index}
-\ea\label{ex:examplelabel} 
+\ea\label{ex:examplelabel}
 \gll  Jean aim-e Marie \\
       John love-\textsc{3s.pres.ind}  Mary \\
-\glt `John loves Mary.'    
+\glt `John loves Mary.'
 \z
 
-Rough alignment of glosses in the source text can be helpful, but is not necessary. \LaTeX\xspace will take care of alignment of the glosses automatically. 
+Rough alignment of glosses in the source text can be helpful, but is not necessary. \LaTeX\xspace will take care of alignment of the glosses automatically.
 % Most glosses from the Leipzig Glossing Rules can be accessed via shortcuts. The example above could also be typeset as
-% 
+%
 % \begin{verbatim}
 % \ea\label{ex:examplelabel}
 % \langinfo{French}{Indo-European}{personal knowledge}\\
 % \gll  Jean aim-e                 Marie \\
 %       John love-\textsc{3s.pres.ind}  Mary \\
-% \glt `John loves Mary.'    
+% \glt `John loves Mary.'
 % \z
 % \end{verbatim}
 
 For more complicated examples with more lines, judgments, additional information and the like, refer to the showcases section, or to the documentation of the package \verb+langsci-gb4e+.
 \verb+\langinfo+ should be used if the language cannot be assumed to be widely known. The first argument is the language, the second the family, the third the source. If the family is left blank, it will not display. If you give a reference in the source, use \verb+\citealt+ rather than \verb+\citep+.
 
-To avoid a page break in an example, put it between \verb+\protectedex{...}+. 
+To avoid a page break in an example, put it between \verb+\protectedex{...}+.
 
 \begin{verbatim}
 \protectedex{
-\ea\label{ex:examplelabel} 
+\ea\label{ex:examplelabel}
 \gll  Jean aim-e                 Marie \\
       John love-\textsc{3s.pres.ind}  Mary \\
-\glt `John loves Mary.'    
+\glt `John loves Mary.'
 \z
 }
 \end{verbatim}
- 
+
 \subsection{Graphics}
 In order to add a graphics file, use the following stretch of code
 
@@ -246,7 +246,7 @@ You can adapt the height, or use \verb+\textwidth+ instead of \verb+\textheight+
 In order to add a table, use the following stretch of code:
 
 \begin{verbatim}
-\begin{table} 
+\begin{table}
   \begin{tabularx}{\textwidth}{XXX}
     \lsptoprule
     German  & French  & Spanish \\
@@ -261,7 +261,7 @@ In order to add a table, use the following stretch of code:
 \end{table}
 \end{verbatim}
 
-This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done. 
+This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add additional vertical lines, but this should generally not be done.
 
 \begin{table}[h]
   \begin{tabularx}{\textwidth}{XXX}
@@ -277,16 +277,16 @@ This will give you  \tabref{tab:chapterhandle:keytotable}. There are ways to add
   \label{tab:chapterhandle:keytotable}
 \end{table}
 
-You can use \verb+\tablevspace+ for separation of groups within a table. 
+You can use \verb+\tablevspace+ for separation of groups within a table.
 
-You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used. 
+You should not assume that a figure or table will be placed exactly where it appears in the text. Therefore, references like ``in the table above/below'' should not be used.
 
 You can adapt the width of the table by using \verb+.75\textwidth+,  \verb+.66\textwidth+, or \verb+.5\textwidth+.
 
-\verb+XXX+ tells \LaTeX\xspace to split the available space into three equal portions and to justify the content inside the cells. 
+\verb+XXX+ tells \LaTeX\xspace to split the available space into three equal portions and to justify the content inside the cells.
 
 \subsubsection{Tweaking tables}
-In order to assign explicit width to a column, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+. 
+In order to assign explicit width to a column, use \verb+p{1.75cm}+ or whatever the desired length might be, instead of \verb+X+.
 This will set the column width to 1.75cm and justify the cell contents. If you would rather have left-aligned content without hyphenation, use \verb+L{1.75cm}+, for center use \verb+C{1.75cm}+, for right-aligned use \verb+R{1.75cm}+.
 
 If you want columns of equal width, use \verb+X+ as above for justified, \verb+Q+ for left-aligned, \verb+Y+ for right aligned and \verb+Z+ for centered.
@@ -299,10 +299,10 @@ If you want the cell to be exactly the width of its content, use \verb+l+, \verb
 l & X & r & R\{2cm\} & Q & c \\
 \midrule
   start & long cell w/   wrapping words & .95 & This content is very long but does not hyphenate. It is right-aligned. The cell has a width of 2cm. & This cell, together with cells in column 2, takes up all remaining space, shared equally. It does not hyphenate. & center\\
-s & & .0001 & &&  c \\ 
+s & & .0001 & &&  c \\
 \lspbottomrule
-\end{tabularx} 
-\caption{Illlustration of different column types.}
+\end{tabularx}
+\caption{Illlustration of different column types}
 \label{tab:colmixes}
 \end{table}
 
@@ -312,13 +312,13 @@ In order to add footnotes, use the command \verb+\footnote{...}+. If you want to
 
 \newpage
 \subsection{Landscape}
- 
+
 A common requirement is to put pages in landscape orientation rather than portrait. In order to do this, use \verb+sidewaysfigure+ or \verb+sidewaystable+ instead of the normal \verb+figure+ or \verb+table+.
 
 \subsection{Fitting large content on the page}
-Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, use \verb+\fittable{stuff to resize}+. This works for figures as well. 
+Another common requirement is fitting a table or other element which is a bit too large on the page. In order to do this, use \verb+\fittable{stuff to resize}+. This works for figures as well.
 
-For other special needs, please contact our coordinator at \url{support@langsci-press.org}. 
+For other special needs, please contact our coordinator at \url{support@langsci-press.org}.
 
 \subsection{Computer code}
 Please use the \verb+listings+ environment. You can change which words should count as keywords. A list of pre-defined languages can be found in the user guide of the \verb+Listings+ package.
@@ -331,7 +331,7 @@ Please use the \verb+listings+ environment. You can change which words should co
     print greeting, addressee
 \end{lstlisting}
 \end{verbatim}
- 
+
 \begin{lstlisting}[language=Python, stringstyle=\color{blue}]
  greeting = "Hello"
  addressees = ["World", "Sky"]
@@ -342,15 +342,15 @@ Please use the \verb+listings+ environment. You can change which words should co
 \largerpage[2]
 \section{Adapting the class to your needs}
 Additional packages can be added via \verb+\usepackage{package}+ in the file\linebreak \verb+localpackages.tex+.
-Addtional commands can be added via \begin{verbatim}\newcommand{\commandname}{commanddefinition}\end{verbatim} in the file \verb+localcommands.tex+. 
-\clearpage 
+Addtional commands can be added via \begin{verbatim}\newcommand{\commandname}{commanddefinition}\end{verbatim} in the file \verb+localcommands.tex+.
+\clearpage
 
 
 Different subdisciplines of linguistics have different requirements. Syntactic trees, generously stacked diacritics, attribute-value matrices, foreign scripts (possibly right-to-left) or OT-tableaus come to mind. Have a look at the ``showcases'' guideline to see how to typeset these elements.
 
 
- 
-   
+
+
 \section{Drafts}
 
 Since \lsp does not have any commercial interest, you can put your book on webpages and distribute it
@@ -359,4 +359,4 @@ publication. If authors want to circulate prefinal versions, they can use the op
 \texttt{draftmode}. This prints a large watermark onto the first page and adds a footer to ever page
 that informs the reader about the fact that they are reading a draft and the date and time of the
 creation of the draft.
-  
+
