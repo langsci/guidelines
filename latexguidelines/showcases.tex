@@ -452,7 +452,83 @@ For easy diagrams, we provide the command \verb+\barplot+ (see \figref{fig:barpl
   \label{fig:barplot}
 \end{figure}
 
- 
+
+\section{Subfloats and row placement of floats}
+To place (sub-)figures and (sub-)tables beside each other, please use the \texttt{subcaption} and \texttt{floatrow}. An example with subfigures is displayed in \figref{fig:showcases:subfigures}, and an example of two figures in row placement in Figures~\ref{fig:showcases:rowA}--\ref{fig:showcases:rowB}. The example is taken from \textcite{Müller2021}.
+
+\begin{verbatim}
+\begin{figure}\hfill%
+	\begin{subfigure}[b]{.3\textwidth}\centering
+		\begin{forest}
+			[V$'$ [V [read]] [blub$_i$]]
+		\end{forest}
+			\caption{Trace\label{fig-a}}
+	\end{subfigure}\hfill%
+	\begin{subfigure}[b]{.3\textwidth}\centering
+		\begin{forest}
+			[V$'$ [V [read]] [NP[bla$_i$]]]
+		\end{forest}
+		\caption{XP with empty daughter}
+	\end{subfigure}\hfill%
+	\begin{subfigure}[b]{.3\textwidth}\centering
+		\begin{forest}
+			[V$'$ [V [read]] [NP$_i$ [bla]]]
+		\end{forest}
+		\caption{Mix of a and b\label{fig-b}}
+		\end{subfigure}\hfill
+	\caption{Alternative ways of depicting movement: the moved constituent can be represented by a trace
+or by an XP dominating a trace}\label{fig:showcases:subfigures}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}\hfill%
+	\begin{subfigure}[b]{.3\textwidth}\centering
+		\begin{forest}
+			[V$'$ [V [read]] [blub$_i$]]
+		\end{forest}
+			\caption{Trace\label{fig-a}}
+	\end{subfigure}\hfill%
+	\begin{subfigure}[b]{.3\textwidth}\centering
+		\begin{forest}
+			[V$'$ [V [read]] [NP[bla$_i$]]]
+		\end{forest}
+		\caption{XP with empty daughter}
+	\end{subfigure}\hfill%
+	\begin{subfigure}[b]{.3\textwidth}\centering
+		\begin{forest}
+			[V$'$ [V [read]] [NP$_i$ [bla]]]
+		\end{forest}
+		\caption{Mix of a and b\label{fig-b}}
+		\end{subfigure}\hfill
+	\caption{Alternative ways of depicting movement: the moved constituent can be represented by a trace
+or by an XP dominating a trace}\label{fig:showcases:subfigures}
+\end{figure}
+
+\begin{verbatim}
+\begin{figure}
+\begin{floatrow}
+  \captionsetup{margin=.05\linewidth}
+  \ffigbox[.5\linewidth]
+          {...}
+          {\caption{Figure A\label{fig:showcases:rowA}}}
+  \ffigbox[.5\linewidth]
+          {...}
+          {\caption{Figure B\label{fig:showcases:rowA}}}
+\end{floatrow}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}
+\begin{floatrow}
+  \captionsetup{margin=.05\linewidth}
+  \ffigbox[.5\linewidth]
+          {...}
+          {\caption{Figure A\label{fig:showcases:rowA}}}
+  \ffigbox[.5\linewidth]
+          {...}
+          {\caption{Figure B\label{fig:showcases:rowA}}}
+\end{floatrow}
+\end{figure}
 
 % \section{DRSes: \texttt{drs}}
 % 
