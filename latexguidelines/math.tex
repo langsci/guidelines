@@ -1,0 +1,25 @@
+\chapter{Math typesetting}
+
+There are recurring situations in which linguists can benefit from the math type capabilities in \LaTeX. At the same time, badly typed math content can severly impact readability and the overall aesthetics of scientific texts. Luckily, there are just a few rules one can follow to achieve a very pleasant math output. These are listed in this chapter.
+
+\section{Type what you mean: Use math mode for math material}
+
+Math mode in \LaTeX{} has neat functions, such as automatically truncating or inserting spaces or switching to math italics for certain objects. 
+
+If you are referring to mathematical material, you should make this clear in your code. For example, if you use variables: Write ``$p$-value'' rather than ``p-value''.
+
+\section{Avoid ``calculator notation''}
+Never erase leading zeroes, such as in ``$p<.05$''. The correct way to type this is ``$p<0.05$''. Similar things apply to exponents: Please type $\num{10e-6}$, rather than 10e-6. You can use \verb+\num+ from \texttt{siunitx} to achieve that output with the input \verb+\num{10e-6}+.
+
+\section{Always use operators instead of text}
+In math mode, the input \verb+$df$+ means ``the product of \verb+d+ and \verb+f+''. It does \emph{not} mean ``df'' as in ``degrees of freedom''. What you need here is a new \emph{operator}. They can be defined with \verb+\DeclareMathOperator+. The correct way to write this would be:
+
+\begin{verbatim}
+\DeclareMathOperator{\df}{df}
+$\df = 2$
+\end{verbatim}
+
+A number of operators are already pre-defined in \LaTeX{}, such as \verb+$\min$+ and \verb+$\max$+.
+
+\section{In-line math}
+It is usually a good idea to have as little in-line math as necessary. If you have in-line math that has super-scripts, please remember to use \verb+\smash+, such as in \verb+$\smash{\sum_{subscript}^{superscript}}$+. Without \verb+\smash+, the line spread geometrics of the respective paragraph would be destroyed.
