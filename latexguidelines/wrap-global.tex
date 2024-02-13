@@ -1,13 +1,11 @@
 %% -*- coding:utf-8 -*-
-\documentclass[series=guidelines,
-	        ,output=guidelines    % long|short|inprep   
-	        ,guidelines
-	        ,modfonts, nonflat
+\documentclass[output=guidelines    % long|short|inprep   
+              ,guidelines
 	        %,blackandwhite
-	        %,smallfont
 % 	        ,draftmode  
-		  ]{langsci/langscibook}    
-\renewcommand{\lsSeries}{guidelines}                      
+]{langscibook}  
+
+\renewcommand{\lsSeries}{guidelines}                   
 \author{Sebastian Nordhoff and Stefan Müller}
 \title{Language Science Press guidelines}  
 \subtitle{Complete set of guidelines}
@@ -16,24 +14,25 @@
 \input{localpackages.tex}
 \input{localcommands.tex}
 \bibliography{lsp-abbrev,lsp-guidelines}
+\graphicspath{{figures}}
 \begin{document}                
 \maketitle    
-\include{inanutshell}
+\include{chapters/inanutshell}
 \tableofcontents      
 \mainmatter     
 
 
-\include{introduction}
-\include{authors} 
-\include{volumeeditors}
-\include{latex}
-\include{conversion}
-\include{sanitycheck}
-\include{proofreaders}
-\include{indexers}
-\include{typesetters} 
-\include{openness}
-\include{showcases}
+\include{chapters/introduction}
+\include{chapters/authors} 
+\include{chapters/volumeeditors}
+\include{chapters/latex}
+\include{chapters/conversion}
+\include{chapters/sanitycheck}
+\include{chapters/proofreaders}
+\include{chapters/indexers}
+\include{chapters/typesetters} 
+\include{chapters/openness}
+\include{chapters/showcases}
 % % \include{serieseditors}
 
 \backmatter
