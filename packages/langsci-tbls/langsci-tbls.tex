@@ -1,0 +1,196 @@
+\documentclass[output=paper]{langscibook}
+\title{\texttt{langsci-tbls}}
+\date{\today}
+\abstract{\texttt{langsci-tbls} is a \LaTeX{} package to create boxes set apart from the main text. They can contain a few words or multiple paragraphs of text and other material like lists. They can also break across several pages, and quite effortlessly so. The package was originally created for our textbook series (TBLS), but may be used in any of our publications.}
+
+\author{The Language Science Press staff}
+\papernote{}
+
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,breaklines}
+
+\usepackage{langsci-tbls}
+\usepackage{lipsum}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\NewDocumentCommand{\TBLSShowcaseIconInItem}{m O{5mm}}
+  {%
+  	\begin{tabular}{@{} |c| @{}}
+  	 \hline
+     \ttfamily\strut #1 \\
+     \includegraphics[height=#2]{tbls-#1.pdf}\\
+     \hline     
+     \end{tabular}\ignorespaces
+  }
+
+\begin{document}
+\frontmatter
+\maketitle
+\section{Initialisation}
+The package is activated with:
+	
+\begin{lstlisting}
+\usepackage{langsci-tbls}
+\end{lstlisting}
+
+\noindent We recommend to place this code in your \texttt{localpackages.tex} file.
+
+\section{Titles and subtitles}\enlargethispage{\baselineskip}
+
+All boxes documented below require the input of a box title. These titles can be ommitted by supplying an empty first argument to all of the box commands, e.g.:
+
+\begin{lstlisting}
+	\begin{tblsframedsymbol}{}{bulb}
+	Framed box with a bulb icon but without title.
+	\end{tblsframedsymbol}
+	
+	\begin{tblsfilled}{}
+	Shaded box without title.
+	\end{tblsfilled}
+\end{lstlisting}
+
+The boxes will automatically adjust their layout -- empty titles do not lead to awkward empty space within the box. But keep in mind that a \emph{missing} title argument will result in a syntax error and/or funny output.
+
+\emph{Subtitles} can be given with the command \texttt{\textbackslash tcbsubtitle\{<subtitle>\}}. The framed symbol box below has an example (notice the heading “Available icons”).
+
+\section{Boxes with icons}
+
+There are two flavours of boxes with icons. The first type has a frame with user-configurable frame width and colour. The second one is filled with a shading of user-configurable colour. The icon on the top left can be chosen from a collection of predefined options. Authors can also request \lsp{} support to include additional icons. Most icons are taken from Google's Material Design (\url{https://fonts.google.com/icons}).
+
+A showcase of all icons shipped with this package can be found in Section~\ref{sec:iconlist}.
+
+\subsection{Framed box with icon}
+
+The environment \texttt{tblsframedsymbol} creates a box with icon and coloured frame. \texttt{<title>} and \texttt{<icon>} must be given. The title, but not the icon, can be an empty argument. The icon has to be one of the available icons listed in the box. Please contact \lsp{} support if you need additional icons. The icon will be coloured in the same \texttt{<frame colour>} as the frame, defaulting to the branding colour of the currently selected series.
+
+\begin{tblsframedsymbol}{A framed box with icon}{bulb}
+	This box was created using the following \LaTeX{} code:
+	
+\begin{lstlisting}
+\begin{tblsframedsymbol}{<title>}[<frame color>][<frame width>]{<icon>}
+...
+\end{tblsframedsymbol}
+\end{lstlisting}
+	
+	
+	\tcbsubtitle{Available icons}
+	\begin{multicols}{4}
+		\begin{itemize}[noitemsep,leftmargin=5mm]
+			\item\ttfamily alarm 
+			\item\ttfamily book 
+			\item\ttfamily bulb 
+			\item\ttfamily bulbon 
+			\item\ttfamily code 
+			\item\ttfamily explore 
+			\item\ttfamily filter 
+			\item\ttfamily glass 
+			\item\ttfamily glass2 
+			\item\ttfamily law 
+			\item\ttfamily more 
+			\item\ttfamily pencil 
+			\item\ttfamily people 
+			\item\ttfamily plus 
+			\item\ttfamily r 
+			\item\ttfamily receipt 
+			\item\ttfamily refresh 
+			\item\ttfamily report 
+			\item\ttfamily test 
+			\item\ttfamily tree 
+		\end{itemize}
+	\end{multicols}
+\end{tblsframedsymbol}
+
+\subsection{Shaded box with icon}
+
+Shaded boxes with icons are similar to framed boxes. The \texttt{<background colour>} defaults to 12\% black.
+
+\begin{tblsfilledsymbol}{TBLS boxes}{bulb}
+This box was created using the \texttt{tblsfilledsymbol} environment in \LaTeX{}:
+
+\begin{lstlisting}
+\begin{tblsfilledsymbol}{<title>}[<background colour>]{<icon>}
+...
+\end{tblsfilledsymbol}
+\end{lstlisting}
+\end{tblsfilledsymbol}
+
+
+\section{Boxes without icons}
+\subsection{Lines below and above}
+
+The box \texttt{tblslineshorizontal} has lines above and below. A \texttt{<title>} has to be given in any case. Optionally, the \texttt{<line width>} can be changed (default 0.8mm) and the \texttt{<line colour>} changed (defaults to the brand colour of the currently selected LSP series.)
+
+\begin{tblslineshorizontal}{A box with lines above and below.}
+	This is a box with lines above and below. It was created with the following \LaTeX{} commands:
+	
+\begin{lstlisting}
+\begin{tblslineshorizontal}{<title>}[<line width>][<line colour>]
+...
+\end{tblslineshorizontal}
+\end{lstlisting}
+\end{tblslineshorizontal}
+
+\subsection{Framed boxes}
+Boxes created with \texttt{tblsframed} have lines all around them, not just below and above. A (possibly empty) title argument has to be given, and the surrounding frame can be adjusted in both its width (defaults to 0.8mm) and colour (defaults to the branding colour of the currently selected series).
+
+\begin{tblsframed}{A framed box}
+This is a framed box. It was created using the following \LaTeX{} command:
+	
+\begin{lstlisting}
+\begin{tblsframed}{<title>}[<frame width>][<frame colour>]
+...
+\end{tblsframed}
+\end{lstlisting}
+\end{tblsframed}
+
+\subsection{Shadings}
+
+The box \texttt{tblsfilled} offers a shaded background. A title argument has to be given as first argument. Optinally, the background colour can be adjusted (default 12\% black). 
+
+\begin{tblsfilled}{A filled box}
+	This is a filled box. It was created with the following \LaTeX{} commands:
+\begin{lstlisting}
+\begin{tblsfilled}{<title>}[<shading colour>]
+...
+\end{tblsfilled}
+\end{lstlisting}
+	
+\end{tblsfilled}
+
+\section{Old \texttt{mdframed} implementation}
+We recommend to use the current implementation, which we built on top of \texttt{tcolorbox}, but an older \texttt{mdframed} implementation is available as well:
+\begin{lstlisting}
+\usepackage[mdframed]{langsci-tbls}
+\end{lstlisting}
+
+The environments from this documentation are available in this implementation, too, but we recommend that you contact \lsp{} support for further guidance if you can't use \texttt{tcolorbox} in your project.
+
+\section{Icons available out of the box}\label{sec:iconlist}
+
+\noindent
+	\TBLSShowcaseIconInItem{alarm} 
+	\TBLSShowcaseIconInItem{book} 
+	\TBLSShowcaseIconInItem{bulb} 
+	\TBLSShowcaseIconInItem{bulbon} 
+	\TBLSShowcaseIconInItem{code} 
+	\TBLSShowcaseIconInItem{explore} 
+	\TBLSShowcaseIconInItem{filter} 
+	\TBLSShowcaseIconInItem{glass} 
+	\TBLSShowcaseIconInItem{glass2}
+	
+\noindent  
+	\TBLSShowcaseIconInItem{law} 
+	\TBLSShowcaseIconInItem{more} 
+	\TBLSShowcaseIconInItem{pencil} 
+	\TBLSShowcaseIconInItem{people} 
+	\TBLSShowcaseIconInItem{plus} 
+	\TBLSShowcaseIconInItem{r} 
+	\TBLSShowcaseIconInItem{receipt} 
+	\TBLSShowcaseIconInItem{refresh} 
+	\TBLSShowcaseIconInItem{report} 
+	
+\noindent 
+	\TBLSShowcaseIconInItem{test} 
+	\TBLSShowcaseIconInItem{tree}
+\end{document}
